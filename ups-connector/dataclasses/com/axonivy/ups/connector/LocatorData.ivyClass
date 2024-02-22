@@ -1,0 +1,16 @@
+LocatorData #class
+com.axonivy.ups.connector #namespace
+version String #field
+version PERSISTENT #fieldModifier
+reqOption String #field
+reqOption PERSISTENT #fieldModifier
+locale String #field
+locale PERSISTENT #fieldModifier
+transId String #field
+transId PERSISTENT #fieldModifier
+transactionSrc String #field
+transactionSrc PERSISTENT #fieldModifier
+locatorRequest com.ups.wwwcie.api.client.LocatorRequest #field
+locatorRequest PERSISTENT #fieldModifier
+locatorResponseWrapper com.ups.wwwcie.api.client.LOCATORResponseWrapper #field
+locatorResponseWrapper PERSISTENT #fieldModifier

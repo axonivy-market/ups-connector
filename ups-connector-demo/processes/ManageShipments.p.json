@@ -1,0 +1,45 @@
+{
+  "format" : "10.0.0",
+  "id" : "18B6B1E5C8AA1A82",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.demo.Data"
+  },
+  "elements" : [ {
+      "id" : "f6",
+      "type" : "RequestStart",
+      "name" : "getTrackingInfo.ivp",
+      "config" : {
+        "callSignature" : "getTrackingInfo",
+        "outLink" : "getTrackingInfo.ivp",
+        "startName" : "Get Tracking",
+        "tags" : "demo"
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 200 }
+      },
+      "connect" : { "id" : "f7", "to" : "f8" }
+    }, {
+      "id" : "f8",
+      "type" : "DialogCall",
+      "name" : "TrackDetail",
+      "config" : {
+        "dialogId" : "com.axonivy.ups.connector.demo.TrackDetail",
+        "startMethod" : "start(com.ups.wwwcie.client.TrackApiResponse)",
+        "call" : {
+          "params" : [
+            { "name" : "trackApiResponse", "type" : "com.ups.wwwcie.client.TrackApiResponse" }
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 400, "y" : 200 }
+      },
+      "connect" : { "id" : "f12", "to" : "f9" }
+    }, {
+      "id" : "f9",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 688, "y" : 200 }
+      }
+    } ]
+}

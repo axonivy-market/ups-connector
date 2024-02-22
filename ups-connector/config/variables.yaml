@@ -1,0 +1,20 @@
+# == Variables ==
+# 
+# You can define here your project Variables.
+# If you want to define/override a Variable for a specific Environment, 
+# add an additional ‘variables.yaml’ file in a subdirectory in the ‘Config’ folder: 
+# '<project>/Config/_<environment>/variables.yaml
+#
+Variables:
+  ups-connector:
+      # Url to UPS connector
+      Url: "https://onlinetools.ups.com/api"
+
+      # Your UPS Auth base URI
+      authUri: "https://onlinetools.ups.com/security/v1/oauth"
+
+      # Your UPS Application Client ID
+      appId: ""
+
+      # Your UPS Application Client Secret
+      secretKey: ""

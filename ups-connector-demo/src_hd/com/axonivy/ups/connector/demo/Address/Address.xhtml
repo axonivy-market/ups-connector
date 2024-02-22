@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+	<ui:composition template="/layouts/frame-10.xhtml">
+		<ui:define name="title">Address</ui:define>
+		<ui:define name="content">
+			<h3>Address Validation</h3>
+			<p>The UPS Address Validation API's database is updated every
+				month with new address information from USPS. Address Validation for
+				City, State, Zip is only available for the United States.</p>
+			<h:form id="form">
+				<p:growl id="growl" showDetail="false" />
+				<p:panelGrid columns="2" layout="grid"
+					styleClass="ui-panelgrid-blank ui-fluid"
+					columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
+
+					<p:outputLabel for="consigneeName" value="Consignee Name" />
+					<p:inputText id="consigneeName"
+						value="#{upsBean.addressKeyFormat.consigneeName}" />
+
+					<p:outputLabel for="region" value="Region" />
+					<p:inputText id="region" value="#{upsBean.addressKeyFormat.region}" />
+
+					<p:outputLabel for="politicalDivision1" value="State/Province" />
+					<p:inputText id="politicalDivision1"
+						value="#{upsBean.addressKeyFormat.politicalDivision1}" />
+
+					<p:outputLabel for="politicalDivision2" value="City or Town name" />
+					<p:inputText id="politicalDivision2"
+						value="#{upsBean.addressKeyFormat.politicalDivision2}" />
+
+					<p:outputLabel for="postcodePrimaryLow"
+						value="Postcode Primary Low" />
+					<p:inputText id="postcodePrimaryLow"
+						value="#{upsBean.addressKeyFormat.postcodePrimaryLow}" />
+
+					<p:outputLabel for="postcodeExtendedLow"
+						value="Postcode Extended Low" />
+					<p:inputText id="postcodeExtendedLow"
+						value="#{upsBean.addressKeyFormat.postcodeExtendedLow}" />
+
+					<p:outputLabel for="urbanization" value="Urbanization" />
+					<p:inputText id="urbanization"
+						value="#{upsBean.addressKeyFormat.urbanization}" />
+
+					<p:outputLabel for="countryCode" value="Country Code" />
+					<p:inputText id="countryCode"
+						value="#{upsBean.addressKeyFormat.countryCode}" />
+
+				</p:panelGrid>
+				<br />
+				<div class="command-btns">
+					<p:commandLink id="cancel" actionListener="#{logic.close}"
+						value="Cancel" immediate="true" />
+					<p:commandButton id="validate" actionListener="#{logic.validate}"
+						value="Validate" update="form" icon="pi pi-check" />
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

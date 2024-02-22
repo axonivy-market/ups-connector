@@ -1,0 +1,144 @@
+{
+  "format" : "10.0.0",
+  "id" : "18D0B1909147679A",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.demo.PickupCancel.PickupCancelData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "callSignature" : "start",
+        "guid" : "18C003D38FDDA263"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f12", "to" : "f11" }
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "18C003D38FEE1AD7"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 }
+      },
+      "connect" : { "id" : "f5", "to" : "f4" }
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "callAPI()",
+      "config" : {
+        "callSignature" : "callAPI",
+        "guid" : "18C0042C10E9140A"
+      },
+      "visual" : {
+        "at" : { "x" : 104, "y" : 344 },
+        "labelOffset" : { "x" : 11, "y" : 35 }
+      },
+      "connect" : { "id" : "f8", "to" : "f7" }
+    }, {
+      "id" : "f7",
+      "type" : "SubProcessCall",
+      "name" : "Pickup",
+      "config" : {
+        "processCall" : "Pickup:pickupCancel(String,String,String,String,String)",
+        "call" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "transId", "type" : "String" },
+            { "name" : "transactionSrc", "type" : "String" },
+            { "name" : "prn", "type" : "String" },
+            { "name" : "cancelBy", "type" : "String" }
+          ],
+          "map" : {
+            "param.version" : "\"v1\"",
+            "param.transId" : "in.transId",
+            "param.transactionSrc" : "in.transactionSrc",
+            "param.prn" : "in.prn",
+            "param.cancelBy" : "in.cancelBy"
+          }
+        },
+        "output" : {
+          "code" : [
+            "import javax.faces.application.FacesMessage;",
+            "import org.primefaces.context.RequestContext;",
+            "import org.primefaces.component.inputtext.InputText;",
+            "import javax.faces.context.FacesContext;",
+            "",
+            "FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, \"Cancel Pickup sucessfully\", null));"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 336, "y" : 344 }
+      },
+      "boundaries" : [ {
+          "id" : "f13",
+          "type" : "ErrorBoundaryEvent",
+          "visual" : {
+            "at" : { "x" : 368, "y" : 384 }
+          },
+          "connect" : { "id" : "f15", "to" : "f14" }
+        } ],
+      "connect" : { "id" : "f10", "to" : "f9" }
+    }, {
+      "id" : "f9",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 528, "y" : 344 }
+      }
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "name" : "init",
+      "config" : {
+        "output" : {
+          "code" : [
+            "in.transactionSrc = \"testing\";",
+            "in.cancelBy = \"01\";"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f14",
+      "type" : "Script",
+      "name" : "show error message",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import javax.faces.application.FacesMessage;",
+            "import org.primefaces.context.RequestContext;",
+            "import org.primefaces.component.inputtext.InputText;",
+            "import javax.faces.context.FacesContext;",
+            "",
+            "FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, \"Cancel pickup failed\", null));"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 456, "y" : 448 }
+      },
+      "connect" : { "id" : "f16", "to" : "f9" }
+    } ]
+}

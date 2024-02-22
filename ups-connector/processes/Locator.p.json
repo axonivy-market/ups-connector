@@ -1,0 +1,84 @@
+{
+  "format" : "10.0.0",
+  "id" : "18B9434D3583828B",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.LocatorData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "locator(String,String,String,String,String,LocatorRequest)",
+      "config" : {
+        "callSignature" : "locator",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "reqOption", "type" : "String" },
+            { "name" : "locale", "type" : "String" },
+            { "name" : "transId", "type" : "String" },
+            { "name" : "transactionSrc", "type" : "String" },
+            { "name" : "locatorRequest", "type" : "com.ups.wwwcie.api.client.LocatorRequest" }
+          ],
+          "map" : {
+            "out.locale" : "param.locale",
+            "out.locatorRequest" : "param.locatorRequest",
+            "out.reqOption" : "param.reqOption",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.transactionSrc",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "locatorResponseWrapper", "type" : "com.ups.wwwcie.api.client.LOCATORResponseWrapper" }
+          ],
+          "map" : {
+            "result.locatorResponseWrapper" : "in.locatorResponseWrapper"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 200, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 800, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Get Locator",
+      "config" : {
+        "bodyObjectMapping" : {
+          "param.locatorRequest" : "in.locatorRequest"
+        },
+        "clientId" : "392a25b1-ff85-48ae-95cb-44dddd4a876b",
+        "method" : "POST",
+        "queryParams" : {
+          "Locale" : "in.locale"
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "bodyObjectType" : "com.ups.wwwcie.api.client.LOCATORRequestWrapper",
+        "bodyInputType" : "ENTITY",
+        "path" : "/locations/{version}/search/availabilities/{reqOption}",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.locatorResponseWrapper" : "result"
+        },
+        "templateParams" : {
+          "reqOption" : "in.reqOption",
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.LOCATORResponseWrapper"
+      },
+      "visual" : {
+        "at" : { "x" : 528, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

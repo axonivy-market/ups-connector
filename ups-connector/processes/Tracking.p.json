@@ -1,0 +1,74 @@
+{
+  "format" : "10.0.0",
+  "id" : "18B6AEC03011C993",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.TrackingData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "tracking(TrackingRequestData)",
+      "config" : {
+        "callSignature" : "tracking",
+        "input" : {
+          "params" : [
+            { "name" : "trackingRequest", "type" : "com.axonivy.ups.connector.TrackingRequestData" }
+          ],
+          "map" : {
+            "out.trackingRequest" : "param.trackingRequest"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "trackApiResponse", "type" : "com.ups.wwwcie.client.TrackApiResponse" }
+          ],
+          "map" : {
+            "result.trackApiResponse" : "in.trackApiResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 17, "y" : 33 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 640, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Call Tracking API",
+      "config" : {
+        "path" : "/track/v1/details/{inquiryNumber}",
+        "headers" : {
+          "Accept" : "*/*",
+          "transactionSrc" : "in.trackingRequest.transactionSrc",
+          "transId" : "in.trackingRequest.transId"
+        },
+        "clientId" : "be29775f-9c8b-4f21-a9bc-b45cf89f932d",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "queryParams" : {
+          "locale" : "in.trackingRequest.locale",
+          "returnSignature" : "in.trackingRequest.returnSignature"
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.trackApiResponse" : "result"
+        },
+        "templateParams" : {
+          "inquiryNumber" : "in.trackingRequest.inquiryNumber"
+        },
+        "resultType" : "com.ups.wwwcie.client.TrackApiResponse"
+      },
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

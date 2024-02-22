@@ -1,0 +1,81 @@
+{
+  "format" : "10.0.0",
+  "id" : "18BA7F3EF0ADEECC",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.TimeInTransitData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "call(String,String,String,TimeInTransitRequest)",
+      "config" : {
+        "callSignature" : "call",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "transId", "type" : "String" },
+            { "name" : "transactionSrc", "type" : "String" },
+            { "name" : "timeInTransitRequest", "type" : "com.ups.wwwcie.api.client.TimeInTransitRequest" }
+          ],
+          "map" : {
+            "out.timeInTransitRequest" : "param.timeInTransitRequest",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.transactionSrc",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "timeInTransitResponse", "type" : "com.ups.wwwcie.api.client.TimeInTransitResponse" }
+          ],
+          "map" : {
+            "result.timeInTransitResponse" : "in.timeInTransitResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 208, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 848, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Get Time and Transit",
+      "config" : {
+        "headers" : {
+          "Accept" : "*/*",
+          "transId" : "in.transId",
+          "transactionSrc" : "in.transactionSrc"
+        },
+        "bodyObjectMapping" : {
+          "param" : "in.timeInTransitRequest"
+        },
+        "clientId" : "4af7d355-b229-44e3-9a0f-d8862b85e6cb",
+        "method" : "POST",
+        "statusErrorCode" : "ivy:error:rest:client",
+        "bodyObjectType" : "com.ups.wwwcie.api.client.TimeInTransitRequest",
+        "bodyInputType" : "ENTITY",
+        "path" : "/shipments/{version}/transittimes",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.timeInTransitResponse" : "result"
+        },
+        "templateParams" : {
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.TimeInTransitResponse"
+      },
+      "visual" : {
+        "at" : { "x" : 544, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

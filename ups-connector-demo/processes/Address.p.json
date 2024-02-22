@@ -1,0 +1,40 @@
+{
+  "format" : "10.0.0",
+  "id" : "18BEBB83F9E96872",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.demo.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "addressValidation.ivp",
+      "config" : {
+        "callSignature" : "addressValidation",
+        "outLink" : "addressValidation.ivp",
+        "startName" : "Validate Address",
+        "tags" : "demo"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 664, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "name" : "Address form",
+      "config" : {
+        "dialogId" : "com.axonivy.ups.connector.demo.Address",
+        "startMethod" : "start()"
+      },
+      "visual" : {
+        "at" : { "x" : 424, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

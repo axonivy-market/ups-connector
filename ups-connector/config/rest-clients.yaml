@@ -1,0 +1,139 @@
+RestClients:
+  ups (TrackService API):
+    UUID: be29775f-9c8b-4f21-a9bc-b45cf89f932d
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/Tracking.json
+      Namespace: com.ups.wwwcie.client
+  #The Address Validation Street Level API can be used to check addresses against the United States Postal Service database of valid addresses in the U.S. and Puerto Rico.
+  ups (Address Validation - Street Level):
+    UUID: 221ae58e-3b92-4977-a80a-94693778aaf4
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/Address%20Validation.json
+      Namespace: com.ups.wwwcie.api.client
+  #The Locator API provides UPS full-service and self-service locations, hours of operation and pickup times.
+  ups (Locator):
+    UUID: 392a25b1-ff85-48ae-95cb-44dddd4a876b
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/Locator.json
+      Namespace: com.ups.wwwcie.api.client
+  ups (Time In Transit):
+    UUID: 4af7d355-b229-44e3-9a0f-d8862b85e6cb
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/TimeInTransit.json
+      Namespace: com.ups.wwwcie.api.client
+  ups (Paperless Document):
+    UUID: 9fe556c4-9078-4bb9-8d0d-ec1fd217a822
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/Paperless%20Documents.json
+      Namespace: com.ups.wwwcie.api.client
+  ups (Pickup):
+    UUID: 3c375417-832b-43bf-83b8-3a522adc3f15
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/Pickup.json
+      Namespace: com.ups.wwwcie.api.client
+  ups (Ship):
+    UUID: 674eeece-45b5-403b-83a4-5d04d5132034
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/Shipping.json
+      Namespace: com.ups.wwwcie.api.client
+  #The Pre-Notification API allows customer applications to inform UPS operations of Dangerous Goods shipments as they are processed and will enter the UPS transportation network prior to an upload of manifest information at the end of the day.
+  ups (PreNotification):
+    UUID: 84689dff-8a92-4f25-b37a-1d4edde2574a
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/PreNotification.json
+      Namespace: com.ups.wwwcie.api.client
+  ups (Quantum View):
+    UUID: 510bac2d-97f1-439a-8007-5b853c2d0af9
+    Url: ${ivy.var.ups-connector.Url}
+    Features:
+    - ch.ivyteam.ivy.rest.client.mapper.JsonFeature
+    - com.axonivy.ups.connector.oauth.OAuth2Feature
+    Properties:
+      AUTH.baseUri: ${ivy.var.ups-connector.authUri}
+      AUTH.appId: ${ivy.var.ups-connector.appId}
+      jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
+      JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
+      AUTH.secretKey: ${ivy.var.ups-connector.secretKey}
+    OpenAPI:
+      SpecUrl: file:///D:/Atomic/project/UPS/OpenApi/QuantumView.json
+      Namespace: com.ups.wwwcie.api.client

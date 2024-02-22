@@ -1,0 +1,88 @@
+{
+  "format" : "10.0.0",
+  "id" : "18B94088D7BAEC17",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.AddressValidationData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "addressValidation(Integer,String,String,Integer,XAVRequest)",
+      "config" : {
+        "callSignature" : "addressValidation",
+        "input" : {
+          "params" : [
+            { "name" : "requestOption", "type" : "Integer" },
+            { "name" : "version", "type" : "String" },
+            { "name" : "regionalRequestIndicator", "type" : "String" },
+            { "name" : "maximumCandidateListSize", "type" : "Integer" },
+            { "name" : "xavRequest", "type" : "com.ups.wwwcie.api.client.XAVRequest" }
+          ],
+          "map" : {
+            "out.maximumCandidateListSize" : "param.maximumCandidateListSize",
+            "out.regionalRequestindicator" : "param.regionalRequestIndicator",
+            "out.requestOption" : "param.requestOption",
+            "out.version" : "param.version",
+            "out.xavRequest" : "param.xavRequest"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "xavResponseWrapper", "type" : "com.ups.wwwcie.api.client.XAVResponseWrapper" }
+          ],
+          "map" : {
+            "result.xavResponseWrapper" : "in.xavResponseWrapper"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 105, "y" : 49 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 856, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Call address validation API",
+      "config" : {
+        "headers" : {
+          "Accept" : "*/*",
+          "X-Requested-By" : "in.version"
+        },
+        "bodyObjectMapping" : {
+          "param.xaVRequest" : "in.xavRequest"
+        },
+        "clientId" : "221ae58e-3b92-4977-a80a-94693778aaf4",
+        "method" : "POST",
+        "queryParams" : {
+          "regionalrequestindicator" : "in.regionalrequestindicator",
+          "maximumcandidatelistsize" : "in.maximumcandidatelistsize"
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "bodyObjectType" : "com.ups.wwwcie.api.client.XAVRequestWrapper",
+        "bodyInputType" : "ENTITY",
+        "path" : "/addressvalidation/{version}/{requestoption}",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.xavResponseWrapper" : "result"
+        },
+        "templateParams" : {
+          "requestoption" : "in.requestoption",
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.XAVResponseWrapper"
+      },
+      "visual" : {
+        "at" : { "x" : 536, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

@@ -1,0 +1,72 @@
+{
+  "format" : "10.0.0",
+  "id" : "18BA92FE8801A9AF",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.QuatumViewData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "quatumView(String,QuantumViewRequest)",
+      "config" : {
+        "callSignature" : "quatumView",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "quantumViewRequest", "type" : "com.ups.wwwcie.api.client.QuantumViewRequest" }
+          ],
+          "map" : {
+            "out.quantumViewRequest" : "param.quantumViewRequest",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "quantumViewResponse", "type" : "com.ups.wwwcie.api.client.QuantumViewResponse" }
+          ],
+          "map" : {
+            "result.quantumViewResponse" : "in.quantumViewResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 888, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Get Quantum View",
+      "config" : {
+        "path" : "/quantumview/{version}/events",
+        "bodyObjectMapping" : {
+          "param.quantumViewRequest" : "in.quantumViewRequest"
+        },
+        "clientId" : "510bac2d-97f1-439a-8007-5b853c2d0af9",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "method" : "POST",
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.quantumViewResponse" : "result.quantumViewResponse"
+        },
+        "bodyObjectType" : "com.ups.wwwcie.api.client.QUANTUMVIEWRequestWrapper",
+        "templateParams" : {
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.QUANTUMVIEWResponseWrapper",
+        "bodyInputType" : "ENTITY"
+      },
+      "visual" : {
+        "at" : { "x" : 568, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    } ]
+}

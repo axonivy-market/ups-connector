@@ -1,0 +1,225 @@
+{
+  "format" : "10.0.0",
+  "id" : "18BA8C00018E3138",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.ShipingData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "shipment(String,String,String,String,ShipmentRequest)",
+      "config" : {
+        "callSignature" : "shipment",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "additionalAddressValidation", "type" : "String" },
+            { "name" : "transId", "type" : "String" },
+            { "name" : "transactionSrc", "type" : "String" },
+            { "name" : "shipmentRequest", "type" : "com.ups.wwwcie.api.client.ShipmentRequest" }
+          ],
+          "map" : {
+            "out.additionalAddressValidation" : "param.additionalAddressValidation",
+            "out.shipmentRequest" : "param.shipmentRequest",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.transactionSrc",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "shipmentResponse", "type" : "com.ups.wwwcie.api.client.ShipmentResponse" }
+          ],
+          "map" : {
+            "result.shipmentResponse" : "in.shipmentResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 248, "y" : 64 },
+        "labelOffset" : { "x" : 17, "y" : 33 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 872, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Shipment",
+      "config" : {
+        "bodyObjectMapping" : {
+          "param.shipmentRequest" : "in.shipmentRequest"
+        },
+        "clientId" : "674eeece-45b5-403b-83a4-5d04d5132034",
+        "method" : "POST",
+        "queryParams" : {
+          "additionaladdressvalidation" : "in.additionalAddressValidation"
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "bodyObjectType" : "com.ups.wwwcie.api.client.SHIPRequestWrapper",
+        "bodyInputType" : "ENTITY",
+        "path" : "/shipments/{version}/ship",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.shipmentResponse" : "result.shipmentResponse"
+        },
+        "templateParams" : {
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.SHIPResponseWrapper"
+      },
+      "visual" : {
+        "at" : { "x" : 584, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f5",
+      "type" : "CallSubStart",
+      "name" : "voidShipment(String,String,String,String)",
+      "config" : {
+        "callSignature" : "voidShipment",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "shipmentIdentificationNumber", "type" : "String" },
+            { "name" : "transId", "type" : "String" },
+            { "name" : "transactionSrc", "type" : "String" }
+          ],
+          "map" : {
+            "out.shipmentIdentificationNumber" : "param.shipmentIdentificationNumber",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.transactionSrc",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "voidShipmentResponse", "type" : "com.ups.wwwcie.api.client.VoidShipmentResponse" }
+          ],
+          "map" : {
+            "result.voidShipmentResponse" : "in.voidShipmentResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 248, "y" : 224 }
+      },
+      "connect" : { "id" : "f8", "to" : "f7" }
+    }, {
+      "id" : "f6",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 872, "y" : 224 }
+      }
+    }, {
+      "id" : "f7",
+      "type" : "RestClientCall",
+      "name" : "Void Shipment",
+      "config" : {
+        "path" : "/shipments/{version}/void/cancel/{shipmentidentificationnumber}",
+        "headers" : {
+          "Accept" : "*/*",
+          "transId" : "in.transId",
+          "transactionSrc" : "in.transactionSrc"
+        },
+        "clientId" : "674eeece-45b5-403b-83a4-5d04d5132034",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "method" : "DELETE",
+        "queryParams" : {
+          "trackingnumber" : "in.trackingNumber"
+        },
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.voidShipmentResponse" : "result.voidShipmentResponse"
+        },
+        "templateParams" : {
+          "shipmentidentificationnumber" : "in.shipmentIdentificationNumber",
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.VOIDSHIPMENTResponseWrapper"
+      },
+      "visual" : {
+        "at" : { "x" : 592, "y" : 224 }
+      },
+      "connect" : { "id" : "f9", "to" : "f6" }
+    }, {
+      "id" : "f10",
+      "type" : "CallSubStart",
+      "name" : "labelRecovery(String,String,String,LabelRecoveryRequest)",
+      "config" : {
+        "callSignature" : "labelRecovery",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "transId", "type" : "String" },
+            { "name" : "transactionSrc", "type" : "String" },
+            { "name" : "labelRecoveryRequest", "type" : "com.ups.wwwcie.api.client.LabelRecoveryRequest" }
+          ],
+          "map" : {
+            "out.labelRecoveryRequest" : "param.labelRecoveryRequest",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.transactionSrc",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "labelRecoveryResponse", "type" : "com.ups.wwwcie.api.client.LabelRecoveryResponse" }
+          ],
+          "map" : {
+            "result.labelRecoveryResponse" : "in.labelRecoveryResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 256, "y" : 400 }
+      },
+      "connect" : { "id" : "f14", "to" : "f12" }
+    }, {
+      "id" : "f11",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 880, "y" : 400 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "RestClientCall",
+      "name" : "Label Recovery",
+      "config" : {
+        "headers" : {
+          "Accept" : "*/*",
+          "transId" : "in.transId",
+          "transactionSrc" : "in.transactionSrc"
+        },
+        "bodyObjectMapping" : {
+          "param.labelRecoveryRequest" : "in.labelRecoveryRequest"
+        },
+        "clientId" : "674eeece-45b5-403b-83a4-5d04d5132034",
+        "method" : "POST",
+        "statusErrorCode" : "ivy:error:rest:client",
+        "bodyObjectType" : "com.ups.wwwcie.api.client.LABELRECOVERYRequestWrapper",
+        "bodyInputType" : "ENTITY",
+        "path" : "/labels/{version}/recovery",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.labelRecoveryResponse" : "result.labelRecoveryResponse"
+        },
+        "templateParams" : {
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.LABELRECOVERYResponseWrapper"
+      },
+      "visual" : {
+        "at" : { "x" : 600, "y" : 400 }
+      },
+      "connect" : { "id" : "f13", "to" : "f11" }
+    } ]
+}

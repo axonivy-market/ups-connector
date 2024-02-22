@@ -1,0 +1,18 @@
+PickupCreationData #class
+com.axonivy.ups.connector.demo.PickupCreation #namespace
+version String #field
+version PERSISTENT #fieldModifier
+pickuptype String #field
+pickuptype PERSISTENT #fieldModifier
+transId String #field
+transId PERSISTENT #fieldModifier
+transactionSrc String #field
+transactionSrc PERSISTENT #fieldModifier
+accountNumber String #field
+accountNumber PERSISTENT #fieldModifier
+pickupCreationRequest com.ups.wwwcie.api.client.PickupCreationRequest #field
+pickupCreationRequest PERSISTENT #fieldModifier
+pickupCreationResponse com.ups.wwwcie.api.client.PickupCreationResponse #field
+pickupCreationResponse PERSISTENT #fieldModifier
+address String #field
+address PERSISTENT #fieldModifier

@@ -1,0 +1,74 @@
+{
+  "format" : "10.0.0",
+  "id" : "18BEFEC3A70B2B09",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.demo.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "pickupCreation.ivp",
+      "config" : {
+        "callSignature" : "pickupCreation",
+        "outLink" : "pickupCreation.ivp",
+        "startName" : "Pickup Creation",
+        "tags" : "demo"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 },
+        "labelOffset" : { "x" : 17, "y" : 33 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 400, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "name" : "PickupCreation",
+      "config" : {
+        "dialogId" : "com.axonivy.ups.connector.demo.PickupCreation",
+        "startMethod" : "start()"
+      },
+      "visual" : {
+        "at" : { "x" : 272, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f5",
+      "type" : "RequestStart",
+      "name" : "pickupCancel.ivp",
+      "config" : {
+        "callSignature" : "pickupCancel",
+        "outLink" : "pickupCancel.ivp",
+        "startName" : "Pickup Cancel",
+        "tags" : "demo"
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 248 },
+        "labelOffset" : { "x" : 17, "y" : 33 }
+      },
+      "connect" : { "id" : "f9", "to" : "f6" }
+    }, {
+      "id" : "f6",
+      "type" : "DialogCall",
+      "name" : "PickupCancel",
+      "config" : {
+        "dialogId" : "com.axonivy.ups.connector.demo.PickupCancel",
+        "startMethod" : "start()"
+      },
+      "visual" : {
+        "at" : { "x" : 272, "y" : 248 }
+      },
+      "connect" : { "id" : "f8", "to" : "f7" }
+    }, {
+      "id" : "f7",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 448, "y" : 248 }
+      }
+    } ]
+}

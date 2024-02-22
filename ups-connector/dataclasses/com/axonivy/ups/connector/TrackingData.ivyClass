@@ -1,0 +1,6 @@
+TrackingData #class
+com.axonivy.ups.connector #namespace
+trackingRequest com.axonivy.ups.connector.TrackingRequestData #field
+trackingRequest PERSISTENT #fieldModifier
+trackApiResponse com.ups.wwwcie.client.TrackApiResponse #field
+trackApiResponse PERSISTENT #fieldModifier

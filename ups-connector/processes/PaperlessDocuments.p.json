@@ -1,0 +1,211 @@
+{
+  "format" : "10.0.0",
+  "id" : "18BA7FF3B06A0E62",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.PaperlessDocumentsData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "deletePaperlessDocument()",
+      "config" : {
+        "callSignature" : "deletePaperlessDocument",
+        "result" : {
+          "params" : [
+            { "name" : "deleteResponse", "type" : "com.ups.wwwcie.api.client.DeleteResponse" }
+          ],
+          "map" : {
+            "result.deleteResponse" : "in.deleteResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 272, "y" : 64 }
+      },
+      "connect" : { "id" : "f4", "to" : "f3" }
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 872, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Delete Paperless Document",
+      "config" : {
+        "path" : "/paperlessdocuments/{version}/DocumentId/ShipperNumber",
+        "headers" : {
+          "Accept" : "*/*",
+          "transId" : "in.transId",
+          "transactionSrc" : "in.transactionSrc",
+          "shipperNumber" : "in.shipperNumber",
+          "documentId" : "in.documentId"
+        },
+        "clientId" : "9fe556c4-9078-4bb9-8d0d-ec1fd217a822",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "method" : "DELETE",
+        "statusErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.deleteResponse" : "result.deleteResponse"
+        },
+        "templateParams" : {
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTDeleteResponseWrapper"
+      },
+      "visual" : {
+        "at" : { "x" : 640, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f5",
+      "type" : "CallSubStart",
+      "name" : "paperlessDocumentPushImage(String,String,String,String,PushToImageRepositoryRequest)",
+      "config" : {
+        "callSignature" : "paperlessDocumentPushImage",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "transId", "type" : "String" },
+            { "name" : "transactionSrc", "type" : "String" },
+            { "name" : "shipperNumber", "type" : "String" },
+            { "name" : "pushToImageRepositoryRequest", "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryRequest" }
+          ],
+          "map" : {
+            "out.pushToImageRepositoryRequest" : "param.pushToImageRepositoryRequest",
+            "out.shipperNumber" : "param.shipperNumber",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.transactionSrc",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "pushToImageRepositoryResponse", "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryResponse" }
+          ],
+          "map" : {
+            "result.pushToImageRepositoryResponse" : "in.pushToImageRepositoryResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 272, "y" : 240 }
+      },
+      "connect" : { "id" : "f9", "to" : "f7" }
+    }, {
+      "id" : "f6",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 872, "y" : 240 }
+      }
+    }, {
+      "id" : "f7",
+      "type" : "RestClientCall",
+      "name" : "Paperless Document Push Image",
+      "config" : {
+        "headers" : {
+          "Accept" : "*/*",
+          "transId" : "in.transId",
+          "transactionSrc" : "in.transactionSrc",
+          "shipperNumber" : "in.shipperNumber"
+        },
+        "bodyObjectMapping" : {
+          "param.pushToImageRepositoryRequest" : "in.pushToImageRepositoryRequest"
+        },
+        "clientId" : "9fe556c4-9078-4bb9-8d0d-ec1fd217a822",
+        "method" : "POST",
+        "statusErrorCode" : "ivy:error:rest:client",
+        "bodyObjectType" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTRequestWrapper",
+        "bodyInputType" : "ENTITY",
+        "path" : "/paperlessdocuments/{version}/image",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "responseMapping" : {
+          "out.pushToImageRepositoryResponse" : "in.pushToImageRepositoryResponse"
+        },
+        "templateParams" : {
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTResponseWrapper"
+      },
+      "visual" : {
+        "at" : { "x" : 640, "y" : 240 }
+      },
+      "connect" : { "id" : "f8", "to" : "f6" }
+    }, {
+      "id" : "f10",
+      "type" : "CallSubStart",
+      "name" : "uploadPaperlessDocument(String,String,String,String,UploadRequest)",
+      "config" : {
+        "callSignature" : "uploadPaperlessDocument",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String" },
+            { "name" : "transId", "type" : "String" },
+            { "name" : "transactionSrc", "type" : "String" },
+            { "name" : "shipperNumber", "type" : "String" },
+            { "name" : "uploadRequest", "type" : "com.ups.wwwcie.api.client.UploadRequest" }
+          ],
+          "map" : {
+            "out.shipperNumber" : "param.shipperNumber",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.transactionSrc",
+            "out.uploadRequest" : "param.uploadRequest",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "uploadResponse", "type" : "com.ups.wwwcie.api.client.UploadResponse" }
+          ],
+          "map" : {
+            "result.uploadResponse" : "in.uploadResponse"
+          }
+        },
+        "tags" : "connector"
+      },
+      "visual" : {
+        "at" : { "x" : 272, "y" : 416 }
+      },
+      "connect" : { "id" : "f14", "to" : "f12" }
+    }, {
+      "id" : "f11",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 872, "y" : 416 }
+      }
+    }, {
+      "id" : "f12",
+      "type" : "RestClientCall",
+      "name" : "Upload Paperless Document",
+      "config" : {
+        "path" : "/paperlessdocuments/{version}/upload",
+        "headers" : {
+          "Accept" : "*/*",
+          "transId" : "in.transId",
+          "transactionSrc" : "in.transactionSrc",
+          "shipperNumber" : "in.shipperNumber"
+        },
+        "bodyObjectMapping" : {
+          "param.uploadRequest" : "in.uploadRequest"
+        },
+        "clientId" : "9fe556c4-9078-4bb9-8d0d-ec1fd217a822",
+        "clientErrorCode" : "ivy:error:rest:client",
+        "method" : "POST",
+        "statusErrorCode" : "ivy:error:rest:client",
+        "bodyObjectType" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTUploadRequestWrapper",
+        "templateParams" : {
+          "version" : "in.version"
+        },
+        "resultType" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTUploadResponseWrapper",
+        "bodyInputType" : "ENTITY"
+      },
+      "visual" : {
+        "at" : { "x" : 640, "y" : 416 }
+      },
+      "connect" : { "id" : "f13", "to" : "f11" }
+    } ]
+}

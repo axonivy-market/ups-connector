@@ -1,0 +1,166 @@
+{
+  "format" : "10.0.0",
+  "id" : "18D0B18AB2CBDAED",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.demo.Address.AddressData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "callSignature" : "start",
+        "guid" : "18BEBB941531104C"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : { "id" : "f12", "to" : "f11" }
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 728, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "18BEBB9415432EC4"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 }
+      },
+      "connect" : { "id" : "f5", "to" : "f4" }
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "validate()",
+      "config" : {
+        "callSignature" : "validate",
+        "guid" : "18BEBC5EA159DC94"
+      },
+      "visual" : {
+        "at" : { "x" : 88, "y" : 288 }
+      },
+      "connect" : { "id" : "f14", "to" : "f13" }
+    }, {
+      "id" : "f7",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 664, "y" : 288 }
+      }
+    }, {
+      "id" : "f8",
+      "type" : "SubProcessCall",
+      "name" : "AddressValidation",
+      "config" : {
+        "processCall" : "AddressValidation:addressValidation(Integer,String,String,Integer,com.ups.wwwcie.api.client.XAVRequest)",
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.xavResponseWrapper" : "result.xavResponseWrapper"
+          },
+          "code" : [
+            "import javax.faces.application.FacesMessage;",
+            "import org.primefaces.context.RequestContext;",
+            "import org.primefaces.component.inputtext.InputText;",
+            "import javax.faces.context.FacesContext;",
+            "",
+            "FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, result.xavResponseWrapper.xaVResponse.response.responseStatus.description, null));"
+          ]
+        },
+        "call" : {
+          "params" : [
+            { "name" : "requestoption", "type" : "Integer" },
+            { "name" : "version", "type" : "String" },
+            { "name" : "regionalrequestindicator", "type" : "String" },
+            { "name" : "maximumcandidatelistsize", "type" : "Integer" },
+            { "name" : "xavRequest", "type" : "com.ups.wwwcie.api.client.XAVRequest" }
+          ],
+          "map" : {
+            "param.requestOption" : "1",
+            "param.version" : "\"v1\"",
+            "param.regionalRequestIndicator" : "\"false\"",
+            "param.maximumCandidateListSize" : "1",
+            "param.xavRequest.addressKeyFormat" : "in.xavRequest.addressKeyFormat",
+            "param.xavRequest.request.requestOption" : "\"1\""
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 376, "y" : 288 }
+      },
+      "boundaries" : [ {
+          "id" : "f15",
+          "type" : "ErrorBoundaryEvent",
+          "visual" : {
+            "at" : { "x" : 408, "y" : 328 }
+          },
+          "connect" : { "id" : "f17", "to" : "f16" }
+        } ],
+      "connect" : { "id" : "f10", "to" : "f7" }
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "name" : "init",
+      "config" : {
+        "output" : {
+          "code" : "in.xavRequest.addressKeyFormat = [];"
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 392, "y" : 64 }
+      },
+      "connect" : { "id" : "f2", "to" : "f1" }
+    }, {
+      "id" : "f13",
+      "type" : "Script",
+      "name" : "add addressKeyFormat",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import com.axonivy.connector.ups.demo.bean.UpsBean;",
+            "import javax.faces.context.FacesContext;",
+            "import java.util.Map;",
+            "",
+            "Map viewMap = FacesContext.getCurrentInstance().getViewRoot().getViewMap();",
+            "UpsBean bean = viewMap.get(\"upsBean\") as UpsBean;",
+            "in.xavRequest.addressKeyFormat.add(bean.addressKeyFormat);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 216, "y" : 288 }
+      },
+      "connect" : { "id" : "f9", "to" : "f8" }
+    }, {
+      "id" : "f16",
+      "type" : "Script",
+      "name" : "Show validation falied message",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import javax.faces.application.FacesMessage;",
+            "import org.primefaces.context.RequestContext;",
+            "import org.primefaces.component.inputtext.InputText;",
+            "import javax.faces.context.FacesContext;",
+            "",
+            "FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, \"Validation Falied\", null));"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 536, "y" : 392 }
+      },
+      "connect" : { "id" : "f18", "to" : "f7" }
+    } ]
+}

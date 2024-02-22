@@ -1,0 +1,230 @@
+{
+    "trackResponse": {
+        "shipment": [
+            {
+                "inquiryNumber": "1Z615V90DK63764633",
+                "package": [
+                    {
+                        "trackingNumber": "1Z615V90DK63764633",
+                        "deliveryDate": [
+                            {
+                                "type": "DEL",
+                                "date": "20231115"
+                            }
+                        ],
+                        "deliveryTime": {
+                            "type": "DEL",
+                            "endTime": "095319"
+                        },
+                        "activity": [
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "MUENCHEN",
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    },
+                                    "slic": "8015"
+                                },
+                                "status": {
+                                    "type": "D",
+                                    "description": "DELIVERED ",
+                                    "code": "KB",
+                                    "statusCode": "011"
+                                },
+                                "date": "20231115",
+                                "time": "095319"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Garching",
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    },
+                                    "slic": "0639"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Out For Delivery",
+                                    "code": "OF",
+                                    "statusCode": "071"
+                                },
+                                "date": "20231115",
+                                "time": "074500"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Garching",
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    },
+                                    "slic": "0639"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Arrived at Facility",
+                                    "code": "AR",
+                                    "statusCode": "005"
+                                },
+                                "date": "20231115",
+                                "time": "062700"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Frankfurt",
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    },
+                                    "slic": "0639"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Departed from Facility",
+                                    "code": "DP",
+                                    "statusCode": "005"
+                                },
+                                "date": "20231115",
+                                "time": "014900"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Garching",
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    },
+                                    "slic": "8015"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Processing at UPS Facility",
+                                    "code": "DS",
+                                    "statusCode": "005"
+                                },
+                                "date": "20231114",
+                                "time": "092800"
+                            },
+                            {
+                                "location": {
+                                    "address": {},
+                                    "slic": "0639"
+                                },
+                                "status": {
+                                    "type": "X",
+                                    "description": "Due to operating conditions, your package may be delayed.",
+                                    "code": "08",
+                                    "statusCode": "048"
+                                },
+                                "date": "20231114",
+                                "time": "034000"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Frankfurt",
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    },
+                                    "slic": "0949"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Arrived at Facility",
+                                    "code": "AR",
+                                    "statusCode": "005"
+                                },
+                                "date": "20231114",
+                                "time": "013900"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Herne-Boernig",
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    },
+                                    "slic": "0949"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Departed from Facility",
+                                    "code": "DP",
+                                    "statusCode": "005"
+                                },
+                                "date": "20231113",
+                                "time": "221600"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "city": "Herne-Boernig",
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    },
+                                    "slic": "0949"
+                                },
+                                "status": {
+                                    "type": "I",
+                                    "description": "Origin Scan",
+                                    "code": "OR",
+                                    "statusCode": "005"
+                                },
+                                "date": "20231113",
+                                "time": "205426"
+                            },
+                            {
+                                "location": {
+                                    "address": {
+                                        "countryCode": "DE",
+                                        "country": "DE"
+                                    }
+                                },
+                                "status": {
+                                    "type": "M",
+                                    "description": "Order Processed: In Transit to UPS ",
+                                    "code": "DP",
+                                    "statusCode": "003"
+                                },
+                                "date": "20231113",
+                                "time": "150557"
+                            }
+                        ],
+                        "currentStatus": {
+                            "description": "Delivered",
+                            "code": "011"
+                        },
+                        "packageAddress": [
+                            {
+                                "type": "ORIGIN",
+                                "address": {
+                                    "city": "HERNE",
+                                    "stateProvince": "",
+                                    "countryCode": "DE",
+                                    "country": "DE"
+                                }
+                            },
+                            {
+                                "type": "DESTINATION",
+                                "address": {
+                                    "city": "MUENCHEN",
+                                    "stateProvince": "",
+                                    "countryCode": "DE",
+                                    "country": "DE"
+                                }
+                            }
+                        ],
+                        "service": {
+                            "code": "559",
+                            "levelCode": "011",
+                            "description": "UPS Standard®"
+                        },
+                        "packageCount": 1
+                    }
+                ]
+            }
+        ]
+    }
+}

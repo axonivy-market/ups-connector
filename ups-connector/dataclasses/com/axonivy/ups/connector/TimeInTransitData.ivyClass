@@ -1,0 +1,12 @@
+TimeInTransitData #class
+com.axonivy.ups.connector #namespace
+version String #field
+version PERSISTENT #fieldModifier
+transId String #field
+transId PERSISTENT #fieldModifier
+transactionSrc String #field
+transactionSrc PERSISTENT #fieldModifier
+timeInTransitRequest com.ups.wwwcie.api.client.TimeInTransitRequest #field
+timeInTransitRequest PERSISTENT #fieldModifier
+timeInTransitResponse com.ups.wwwcie.api.client.TimeInTransitResponse #field
+timeInTransitResponse PERSISTENT #fieldModifier

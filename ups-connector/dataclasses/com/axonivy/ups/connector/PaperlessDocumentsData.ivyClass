@@ -1,0 +1,22 @@
+PaperlessDocumentsData #class
+com.axonivy.ups.connector #namespace
+version String #field
+version PERSISTENT #fieldModifier
+transId String #field
+transId PERSISTENT #fieldModifier
+transactionSrc String #field
+transactionSrc PERSISTENT #fieldModifier
+shipperNumber String #field
+shipperNumber PERSISTENT #fieldModifier
+documentId String #field
+documentId PERSISTENT #fieldModifier
+deleteResponse com.ups.wwwcie.api.client.DeleteResponse #field
+deleteResponse PERSISTENT #fieldModifier
+pushToImageRepositoryRequest com.ups.wwwcie.api.client.PushToImageRepositoryRequest #field
+pushToImageRepositoryRequest PERSISTENT #fieldModifier
+pushToImageRepositoryResponse com.ups.wwwcie.api.client.PushToImageRepositoryResponse #field
+pushToImageRepositoryResponse PERSISTENT #fieldModifier
+uploadRequest com.ups.wwwcie.api.client.UploadRequest #field
+uploadRequest PERSISTENT #fieldModifier
+uploadResponse com.ups.wwwcie.api.client.UploadResponse #field
+uploadResponse PERSISTENT #fieldModifier

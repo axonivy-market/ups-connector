@@ -1,0 +1,245 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<h:body>
+	<ui:composition template="/layouts/frame-10.xhtml">
+		<ui:define name="title">PickupCreation</ui:define>
+		<ui:define name="content">
+			<h3>Pickup Creation</h3>
+			<p>Using the Pickup API, applications can schedule pickups.</p>
+			<p:growl />
+			<h:form id="form">
+				<p:growl id="growl" showDetail="false" />
+				<p:fieldset legend="Shipper Info">
+					<p:panelGrid columns="5"
+						styleClass="ui-panelgrid-blank ui-fluid width-100"
+						columnClasses="width-23-percent, width-23-percent, width-8-percent, width-23-percent, width-23-percent">
+						<p:outputLabel for="accountNumber" value="Account Number" />
+						<p:inputText id="accountNumber" required="true"
+							value="#{data.pickupCreationRequest.shipper.account.accountNumber}" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="accountCountryCode"
+							value="Account Country Code" />
+						<p:inputText id="accountCountryCode" required="true"
+							value="#{data.pickupCreationRequest.shipper.account.accountCountryCode}" />
+					</p:panelGrid>
+				</p:fieldset>
+				<p:fieldset legend="Pickup Date Info" styleClass="mt-8">
+					<p:panelGrid columns="5"
+						styleClass="ui-panelgrid-blank ui-fluid width-100"
+						columnClasses="width-23-percent, width-23-percent, width-8-percent, width-23-percent, width-23-percent">
+						<p:outputLabel for="readyTime" value="Ready Time" />
+						<p:inputText id="readyTime" required="true"
+							value="#{data.pickupCreationRequest.pickupDateInfo.readyTime}" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="closeTime" value="Close Time" />
+						<p:inputText id="closeTime" required="true"
+							value="#{data.pickupCreationRequest.pickupDateInfo.closeTime}" />
+
+						<p:outputLabel for="pickupDate" value="Pickup Date" />
+						<p:inputText id="pickupDate" required="true"
+							value="#{data.pickupCreationRequest.pickupDateInfo.pickupDate}" />
+					</p:panelGrid>
+				</p:fieldset>
+				<p:fieldset legend="Address" styleClass="mt-8">
+					<p:panelGrid columns="5"
+						styleClass="ui-panelgrid-blank ui-fluid width-100"
+						columnClasses="width-23-percent, width-23-percent, width-8-percent, width-23-percent, width-23-percent">
+						<p:outputLabel for="companyName" value="Company Name" />
+						<p:inputText id="companyName" required="true"
+							value="#{data.pickupCreationRequest.pickupAddress.companyName}" />
+						<p:outputLabel value="" />
+						<p:outputLabel for="contactName" value="Contact Name" />
+						<p:inputText id="contactName" required="true"
+							value="#{data.pickupCreationRequest.pickupAddress.contactName}" />
+
+						<p:outputLabel for="addressLine" value="Address" />
+						<p:inputText id="addressLine" value="#{data.address}"
+							required="true" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="room" value="Room" />
+						<p:inputText id="room"
+							value="#{data.pickupCreationRequest.pickupAddress.room}" />
+
+						<p:outputLabel for="floor" value="Floor" />
+						<p:inputText id="floor"
+							value="#{data.pickupCreationRequest.pickupAddress.floor}" />
+						<p:outputLabel value="" />
+						<p:outputLabel for="city" value="City" />
+						<p:inputText id="city" required="true"
+							value="#{data.pickupCreationRequest.pickupAddress.city}" />
+
+						<p:outputLabel for="stateProvince" value="State Province" />
+						<p:inputText id="stateProvince"
+							value="#{data.pickupCreationRequest.pickupAddress.stateProvince}" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="urbanization" value="Urbanization" />
+						<p:inputText id="urbanization"
+							value="#{data.pickupCreationRequest.pickupAddress.urbanization}" />
+
+						<p:outputLabel for="postalCode" value="Postal Code" />
+						<p:inputText id="postalCode" required="true"
+							value="#{data.pickupCreationRequest.pickupAddress.postalCode}" />
+						<p:outputLabel value="" />
+						<p:outputLabel for="countryCode" value="Country Code" />
+						<p:inputText id="countryCode" required="true"
+							value="#{data.pickupCreationRequest.pickupAddress.countryCode}" />
+
+						<p:outputLabel for="residentialIndicator"
+							value="Residential Indicator" />
+						<p:inputText id="residentialIndicator"
+							value="#{data.pickupCreationRequest.pickupAddress.residentialIndicator}" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="pickupPoint" value="Pickup Point" />
+						<p:inputText id="pickupPoint"
+							value="#{data.pickupCreationRequest.pickupAddress.pickupPoint}" />
+
+						<p:outputLabel for="phoneNumber" value="Phone Number" />
+						<p:inputText id="phoneNumber" required="true"
+							value="#{data.pickupCreationRequest.pickupAddress.phone.number}" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="phoneExtension" value="Phone Extension" />
+						<p:inputText id="phoneExtension"
+							value="#{data.pickupCreationRequest.pickupAddress.phone.extension}" />
+					</p:panelGrid>
+				</p:fieldset>
+				<p:fieldset legend="Pickup Piece" styleClass="mt-8">
+					<p:panelGrid columns="5"
+						styleClass="ui-panelgrid-blank ui-fluid width-100"
+						columnClasses="width-23-percent, width-23-percent, width-8-percent, width-23-percent, width-23-percent">
+						<p:outputLabel for="serviceCode" value="Service Code" />
+						<p:inputText id="serviceCode" required="true"
+							value="#{upsBean.pickupPiece.serviceCode}" />
+						<p:outputLabel value="" />
+						<p:outputLabel for="quantity" value="Quantity" />
+						<p:inputText id="quantity" value="#{upsBean.pickupPiece.quantity}"
+							required="true" />
+
+						<p:outputLabel for="destinationCountryCode"
+							value="Destination Country Code" />
+						<p:inputText id="destinationCountryCode"
+							value="#{upsBean.pickupPiece.destinationCountryCode}"
+							required="true" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="containerCode" value="Container Code" />
+						<p:selectOneMenu id="containerCode" required="true"
+							value="#{upsBean.pickupPiece.containerCode}">
+							<f:selectItem itemLabel="Package" itemValue="01" />
+							<f:selectItem itemLabel="UPS Letter" itemValue="02" />
+							<f:selectItem itemLabel="Pallet" itemValue="03" />
+						</p:selectOneMenu>
+					</p:panelGrid>
+				</p:fieldset>
+				<p:fieldset legend="Total weight" styleClass="mt-8">
+					<p:panelGrid columns="5"
+						styleClass="ui-panelgrid-blank ui-fluid width-100"
+						columnClasses="width-23-percent, width-23-percent, width-8-percent, width-23-percent, width-23-percent">
+						<p:outputLabel for="weight" value="Weight" />
+						<p:inputText id="weight" required="true"
+							value="#{data.pickupCreationRequest.totalWeight.weight}" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="unitOfMeasurement" value="Unit Of Measurement" />
+						<p:inputText id="unitOfMeasurement" required="true"
+							value="#{data.pickupCreationRequest.totalWeight.unitOfMeasurement}" />
+					</p:panelGrid>
+				</p:fieldset>
+				<p:fieldset legend="Other Infomation" styleClass="mt-8">
+					<p:panelGrid columns="5"
+						styleClass="ui-panelgrid-blank ui-fluid width-100"
+						columnClasses="width-23-percent, width-23-percent, width-8-percent, width-23-percent, width-23-percent">
+						<p:outputLabel for="ratePickupIndicator"
+							value="Rate Pickup Indicator" />
+						<p:selectOneMenu id="ratePickupIndicator" required="true"
+							value="#{data.pickupCreationRequest.ratePickupIndicator}">
+							<f:selectItem itemLabel="Do not rate this pickup" itemValue="N" />
+							<f:selectItem itemLabel="Rate this pickup" itemValue="Y" />
+						</p:selectOneMenu>
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="alternateAddressIndicator"
+							value="Alternate Address Indicator" />
+						<p:selectOneMenu id="alternateAddressIndicator"
+							value="#{data.pickupCreationRequest.alternateAddressIndicator}">
+							<f:selectItem itemLabel="Original pickup address" itemValue="N" />
+							<f:selectItem itemLabel="Alternate address" itemValue="Y" />
+						</p:selectOneMenu>
+
+						<p:outputLabel for="overweightIndicator"
+							value="Overweight Indicator" />
+
+						<p:selectOneMenu id="overweightIndicator"
+							value="#{data.pickupCreationRequest.overweightIndicator}">
+							<f:selectItem itemLabel="Not over weight" itemValue="N" />
+							<f:selectItem itemLabel="Over weight" itemValue="Y" />
+						</p:selectOneMenu>
+						<p:outputLabel value="" />
+						<p:outputLabel for="paymentMethod" value="Payment Method" />
+						<p:selectOneMenu id="paymentMethod" required="true"
+							value="#{data.pickupCreationRequest.paymentMethod}">
+							<f:selectItem itemLabel="No payment needed" itemValue="00" />
+							<f:selectItem itemLabel="Pay by shipper account" itemValue="01" />
+							<f:selectItem itemLabel="Pay by charge card" itemValue="03" />
+							<f:selectItem itemLabel="Pay by 1Z tracking number"
+								itemValue="04" />
+							<f:selectItem itemLabel="Pay by check or money order"
+								itemValue="05" />
+							<f:selectItem itemLabel="Cash" itemValue="06" />
+							<f:selectItem itemLabel="Pay by PayPal" itemValue="07" />
+						</p:selectOneMenu>
+
+						<p:outputLabel for="specialInstruction"
+							value="Special Instruction" />
+						<p:inputText id="specialInstruction"
+							value="#{data.pickupCreationRequest.specialInstruction}" />
+						<p:outputLabel value="" />
+
+						<p:outputLabel for="referenceNumber" value="Reference Number" />
+						<p:inputText id="referenceNumber"
+							value="#{data.pickupCreationRequest.referenceNumber}" />
+					</p:panelGrid>
+				</p:fieldset>
+				<br />
+				<div class="command-btns">
+					<p:commandLink id="cancel" actionListener="#{logic.close}"
+						value="Cancel" immediate="true" />
+					<p:commandButton id="proceed" actionListener="#{logic.callAPI}"
+						value="Proceed" update="form" icon="pi pi-check" />
+				</div>
+				<c:if test="#{data.pickupCreationResponse ne null}">
+					<hr />
+					<h3>Pickup Creation Response</h3>
+					<p:panelGrid id="result"
+						rendered="#{data.pickupCreationResponse ne null}" columns="2"
+						layout="grid" styleClass="ui-panelgrid-blank ui-fluid"
+						columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
+
+						<p:outputLabel for="responseStatus" value="Response Status" />
+						<p:inputText id="responseStatus"
+							value="#{data.pickupCreationResponse.response.responseStatus.description}" />
+
+						<p:outputLabel for="PRN" value="PRN" />
+						<p:inputText id="PRN" value="#{data.pickupCreationResponse.PRN}" />
+
+						<p:outputLabel for="rateStatus" value="Rate Status" />
+						<p:inputText id="rateStatus"
+							value="#{data.pickupCreationResponse.rateStatus.description}" />
+					</p:panelGrid>
+				</c:if>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

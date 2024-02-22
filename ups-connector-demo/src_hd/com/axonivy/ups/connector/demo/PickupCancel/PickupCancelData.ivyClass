@@ -1,0 +1,14 @@
+PickupCancelData #class
+com.axonivy.ups.connector.demo.PickupCancel #namespace
+transId String #field
+transId PERSISTENT #fieldModifier
+transactionSrc String #field
+transactionSrc PERSISTENT #fieldModifier
+prn String #field
+prn PERSISTENT #fieldModifier
+cancelBy String #field
+cancelBy PERSISTENT #fieldModifier
+pickupResponse com.ups.wwwcie.api.client.PickupCancelResponse #field
+pickupResponse PERSISTENT #fieldModifier
+accountNumber String #field
+accountNumber PERSISTENT #fieldModifier

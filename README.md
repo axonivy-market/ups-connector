@@ -1,7 +1,6 @@
-# MY-PRODUCT-NAME
+# UPS connector
+[![CI Build](https://github.com/axonivy-market/ups-connector/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/ups-connector/actions/workflows/ci.yml)
 
-[![CI Build](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/axonivy-market/REPO-NAME/actions/workflows/ci.yml)
+This is a UPS module built in the Axon Ivy framework, enabling users to seamlessly integrate with UPS services. With this app, users can effortlessly manage their packages through UPS.
 
-"YOUR SHORT DESCRIPTION GOES HERE"
-
-Read our [documentation](MY-PRODUCT-NAME-product/README.md).
+Read our [documentation](ups-connector-product/README.md).
