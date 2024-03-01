@@ -1,7 +1,7 @@
 # UPS Modules
 
 ## Description
-The Axon Ivy' [UPS connector](https://developer.ups.com/catalog) enables users to integrate UPS services seamlessly into any business process. This connector:
+The Axon Ivy [UPS connector](https://developer.ups.com/catalog) enables users to integrate UPS services seamlessly into any business process. This connector:
 - Empowers you with full access to the OpenAPI UPS API Catalog
 - Features everyday use cases such as tracking packages, obtain shipping rates, and validating addresses
 - Provides an easy-to-copy demo implementation to streamline your integration efforts.
