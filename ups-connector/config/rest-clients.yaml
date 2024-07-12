@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/app/11.3.1/rest-clients.json
 RestClients:
   ups (TrackService API):
     UUID: be29775f-9c8b-4f21-a9bc-b45cf89f932d
