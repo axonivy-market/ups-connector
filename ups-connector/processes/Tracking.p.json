@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "18B6AEC03011C993",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,10 +10,10 @@
       "type" : "CallSubStart",
       "name" : "tracking(TrackingRequestData)",
       "config" : {
-        "callSignature" : "tracking",
+        "signature" : "tracking",
         "input" : {
           "params" : [
-            { "name" : "trackingRequest", "type" : "com.axonivy.ups.connector.TrackingRequestData" }
+            { "name" : "trackingRequest", "type" : "com.axonivy.ups.connector.TrackingRequestData", "desc" : "" }
           ],
           "map" : {
             "out.trackingRequest" : "param.trackingRequest"
@@ -21,19 +21,23 @@
         },
         "result" : {
           "params" : [
-            { "name" : "trackApiResponse", "type" : "com.ups.wwwcie.client.TrackApiResponse" }
+            { "name" : "trackApiResponse", "type" : "com.ups.wwwcie.client.TrackApiResponse", "desc" : "" }
           ],
           "map" : {
             "result.trackApiResponse" : "in.trackApiResponse"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
         "labelOffset" : { "x" : 17, "y" : 33 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -45,30 +49,35 @@
       "type" : "RestClientCall",
       "name" : "Call Tracking API",
       "config" : {
-        "path" : "/track/v1/details/{inquiryNumber}",
-        "headers" : {
-          "Accept" : "*/*",
-          "transactionSrc" : "in.trackingRequest.transactionSrc",
-          "transId" : "in.trackingRequest.transId"
+        "target" : {
+          "clientId" : "be29775f-9c8b-4f21-a9bc-b45cf89f932d",
+          "path" : "/track/v1/details/{inquiryNumber}",
+          "templateParams" : {
+            "inquiryNumber" : "in.trackingRequest.inquiryNumber"
+          },
+          "queryParams" : {
+            "locale" : "in.trackingRequest.locale",
+            "returnSignature" : "in.trackingRequest.returnSignature"
+          },
+          "headers" : {
+            "transactionSrc" : "in.trackingRequest.transactionSrc",
+            "transId" : "in.trackingRequest.transId"
+          }
         },
-        "clientId" : "be29775f-9c8b-4f21-a9bc-b45cf89f932d",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "queryParams" : {
-          "locale" : "in.trackingRequest.locale",
-          "returnSignature" : "in.trackingRequest.returnSignature"
-        },
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.trackApiResponse" : "result"
-        },
-        "templateParams" : {
-          "inquiryNumber" : "in.trackingRequest.inquiryNumber"
-        },
-        "resultType" : "com.ups.wwwcie.client.TrackApiResponse"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.client.TrackApiResponse",
+            "map" : {
+              "out.trackApiResponse" : "result"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 352, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "18B94088D7BAEC17",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,14 +10,14 @@
       "type" : "CallSubStart",
       "name" : "addressValidation(Integer,String,String,Integer,XAVRequest)",
       "config" : {
-        "callSignature" : "addressValidation",
+        "signature" : "addressValidation",
         "input" : {
           "params" : [
-            { "name" : "requestOption", "type" : "Integer" },
-            { "name" : "version", "type" : "String" },
-            { "name" : "regionalRequestIndicator", "type" : "String" },
-            { "name" : "maximumCandidateListSize", "type" : "Integer" },
-            { "name" : "xavRequest", "type" : "com.ups.wwwcie.api.client.XAVRequest" }
+            { "name" : "requestOption", "type" : "Integer", "desc" : "" },
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "regionalRequestIndicator", "type" : "String", "desc" : "" },
+            { "name" : "maximumCandidateListSize", "type" : "Integer", "desc" : "" },
+            { "name" : "xavRequest", "type" : "com.ups.wwwcie.api.client.XAVRequest", "desc" : "" }
           ],
           "map" : {
             "out.maximumCandidateListSize" : "param.maximumCandidateListSize",
@@ -29,19 +29,23 @@
         },
         "result" : {
           "params" : [
-            { "name" : "xavResponseWrapper", "type" : "com.ups.wwwcie.api.client.XAVResponseWrapper" }
+            { "name" : "xavResponseWrapper", "type" : "com.ups.wwwcie.api.client.XAVResponseWrapper", "desc" : "" }
           ],
           "map" : {
             "result.xavResponseWrapper" : "in.xavResponseWrapper"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 96, "y" : 64 },
         "labelOffset" : { "x" : 105, "y" : 49 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -53,36 +57,44 @@
       "type" : "RestClientCall",
       "name" : "Call address validation API",
       "config" : {
-        "headers" : {
-          "Accept" : "*/*",
-          "X-Requested-By" : "in.version"
-        },
-        "bodyObjectMapping" : {
-          "param.xaVRequest" : "in.xavRequest"
-        },
-        "clientId" : "221ae58e-3b92-4977-a80a-94693778aaf4",
         "method" : "POST",
-        "queryParams" : {
-          "regionalrequestindicator" : "in.regionalrequestindicator",
-          "maximumcandidatelistsize" : "in.maximumcandidatelistsize"
+        "target" : {
+          "clientId" : "221ae58e-3b92-4977-a80a-94693778aaf4",
+          "path" : "/addressvalidation/{version}/{requestoption}",
+          "templateParams" : {
+            "requestoption" : "in.requestoption",
+            "version" : "in.version"
+          },
+          "queryParams" : {
+            "regionalrequestindicator" : "in.regionalrequestindicator",
+            "maximumcandidatelistsize" : "in.maximumcandidatelistsize"
+          },
+          "headers" : {
+            "X-Requested-By" : "in.version"
+          }
         },
-        "statusErrorCode" : "ivy:error:rest:client",
-        "bodyObjectType" : "com.ups.wwwcie.api.client.XAVRequestWrapper",
-        "bodyInputType" : "ENTITY",
-        "path" : "/addressvalidation/{version}/{requestoption}",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.xavResponseWrapper" : "result"
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.XAVRequestWrapper",
+            "map" : {
+              "param.xaVRequest" : "in.xavRequest"
+            }
+          }
         },
-        "templateParams" : {
-          "requestoption" : "in.requestoption",
-          "version" : "in.version"
-        },
-        "resultType" : "com.ups.wwwcie.api.client.XAVResponseWrapper"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.XAVResponseWrapper",
+            "map" : {
+              "out.xavResponseWrapper" : "result"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 536, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

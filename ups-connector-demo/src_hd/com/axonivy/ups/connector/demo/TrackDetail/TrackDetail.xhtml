@@ -56,16 +56,20 @@
 						<p:outputLabel for="inquiryNumber1" value="Tracking Number" />
 						<p:inputText id="inquiryNumber1"
 							value="#{data.trackApiResponse.trackResponse.shipment[0].package[0].trackingNumber}" />
-
-						<p:outputLabel for="deliveryDate" value="Delivery Date" />
-						<p:calendar id="deliveryDate"
-							value="#{upsBean.getFormatedDate(data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryDate[0].date)}"
-							pattern="yyyyMMdd">
-						</p:calendar>
-
-						<p:outputLabel for="deliveryTime" value="Delivery Time" />
-						<p:inputText id="deliveryTime"
-							value="#{upsBean.getFormatedTime(data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryTime.endTime)}" />
+						<c:if
+							test="#{not empty data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryDate[0].date}">
+							<p:outputLabel for="deliveryDate" value="Delivery Date" />
+							<p:calendar id="deliveryDate"
+								value="#{upsBean.getFormatedDate(data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryDate[0].date)}"
+								pattern="yyyyMMdd">
+							</p:calendar>
+						</c:if>
+						<c:if
+							test="#{not empty data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryTime.endTime}">
+							<p:outputLabel for="deliveryTime" value="Delivery Time" />
+							<p:inputText id="deliveryTime"
+								value="#{upsBean.getFormatedTime(data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryTime.endTime)}" />
+						</c:if>
 					</p:panelGrid>
 					<h4>Package Activity</h4>
 					<p:dataTable id="activity" var="activity"

@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "18D0B1942A6D959F",
   "kind" : "HTML_DIALOG",
   "config" : {
@@ -10,10 +10,10 @@
       "type" : "HtmlDialogStart",
       "name" : "start()",
       "config" : {
-        "callSignature" : "start",
+        "signature" : "start",
         "input" : {
           "params" : [
-            { "name" : "trackApiResponse", "type" : "com.ups.wwwcie.client.TrackApiResponse" }
+            { "name" : "trackApiResponse", "type" : "com.ups.wwwcie.client.TrackApiResponse", "desc" : "" }
           ],
           "map" : {
             "out.trackApiResponse" : "param.trackApiResponse"
@@ -24,7 +24,9 @@
       "visual" : {
         "at" : { "x" : 96, "y" : 64 }
       },
-      "connect" : { "id" : "f12", "to" : "f9" }
+      "connect" : [
+        { "id" : "f12", "to" : "f9" }
+      ]
     }, {
       "id" : "f1",
       "type" : "HtmlDialogEnd",
@@ -41,7 +43,9 @@
       "visual" : {
         "at" : { "x" : 96, "y" : 160 }
       },
-      "connect" : { "id" : "f5", "to" : "f4" }
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
     }, {
       "id" : "f4",
       "type" : "HtmlDialogExit",
@@ -53,10 +57,10 @@
       "type" : "HtmlDialogMethodStart",
       "name" : "getTracking(TrackingRequestData)",
       "config" : {
-        "callSignature" : "getTracking",
+        "signature" : "getTracking",
         "input" : {
           "params" : [
-            { "name" : "trackingRequest", "type" : "com.axonivy.ups.connector.TrackingRequestData" }
+            { "name" : "trackingRequest", "type" : "com.axonivy.ups.connector.TrackingRequestData", "desc" : "" }
           ],
           "map" : {
             "out.trackingRequest" : "param.trackingRequest",
@@ -69,32 +73,33 @@
         "at" : { "x" : 96, "y" : 304 },
         "labelOffset" : { "x" : 67, "y" : 35 }
       },
-      "connect" : { "id" : "f7", "to" : "f8" }
+      "connect" : [
+        { "id" : "f7", "to" : "f8" }
+      ]
     }, {
       "id" : "f8",
       "type" : "SubProcessCall",
       "name" : "Tracking",
       "config" : {
         "processCall" : "Tracking:tracking(com.axonivy.ups.connector.TrackingRequestData)",
+        "call" : {
+          "map" : {
+            "param.trackingRequest" : "in.trackingRequest"
+          }
+        },
         "output" : {
           "map" : {
             "out" : "in",
             "out.trackApiResponse" : "result.trackApiResponse"
-          }
-        },
-        "call" : {
-          "params" : [
-            { "name" : "trackingRequest", "type" : "com.axonivy.ups.connector.TrackingRequestData" }
-          ],
-          "map" : {
-            "param.trackingRequest" : "in.trackingRequest"
           }
         }
       },
       "visual" : {
         "at" : { "x" : 392, "y" : 304 }
       },
-      "connect" : { "id" : "f10", "to" : "f11" }
+      "connect" : [
+        { "id" : "f10", "to" : "f11" }
+      ]
     }, {
       "id" : "f11",
       "type" : "HtmlDialogEnd",
@@ -117,6 +122,8 @@
       "visual" : {
         "at" : { "x" : 224, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
   "id" : "18BA8EFA66A3E32A",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,13 +10,13 @@
       "type" : "CallSubStart",
       "name" : "preNotification(String,String,String,PreNotificationRequest)",
       "config" : {
-        "callSignature" : "preNotification",
+        "signature" : "preNotification",
         "input" : {
           "params" : [
-            { "name" : "version", "type" : "String" },
-            { "name" : "transId", "type" : "String" },
-            { "name" : "tramsactionSrc", "type" : "String" },
-            { "name" : "preNotificationRequest", "type" : "com.ups.wwwcie.api.client.PreNotificationRequest" }
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "transId", "type" : "String", "desc" : "" },
+            { "name" : "tramsactionSrc", "type" : "String", "desc" : "" },
+            { "name" : "preNotificationRequest", "type" : "com.ups.wwwcie.api.client.PreNotificationRequest", "desc" : "" }
           ],
           "map" : {
             "out.preNotificationRequest" : "param.preNotificationRequest",
@@ -27,18 +27,22 @@
         },
         "result" : {
           "params" : [
-            { "name" : "preNotificationResponse", "type" : "com.ups.wwwcie.api.client.PreNotificationResponse" }
+            { "name" : "preNotificationResponse", "type" : "com.ups.wwwcie.api.client.PreNotificationResponse", "desc" : "" }
           ],
           "map" : {
             "result.preNotificationResponse" : "in.preNotificationResponse"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 232, "y" : 64 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -50,32 +54,40 @@
       "type" : "RestClientCall",
       "name" : "Pre-Notification",
       "config" : {
-        "headers" : {
-          "Accept" : "*/*",
-          "transId" : "in.transId",
-          "transactionSrc" : "in.transactionSrc"
-        },
-        "bodyObjectMapping" : {
-          "param.preNotificationRequest" : "in.preNotificationRequest"
-        },
-        "clientId" : "84689dff-8a92-4f25-b37a-1d4edde2574a",
         "method" : "POST",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "bodyObjectType" : "com.ups.wwwcie.api.client.PRENOTIFICATIONRequestWrapper",
-        "bodyInputType" : "ENTITY",
-        "path" : "/dangerousgoods/{version}/prenotification",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.preNotificationResponse" : "result.preNotificationResponse"
+        "target" : {
+          "clientId" : "84689dff-8a92-4f25-b37a-1d4edde2574a",
+          "path" : "/dangerousgoods/{version}/prenotification",
+          "templateParams" : {
+            "version" : "in.version"
+          },
+          "headers" : {
+            "transId" : "in.transId",
+            "transactionSrc" : "in.transactionSrc"
+          }
         },
-        "templateParams" : {
-          "version" : "in.version"
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PRENOTIFICATIONRequestWrapper",
+            "map" : {
+              "param.preNotificationRequest" : "in.preNotificationRequest"
+            }
+          }
         },
-        "resultType" : "com.ups.wwwcie.api.client.PRENOTIFICATIONResponseWrapper"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PRENOTIFICATIONResponseWrapper",
+            "map" : {
+              "out.preNotificationResponse" : "result.preNotificationResponse"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 536, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }
