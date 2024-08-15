@@ -1,6 +1,6 @@
 # UPS Konnektor
 
-Der Axon Ivy [UPS Konnektor](https://developer.ups.com/catalog) ermöglicht es Nutzern, UPS-Dienste problemlos in deinen Geschäftsprozess zu integrieren.
+Der Axon Ivy [UPS Konnektor](https://developer.ups.com/catalog) ermöglicht es dir, UPS-Dienste problemlos in deine Geschäftsprozess zu integrieren.
 
 Dieser Konnektor:
 
