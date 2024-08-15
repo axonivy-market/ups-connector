@@ -1,6 +1,5 @@
 # UPS Module
 
-## Description
 The Axon Ivy [UPS connector](https://developer.ups.com/catalog) enables users to integrate UPS services seamlessly into any business process. 
 
 This connector:
