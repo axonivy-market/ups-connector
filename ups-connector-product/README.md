@@ -9,13 +9,6 @@ This connector:
 
 Explore the [API catalog](https://developer.ups.com/catalog) to identify which APIs align best with your business needs.
 
-## Setup
-1. Go to https://developer.ups.com, login with your user or create a new UPS account.
-2. Create an application on UPS
-3. Once your application is created, the **Client ID** and **Client Secret** are generated and can be used to obtain an access token for authorizing your API requests
-4. Configure the following variables in your project:
-![Alt text](images/image-11.png)
-
 ## Demo
 ### Get tracking information
 This service is used to retrieve package information.
@@ -72,3 +65,10 @@ This service is utilized to verify addresses against the United States Postal Se
 ![Alt text](images/image-10.png)
 
 4. Click **Validate** button
+
+## Setup
+1. Go to https://developer.ups.com, login with your user or create a new UPS account.
+2. Create an application on UPS
+3. Once your application is created, the **Client ID** and **Client Secret** are generated and can be used to obtain an access token for authorizing your API requests
+4. Configure the following variables in your project:
+![Alt text](images/image-11.png)
