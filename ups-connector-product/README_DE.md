@@ -1,15 +1,5 @@
 # UPS Konnektor
 
-The Axon Ivy [UPS connector](https://developer.ups.com/catalog) enables users to integrate UPS services seamlessly into any business process. 
-
-This connector:
-
-- Empowers you with full access to the OpenAPI UPS API Catalog
-- Features everyday use cases such as tracking packages, obtain shipping rates, and validating addresses
-
-Explore the [API catalog](https://developer.ups.com/catalog) to identify which APIs align best with your business needs.
-
-
 Der Axon Ivy [UPS Konnektor](https://developer.ups.com/catalog) ermöglicht es Nutzern, UPS-Dienste problemlos in deinen Geschäftsprozess zu integrieren.
 
 Dieser Konnektor:
