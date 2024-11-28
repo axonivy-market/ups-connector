@@ -6,19 +6,4 @@
 # '<project>/Config/_<environment>/variables.yaml
 #
 Variables:
-
-  ups-connector:
-  
-      # Url to UPS connector
-      Url: "https://wwwcie.ups.com/api"
-      
-      # Your UPS Auth base URI
-      authUri: "https://wwwcie.ups.com/security/v1/oauth"
-  
-      # Your UPS Application (client) ID
-      appId: "ZItPy7z8Ep1bZBpGLVQbW3CPiMk9rGFJDpRLjgocLCJbQ5Tw"
-  
-      # Secret key from your applications "certificates & secrets"
-      # [password]
-      secretKey: "rLLiUjXI5j59kjvCWBfmXspBNCeW7Oo6x0RhOL0EyDSnADF7Vj4kHjx0JNAK3Jvi"
       
