@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "18BA81B8D6761598",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,14 +10,14 @@
       "type" : "CallSubStart",
       "name" : "pickupRate(String,String,PICKUPRequestWrapper,String,String)",
       "config" : {
-        "callSignature" : "pickupRate",
+        "signature" : "pickupRate",
         "input" : {
           "params" : [
-            { "name" : "version", "type" : "String" },
-            { "name" : "pickuptype", "type" : "String" },
-            { "name" : "pickupRequestWrapper", "type" : "com.ups.wwwcie.api.client.PICKUPRequestWrapper" },
-            { "name" : "transId", "type" : "String" },
-            { "name" : "transactionSrc", "type" : "String" }
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "pickuptype", "type" : "String", "desc" : "" },
+            { "name" : "pickupRequestWrapper", "type" : "com.ups.wwwcie.api.client.PICKUPRequestWrapper", "desc" : "" },
+            { "name" : "transId", "type" : "String", "desc" : "" },
+            { "name" : "transactionSrc", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "out.pickupRequestWrapper" : "param.pickupRequestWrapper",
@@ -29,18 +29,22 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupRateResponse", "type" : "com.ups.wwwcie.api.client.PickupRateResponse" }
+            { "name" : "pickupRateResponse", "type" : "com.ups.wwwcie.api.client.PickupRateResponse", "desc" : "" }
           ],
           "map" : {
             "result.pickupRateResponse" : "in.pickupRateResponse"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 256, "y" : 64 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -52,47 +56,55 @@
       "type" : "RestClientCall",
       "name" : "Pickup Rate",
       "config" : {
-        "headers" : {
-          "Accept" : "*/*",
-          "transId" : "in.transId",
-          "transactionSrc" : "in.transactionSrc"
-        },
-        "bodyObjectMapping" : {
-          "param" : "in.pickupRequestWrapper"
-        },
-        "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
         "method" : "POST",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "bodyObjectType" : "com.ups.wwwcie.api.client.PICKUPRequestWrapper",
-        "bodyInputType" : "ENTITY",
-        "path" : "/shipments/{version}/pickup/{pickuptype}",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.pickupRateResponse" : "result.pickupRateResponse"
+        "target" : {
+          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "path" : "/shipments/{version}/pickup/{pickuptype}",
+          "templateParams" : {
+            "version" : "in.version",
+            "pickuptype" : "in.pickuptype"
+          },
+          "headers" : {
+            "transId" : "in.transId",
+            "transactionSrc" : "in.transactionSrc"
+          }
         },
-        "templateParams" : {
-          "version" : "in.version",
-          "pickuptype" : "in.pickuptype"
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PICKUPRequestWrapper",
+            "map" : {
+              "param" : "in.pickupRequestWrapper"
+            }
+          }
         },
-        "resultType" : "com.ups.wwwcie.api.client.PICKUPResponseWrapper"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PICKUPResponseWrapper",
+            "map" : {
+              "out.pickupRateResponse" : "result.pickupRateResponse"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 632, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     }, {
       "id" : "f5",
       "type" : "CallSubStart",
       "name" : "pickupPendingStatus(String,String,String,String,String)",
       "config" : {
-        "callSignature" : "pickupPendingStatus",
+        "signature" : "pickupPendingStatus",
         "input" : {
           "params" : [
-            { "name" : "version", "type" : "String" },
-            { "name" : "transId", "type" : "String" },
-            { "name" : "transactionSrc", "type" : "String" },
-            { "name" : "accountNumber", "type" : "String" },
-            { "name" : "pickuptype", "type" : "String" }
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "transId", "type" : "String", "desc" : "" },
+            { "name" : "transactionSrc", "type" : "String", "desc" : "" },
+            { "name" : "accountNumber", "type" : "String", "desc" : "" },
+            { "name" : "pickuptype", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "out.accountNumber" : "param.accountNumber",
@@ -104,18 +116,22 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupPendingStatusResponse", "type" : "com.ups.wwwcie.api.client.PickupPendingStatusResponse" }
+            { "name" : "pickupPendingStatusResponse", "type" : "com.ups.wwwcie.api.client.PickupPendingStatusResponse", "desc" : "" }
           ],
           "map" : {
             "result.pickupPendingStatusResponse" : "in.pickupPendingStatusResponse"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 256, "y" : 208 }
       },
-      "connect" : { "id" : "f8", "to" : "f7" }
+      "connect" : [
+        { "id" : "f8", "to" : "f7" }
+      ]
     }, {
       "id" : "f6",
       "type" : "CallSubEnd",
@@ -127,42 +143,47 @@
       "type" : "RestClientCall",
       "name" : "Pickup Pending Status",
       "config" : {
-        "path" : "/shipments/{version}/pickup/{pickuptype}",
-        "headers" : {
-          "Accept" : "*/*",
-          "transId" : "in.transId",
-          "transactionSrc" : "in.transactionSrc",
-          "AccountNumber" : "in.accountNumber"
+        "target" : {
+          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "path" : "/shipments/{version}/pickup/{pickuptype}",
+          "templateParams" : {
+            "version" : "in.version",
+            "pickuptype" : "in.pickuptype"
+          },
+          "headers" : {
+            "transId" : "in.transId",
+            "transactionSrc" : "in.transactionSrc",
+            "AccountNumber" : "in.accountNumber"
+          }
         },
-        "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.pickupPendingStatusResponse" : "result.pickupPendingStatusResponse"
-        },
-        "templateParams" : {
-          "version" : "in.version",
-          "pickuptype" : "in.pickuptype"
-        },
-        "resultType" : "com.ups.wwwcie.api.client.PICKUPPendingResponseWrapper"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PICKUPPendingResponseWrapper",
+            "map" : {
+              "out.pickupPendingStatusResponse" : "result.pickupPendingStatusResponse"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 640, "y" : 208 }
       },
-      "connect" : { "id" : "f9", "to" : "f6" }
+      "connect" : [
+        { "id" : "f9", "to" : "f6" }
+      ]
     }, {
       "id" : "f10",
       "type" : "CallSubStart",
       "name" : "pickupCancel(String,String,String,String,String)",
       "config" : {
-        "callSignature" : "pickupCancel",
+        "signature" : "pickupCancel",
         "input" : {
           "params" : [
-            { "name" : "version", "type" : "String" },
-            { "name" : "transId", "type" : "String" },
-            { "name" : "transactionSrc", "type" : "String" },
-            { "name" : "prn", "type" : "String" },
-            { "name" : "cancelBy", "type" : "String" }
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "transId", "type" : "String", "desc" : "" },
+            { "name" : "transactionSrc", "type" : "String", "desc" : "" },
+            { "name" : "prn", "type" : "String", "desc" : "" },
+            { "name" : "cancelBy", "type" : "String", "desc" : "" }
           ],
           "map" : {
             "out.cancelBy" : "param.cancelBy",
@@ -174,18 +195,22 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupCancelResponse", "type" : "com.ups.wwwcie.api.client.PickupCancelResponse" }
+            { "name" : "pickupCancelResponse", "type" : "com.ups.wwwcie.api.client.PickupCancelResponse", "desc" : "" }
           ],
           "map" : {
             "result.pickupCancelResponse" : "in.pickupCancelResponse"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 256, "y" : 368 }
       },
-      "connect" : { "id" : "f13", "to" : "f12" }
+      "connect" : [
+        { "id" : "f13", "to" : "f12" }
+      ]
     }, {
       "id" : "f11",
       "type" : "CallSubEnd",
@@ -197,44 +222,49 @@
       "type" : "RestClientCall",
       "name" : "Pickup Cancel",
       "config" : {
-        "path" : "/shipments/{version}/pickup/{CancelBy}",
-        "headers" : {
-          "Accept" : "*/*",
-          "transId" : "in.transId",
-          "transactionSrc" : "in.transactionSrc",
-          "Prn" : "in.prn",
-          "X-Requested-By" : "in.cancelBy"
-        },
-        "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
-        "clientErrorCode" : "ivy:error:rest:client",
         "method" : "DELETE",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.pickupCancelResponse" : "result.pickupCancelResponse"
+        "target" : {
+          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "path" : "/shipments/{version}/pickup/{CancelBy}",
+          "templateParams" : {
+            "version" : "in.version",
+            "pickuptype" : "in.pickuptype",
+            "CancelBy" : "in.cancelBy"
+          },
+          "headers" : {
+            "transId" : "in.transId",
+            "transactionSrc" : "in.transactionSrc",
+            "Prn" : "in.prn",
+            "X-Requested-By" : "in.cancelBy"
+          }
         },
-        "templateParams" : {
-          "version" : "in.version",
-          "pickuptype" : "in.pickuptype",
-          "CancelBy" : "in.cancelBy"
-        },
-        "resultType" : "com.ups.wwwcie.api.client.PICKUPCancelResponseWrapper"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PICKUPCancelResponseWrapper",
+            "map" : {
+              "out.pickupCancelResponse" : "result.pickupCancelResponse"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 640, "y" : 368 }
       },
-      "connect" : { "id" : "f14", "to" : "f11" }
+      "connect" : [
+        { "id" : "f14", "to" : "f11" }
+      ]
     }, {
       "id" : "f15",
       "type" : "CallSubStart",
       "name" : "pickupCreation(String,String,String,PickupCreationRequest)",
       "config" : {
-        "callSignature" : "pickupCreation",
+        "signature" : "pickupCreation",
         "input" : {
           "params" : [
-            { "name" : "version", "type" : "String" },
-            { "name" : "transId", "type" : "String" },
-            { "name" : "transactionSrc", "type" : "String" },
-            { "name" : "pickupCreationRequest", "type" : "com.ups.wwwcie.api.client.PickupCreationRequest" }
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "transId", "type" : "String", "desc" : "" },
+            { "name" : "transactionSrc", "type" : "String", "desc" : "" },
+            { "name" : "pickupCreationRequest", "type" : "com.ups.wwwcie.api.client.PickupCreationRequest", "desc" : "" }
           ],
           "map" : {
             "out.pickupCreationRequest" : "param.pickupCreationRequest",
@@ -245,18 +275,22 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupCreationResponse", "type" : "com.ups.wwwcie.api.client.PickupCreationResponse" }
+            { "name" : "pickupCreationResponse", "type" : "com.ups.wwwcie.api.client.PickupCreationResponse", "desc" : "" }
           ],
           "map" : {
             "result.pickupCreationResponse" : "in.pickupCreationResponse"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 256, "y" : 512 }
       },
-      "connect" : { "id" : "f18", "to" : "f17" }
+      "connect" : [
+        { "id" : "f18", "to" : "f17" }
+      ]
     }, {
       "id" : "f16",
       "type" : "CallSubEnd",
@@ -268,45 +302,53 @@
       "type" : "RestClientCall",
       "name" : "Pickup Creation",
       "config" : {
-        "headers" : {
-          "Accept" : "*/*",
-          "transId" : "in.transId",
-          "transactionSrc" : "in.transactionSrc"
-        },
-        "bodyObjectMapping" : {
-          "param.pickupCreationRequest" : "in.pickupCreationRequest"
-        },
-        "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
         "method" : "POST",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "bodyObjectType" : "com.ups.wwwcie.api.client.PICKUPCreationRequestWrapper",
-        "bodyInputType" : "ENTITY",
-        "path" : "/pickupcreation/{version}/pickup",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.pickupCreationResponse" : "result.pickupCreationResponse"
+        "target" : {
+          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "path" : "/pickupcreation/{version}/pickup",
+          "templateParams" : {
+            "version" : "in.version"
+          },
+          "headers" : {
+            "transId" : "in.transId",
+            "transactionSrc" : "in.transactionSrc"
+          }
         },
-        "templateParams" : {
-          "version" : "in.version"
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PICKUPCreationRequestWrapper",
+            "map" : {
+              "param.pickupCreationRequest" : "in.pickupCreationRequest"
+            }
+          }
         },
-        "resultType" : "com.ups.wwwcie.api.client.PICKUPCreationResponseWrapper"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PICKUPCreationResponseWrapper",
+            "map" : {
+              "out.pickupCreationResponse" : "result.pickupCreationResponse"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 640, "y" : 512 }
       },
-      "connect" : { "id" : "f19", "to" : "f16" }
+      "connect" : [
+        { "id" : "f19", "to" : "f16" }
+      ]
     }, {
       "id" : "f20",
       "type" : "CallSubStart",
       "name" : "pickupGetServiceCenterFacilities(String,String,String,PickupGetServiceCenterFacilitiesRequest)",
       "config" : {
-        "callSignature" : "pickupGetServiceCenterFacilities",
+        "signature" : "pickupGetServiceCenterFacilities",
         "input" : {
           "params" : [
-            { "name" : "version", "type" : "String" },
-            { "name" : "transId", "type" : "String" },
-            { "name" : "transactionSrc", "type" : "String" },
-            { "name" : "pickupGetServiceCenterFacilitiesRequest", "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesRequest" }
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "transId", "type" : "String", "desc" : "" },
+            { "name" : "transactionSrc", "type" : "String", "desc" : "" },
+            { "name" : "pickupGetServiceCenterFacilitiesRequest", "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesRequest", "desc" : "" }
           ],
           "map" : {
             "out.pickupGetServiceCenterFacilitiesRequest" : "param.pickupGetServiceCenterFacilitiesRequest",
@@ -317,18 +359,22 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupGetServiceCenterFacilitiesResponse", "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesResponse" }
+            { "name" : "pickupGetServiceCenterFacilitiesResponse", "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesResponse", "desc" : "" }
           ],
           "map" : {
             "result.pickupGetServiceCenterFacilitiesResponse" : "in.pickupGetServiceCenterFacilitiesResponse"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 256, "y" : 656 }
       },
-      "connect" : { "id" : "f24", "to" : "f22" }
+      "connect" : [
+        { "id" : "f24", "to" : "f22" }
+      ]
     }, {
       "id" : "f21",
       "type" : "CallSubEnd",
@@ -340,32 +386,40 @@
       "type" : "RestClientCall",
       "name" : "Pickup Get Service Center Facilities",
       "config" : {
-        "headers" : {
-          "Accept" : "*/*",
-          "transId" : "in.transId",
-          "transactionSrc" : "in.transactionSrc"
-        },
-        "bodyObjectMapping" : {
-          "param.pickupGetServiceCenterFacilitiesRequest" : "in.pickupGetServiceCenterFacilitiesRequest"
-        },
-        "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
         "method" : "POST",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "bodyObjectType" : "com.ups.wwwcie.api.client.PICKUPServCenterRequestWrapper",
-        "bodyInputType" : "ENTITY",
-        "path" : "/pickup/{version}/servicecenterlocations",
-        "clientErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.pickupGetServiceCenterFacilitiesResponse" : "result.pickupGetServiceCenterFacilitiesResponse"
+        "target" : {
+          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "path" : "/pickup/{version}/servicecenterlocations",
+          "templateParams" : {
+            "version" : "in.version"
+          },
+          "headers" : {
+            "transId" : "in.transId",
+            "transactionSrc" : "in.transactionSrc"
+          }
         },
-        "templateParams" : {
-          "version" : "in.version"
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PICKUPServCenterRequestWrapper",
+            "map" : {
+              "param.pickupGetServiceCenterFacilitiesRequest" : "in.pickupGetServiceCenterFacilitiesRequest"
+            }
+          }
         },
-        "resultType" : "com.ups.wwwcie.api.client.PICKUPServCenterResponseWrapper"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PICKUPServCenterResponseWrapper",
+            "map" : {
+              "out.pickupGetServiceCenterFacilitiesResponse" : "result.pickupGetServiceCenterFacilitiesResponse"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 640, "y" : 656 }
       },
-      "connect" : { "id" : "f23", "to" : "f21" }
+      "connect" : [
+        { "id" : "f23", "to" : "f21" }
+      ]
     } ]
 }

@@ -1,0 +1,67 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "PickupData",
+  "namespace" : "com.axonivy.ups.connector",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "version",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickuptype",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickupRequestWrapper",
+    "type" : "com.ups.wwwcie.api.client.PICKUPRequestWrapper",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickupRateResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupRateResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "transId",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "transactionSrc",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "accountNumber",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickupPendingStatusResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupPendingStatusResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "cancelBy",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "prn",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickupCancelResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupCancelResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickupCreationResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupCreationResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickupCreationRequest",
+    "type" : "com.ups.wwwcie.api.client.PickupCreationRequest",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickupGetServiceCenterFacilitiesRequest",
+    "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesRequest",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pickupGetServiceCenterFacilitiesResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

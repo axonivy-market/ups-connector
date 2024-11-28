@@ -1,0 +1,47 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "PaperlessDocumentsData",
+  "namespace" : "com.axonivy.ups.connector",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "version",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "transId",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "transactionSrc",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "shipperNumber",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "documentId",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "deleteResponse",
+    "type" : "com.ups.wwwcie.api.client.DeleteResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pushToImageRepositoryRequest",
+    "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryRequest",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "pushToImageRepositoryResponse",
+    "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "uploadRequest",
+    "type" : "com.ups.wwwcie.api.client.UploadRequest",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "uploadResponse",
+    "type" : "com.ups.wwwcie.api.client.UploadResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}
