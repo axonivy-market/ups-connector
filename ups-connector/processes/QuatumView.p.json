@@ -1,5 +1,5 @@
 {
-  "format" : "10.0.0",
+  "$schema" : "https://json-schema.axonivy.com/process/12.0.0/process.json",
   "id" : "18BA92FE8801A9AF",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -10,11 +10,11 @@
       "type" : "CallSubStart",
       "name" : "quatumView(String,QuantumViewRequest)",
       "config" : {
-        "callSignature" : "quatumView",
+        "signature" : "quatumView",
         "input" : {
           "params" : [
-            { "name" : "version", "type" : "String" },
-            { "name" : "quantumViewRequest", "type" : "com.ups.wwwcie.api.client.QuantumViewRequest" }
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "quantumViewRequest", "type" : "com.ups.wwwcie.api.client.QuantumViewRequest", "desc" : "" }
           ],
           "map" : {
             "out.quantumViewRequest" : "param.quantumViewRequest",
@@ -23,18 +23,22 @@
         },
         "result" : {
           "params" : [
-            { "name" : "quantumViewResponse", "type" : "com.ups.wwwcie.api.client.QuantumViewResponse" }
+            { "name" : "quantumViewResponse", "type" : "com.ups.wwwcie.api.client.QuantumViewResponse", "desc" : "" }
           ],
           "map" : {
             "result.quantumViewResponse" : "in.quantumViewResponse"
           }
-        },
-        "tags" : "connector"
+        }
       },
+      "tags" : [
+        "connector"
+      ],
       "visual" : {
         "at" : { "x" : 256, "y" : 64 }
       },
-      "connect" : { "id" : "f4", "to" : "f3" }
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
     }, {
       "id" : "f1",
       "type" : "CallSubEnd",
@@ -46,27 +50,36 @@
       "type" : "RestClientCall",
       "name" : "Get Quantum View",
       "config" : {
-        "path" : "/quantumview/{version}/events",
-        "bodyObjectMapping" : {
-          "param.quantumViewRequest" : "in.quantumViewRequest"
-        },
-        "clientId" : "510bac2d-97f1-439a-8007-5b853c2d0af9",
-        "clientErrorCode" : "ivy:error:rest:client",
         "method" : "POST",
-        "statusErrorCode" : "ivy:error:rest:client",
-        "responseMapping" : {
-          "out.quantumViewResponse" : "result.quantumViewResponse"
+        "target" : {
+          "clientId" : "510bac2d-97f1-439a-8007-5b853c2d0af9",
+          "path" : "/quantumview/{version}/events",
+          "templateParams" : {
+            "version" : "in.version"
+          }
         },
-        "bodyObjectType" : "com.ups.wwwcie.api.client.QUANTUMVIEWRequestWrapper",
-        "templateParams" : {
-          "version" : "in.version"
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.QUANTUMVIEWRequestWrapper",
+            "map" : {
+              "param.quantumViewRequest" : "in.quantumViewRequest"
+            }
+          }
         },
-        "resultType" : "com.ups.wwwcie.api.client.QUANTUMVIEWResponseWrapper",
-        "bodyInputType" : "ENTITY"
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.QUANTUMVIEWResponseWrapper",
+            "map" : {
+              "out.quantumViewResponse" : "result.quantumViewResponse"
+            }
+          }
+        }
       },
       "visual" : {
         "at" : { "x" : 568, "y" : 64 }
       },
-      "connect" : { "id" : "f2", "to" : "f1" }
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
     } ]
 }

@@ -1,8 +1,0 @@
-QuatumViewData #class
-com.axonivy.ups.connector #namespace
-version String #field
-version PERSISTENT #fieldModifier
-quantumViewRequest com.ups.wwwcie.api.client.QuantumViewRequest #field
-quantumViewRequest PERSISTENT #fieldModifier
-quantumViewResponse com.ups.wwwcie.api.client.QuantumViewResponse #field
-quantumViewResponse PERSISTENT #fieldModifier
