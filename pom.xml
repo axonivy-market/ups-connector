@@ -3,7 +3,7 @@
   <groupId>com.axonivy.connector.ups</groupId>
   <name>ups-connector</name>
   <artifactId>ups-connector-modules</artifactId>
-  <version>10.0.17-SNAPSHOT</version>
+  <version>12.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <modules>

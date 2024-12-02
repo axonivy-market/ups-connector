@@ -1,0 +1,51 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "ShipingData",
+  "namespace" : "com.axonivy.ups.connector",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "version",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "additionalAddressValidation",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "transId",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "transactionSrc",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "shipmentRequest",
+    "type" : "com.ups.wwwcie.api.client.ShipmentRequest",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "shipmentResponse",
+    "type" : "com.ups.wwwcie.api.client.ShipmentResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "shipmentIdentificationNumber",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "trackingNumber",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "voidShipmentResponse",
+    "type" : "com.ups.wwwcie.api.client.VoidShipmentResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "labelRecoveryRequest",
+    "type" : "com.ups.wwwcie.api.client.LabelRecoveryRequest",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "labelRecoveryResponse",
+    "type" : "com.ups.wwwcie.api.client.LabelRecoveryResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

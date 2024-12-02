@@ -1,0 +1,15 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "simpleName" : "TrackingData",
+  "namespace" : "com.axonivy.ups.connector",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "trackingRequest",
+    "type" : "com.axonivy.ups.connector.TrackingRequestData",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "trackApiResponse",
+    "type" : "com.ups.wwwcie.client.TrackApiResponse",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}
