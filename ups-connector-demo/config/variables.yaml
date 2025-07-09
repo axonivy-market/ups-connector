@@ -1,0 +1,6 @@
+Variables:
+  ups-connector:  
+      # Your UPS Application Client ID
+      appId: ""
+      # Your UPS Application Client Secret
+      secretKey: ""
