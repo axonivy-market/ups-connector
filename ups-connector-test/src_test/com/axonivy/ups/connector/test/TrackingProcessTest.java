@@ -24,7 +24,7 @@ public class TrackingProcessTest {
 	void beforeEach(AppFixture fixture) {
 		// Disable OAuth feature for mock rest service
 		fixture.config("RestClients.ups (TrackService API).Features", "ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
-		fixture.var("ups-connector.Url", "{ivy.app.baseurl}/api/upsMock");
+		fixture.var("upsConnector.Url", "{ivy.app.baseurl}/api/upsMock");
 	}
 
 	@Test
