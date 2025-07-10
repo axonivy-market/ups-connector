@@ -75,4 +75,4 @@ This service is utilized to verify addresses against the United States Postal Se
 @variables.yaml@
 ```
 > [!NOTE]
-> This variable path `ups-connector` is renamed to `upsConnector`.
+> This variable path `ups-connector` is renamed to `upsConnector` from 13.1.
