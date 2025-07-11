@@ -71,4 +71,8 @@ This service is utilized to verify addresses against the United States Postal Se
 2. Create an application on UPS
 3. Once your application is created, the **Client ID** and **Client Secret** are generated and can be used to obtain an access token for authorizing your API requests
 4. Configure the following variables in your project:
-![Alt text](images/image-11.png)
+```
+@variables.yaml@
+```
+> [!NOTE]
+> The variable path `ups-connector` is renamed to `upsConnector` from 13.1.

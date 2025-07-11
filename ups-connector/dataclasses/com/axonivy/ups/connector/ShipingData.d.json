@@ -1,51 +1,40 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
   "simpleName" : "ShipingData",
   "namespace" : "com.axonivy.ups.connector",
   "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "version",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "additionalAddressValidation",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "transId",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "transactionSrc",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "shipmentRequest",
-    "type" : "com.ups.wwwcie.api.client.ShipmentRequest",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.ups.wwwcie.api.client.ShipmentRequest"
   }, {
     "name" : "shipmentResponse",
-    "type" : "com.ups.wwwcie.api.client.ShipmentResponse",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.ups.wwwcie.api.client.ShipmentResponse"
   }, {
     "name" : "shipmentIdentificationNumber",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "trackingNumber",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "String"
   }, {
     "name" : "voidShipmentResponse",
-    "type" : "com.ups.wwwcie.api.client.VoidShipmentResponse",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.ups.wwwcie.api.client.VoidShipmentResponse"
   }, {
     "name" : "labelRecoveryRequest",
-    "type" : "com.ups.wwwcie.api.client.LabelRecoveryRequest",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.ups.wwwcie.api.client.LabelRecoveryRequest"
   }, {
     "name" : "labelRecoveryResponse",
-    "type" : "com.ups.wwwcie.api.client.LabelRecoveryResponse",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.ups.wwwcie.api.client.LabelRecoveryResponse"
   } ]
 }

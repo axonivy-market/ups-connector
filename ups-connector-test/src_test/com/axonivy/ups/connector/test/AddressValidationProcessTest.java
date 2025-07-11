@@ -34,7 +34,7 @@ public class AddressValidationProcessTest {
 		// Disable OAuth feature for mock rest service
 		fixture.config("RestClients.ups (Address Validation - Street Level).Features",
 				"ch.ivyteam.ivy.rest.client.mapper.JsonFeature");
-		fixture.var("ups-connector.Url", "{ivy.app.baseurl}/api/upsMock");
+		fixture.var("upsConnector.Url", "{ivy.app.baseurl}/api/upsMock");
 	}
 
 	@Test
