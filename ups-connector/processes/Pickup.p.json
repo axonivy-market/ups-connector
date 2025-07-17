@@ -29,10 +29,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupRateResponse", "type" : "com.ups.wwwcie.api.client.PickupRateResponse", "desc" : "" }
+            { "name" : "pickupRateResponse", "type" : "com.ups.wwwcie.api.client.PickupRateResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.pickupRateResponse" : "in.pickupRateResponse"
+            "result.pickupRateResponse" : "in.pickupRateResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -89,6 +91,24 @@
       "visual" : {
         "at" : { "x" : 632, "y" : 64 }
       },
+      "boundaries" : [ {
+          "id" : "f25",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 664, "y" : 104 }
+          },
+          "connect" : [
+            { "id" : "f26", "to" : "f1" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f2", "to" : "f1" }
       ]
@@ -116,10 +136,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupPendingStatusResponse", "type" : "com.ups.wwwcie.api.client.PickupPendingStatusResponse", "desc" : "" }
+            { "name" : "pickupPendingStatusResponse", "type" : "com.ups.wwwcie.api.client.PickupPendingStatusResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.pickupPendingStatusResponse" : "in.pickupPendingStatusResponse"
+            "result.pickupPendingStatusResponse" : "in.pickupPendingStatusResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -168,6 +190,24 @@
       "visual" : {
         "at" : { "x" : 640, "y" : 208 }
       },
+      "boundaries" : [ {
+          "id" : "f27",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 672, "y" : 248 }
+          },
+          "connect" : [
+            { "id" : "f28", "to" : "f6" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f9", "to" : "f6" }
       ]
@@ -195,10 +235,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupCancelResponse", "type" : "com.ups.wwwcie.api.client.PickupCancelResponse", "desc" : "" }
+            { "name" : "pickupCancelResponse", "type" : "com.ups.wwwcie.api.client.PickupCancelResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.pickupCancelResponse" : "in.pickupCancelResponse"
+            "result.pickupCancelResponse" : "in.pickupCancelResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -250,6 +292,24 @@
       "visual" : {
         "at" : { "x" : 640, "y" : 368 }
       },
+      "boundaries" : [ {
+          "id" : "f29",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 672, "y" : 408 }
+          },
+          "connect" : [
+            { "id" : "f30", "to" : "f11" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f14", "to" : "f11" }
       ]
@@ -275,10 +335,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupCreationResponse", "type" : "com.ups.wwwcie.api.client.PickupCreationResponse", "desc" : "" }
+            { "name" : "pickupCreationResponse", "type" : "com.ups.wwwcie.api.client.PickupCreationResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.pickupCreationResponse" : "in.pickupCreationResponse"
+            "result.pickupCreationResponse" : "in.pickupCreationResponse",
+            "result.error" : "in.error"
           }
         }
       },
@@ -334,6 +396,24 @@
       "visual" : {
         "at" : { "x" : 640, "y" : 512 }
       },
+      "boundaries" : [ {
+          "id" : "f31",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 672, "y" : 552 }
+          },
+          "connect" : [
+            { "id" : "f32", "to" : "f16" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f19", "to" : "f16" }
       ]
@@ -359,10 +439,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pickupGetServiceCenterFacilitiesResponse", "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesResponse", "desc" : "" }
+            { "name" : "pickupGetServiceCenterFacilitiesResponse", "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.pickupGetServiceCenterFacilitiesResponse" : "in.pickupGetServiceCenterFacilitiesResponse"
+            "result.pickupGetServiceCenterFacilitiesResponse" : "in.pickupGetServiceCenterFacilitiesResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -418,6 +500,24 @@
       "visual" : {
         "at" : { "x" : 640, "y" : 656 }
       },
+      "boundaries" : [ {
+          "id" : "f33",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 672, "y" : 696 }
+          },
+          "connect" : [
+            { "id" : "f34", "to" : "f21" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f23", "to" : "f21" }
       ]

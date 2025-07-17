@@ -1,0 +1,65 @@
+{
+  "TimeInTransitResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      },
+      "TransactionReference": {
+        "CustomerContext": "Transit time request"
+      }
+    },
+    "TransitResponse": {
+      "ShipmentWeight": {
+        "UnitOfMeasurement": {
+          "Code": "LBS",
+          "Description": "Pounds"
+        },
+        "Weight": "10.0"
+      },
+      "TransitFrom": {
+        "AddressArtifactFormat": {
+          "PoliticalDivision2": "New York",
+          "PoliticalDivision1": "NY",
+          "PostcodePrimaryLow": "10001",
+          "CountryCode": "US"
+        }
+      },
+      "TransitTo": {
+        "AddressArtifactFormat": {
+          "PoliticalDivision2": "Atlanta",
+          "PoliticalDivision1": "GA",
+          "PostcodePrimaryLow": "30303",
+          "CountryCode": "US"
+        }
+      },
+      "ServiceSummary": [
+        {
+          "Service": {
+            "Code": "02",
+            "Description": "2nd Day Air"
+          },
+          "GuaranteedIndicator": "",
+          "EstimatedArrival": {
+            "ArrivalDate": "20250719",
+            "ArrivalTime": "1700",
+            "BusinessTransitDays": "2",
+            "DayOfWeek": "Friday"
+          }
+        },
+        {
+          "Service": {
+            "Code": "03",
+            "Description": "Ground"
+          },
+          "EstimatedArrival": {
+            "ArrivalDate": "20250721",
+            "ArrivalTime": "1700",
+            "BusinessTransitDays": "4",
+            "DayOfWeek": "Monday"
+          }
+        }
+      ]
+    }
+  }
+}

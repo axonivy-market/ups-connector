@@ -33,54 +33,15 @@ public class UPSMock {
 	@Path("shipments/{version}/pickup/{cancelBy}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response pickupCancel(@PathParam("cancelBy") String cancelBy, @PathParam("version") String version) {
-		return Response.status(200).entity("{\r\n"
-				+ "    \"PickupCancelResponse\": {\r\n"
-				+ "        \"Response\": {\r\n"
-				+ "            \"ResponseStatus\": {\r\n"
-				+ "                \"Code\": \"1\",\r\n"
-				+ "                \"Description\": \"Success\"\r\n"
-				+ "            },\r\n"
-				+ "            \"TransactionReference\": {\r\n"
-				+ "                \"CustomerContext\": \"testing\",\r\n"
-				+ "                \"TransactionIdentifier\": \"iewssoat2dtc6rrV5x2prt\"\r\n"
-				+ "            }\r\n"
-				+ "        },\r\n"
-				+ "        \"PickupType\": \"01\"\r\n"
-				+ "    }\r\n"
-				+ "}")
-				.build();
+		return Response.status(200).entity(load("DeleteShipment.json")).build();
 	}
-	
+
 	@GET
 	@Path("shipments/{version}/pickup/{pickupType}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response pickupPendingStatus(@PathParam("pickupType") String pickupType,
 			@PathParam("version") String version) {
-		return Response.status(200).entity("{\r\n"
-				+ "    \"PickupPendingStatusResponse\": {\r\n"
-				+ "        \"Response\": {\r\n"
-				+ "            \"ResponseStatus\": {\r\n"
-				+ "                \"Code\": \"1\",\r\n"
-				+ "                \"Description\": \"Success\"\r\n"
-				+ "            },\r\n"
-				+ "            \"TransactionReference\": {\r\n"
-				+ "                \"CustomerContext\": \"testing\",\r\n"
-				+ "                \"TransactionIdentifier\": \"iewssoas21bcKvQwVSC7b5\"\r\n"
-				+ "            }\r\n"
-				+ "        },\r\n"
-				+ "        \"PendingStatus\": {\r\n"
-				+ "            \"PickupType\": \"01\",\r\n"
-				+ "            \"ServiceDate\": \"20240110\",\r\n"
-				+ "            \"PRN\": \"2929AONCALL\",\r\n"
-				+ "            \"OnCallStatusCode\": \"001\",\r\n"
-				+ "            \"PickupStatusMessage\": \"Received at dispatch\",\r\n"
-				+ "            \"BillingCode\": \"01\",\r\n"
-				+ "            \"ContactName\": \"Shipping Mgr.\",\r\n"
-				+ "            \"ReferenceNumber\": \"OnCallNextDayAir\"\r\n"
-				+ "        }\r\n"
-				+ "    }\r\n"
-				+ "}")
-				.build();
+		return Response.status(200).entity(load("PickupPending.json")).build();
 	}
 
 	@POST
@@ -88,20 +49,17 @@ public class UPSMock {
 	@Path("addressvalidation/{version}/{requestOption}")
 	public Response addressValidation(@PathParam("version") String version,
 			@PathParam("requestOption") String requestOption) {
-		return Response.status(200).entity("{\r\n"
-				+ "    \"XAVResponse\": {\r\n"
-				+ "        \"Response\": {\r\n"
-				+ "            \"ResponseStatus\": {\r\n"
-				+ "                \"Code\": \"1\",\r\n"
-				+ "                \"Description\": \"Success\"\r\n"
-				+ "            }\r\n"
-				+ "        },\r\n"
-				+ "        \"NoCandidatesIndicator\": \"\"\r\n"
-				+ "    }\r\n"
-				+ "}")
-				.build();
+		return Response.status(200).entity(load("AddressValidation.json")).build();
 	}
-	
+
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("locations/{version}/search/availabilities/{reqOption}")
+	public Response locator(@PathParam("version") String version,
+			@PathParam("requestOption") String requestOption) {
+		return Response.status(200).entity(load("Locator.json")).build();
+	}
+
 	private static String load(String json) {
 		try (var is = UPSMock.class.getResourceAsStream("json/" + json)) {
 			if (is == null) {

@@ -1,0 +1,25 @@
+{
+  "LabelRecoveryResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      },
+      "TransactionReference": {
+        "CustomerContext": "Label recovery request"
+      }
+    },
+    "ShipmentIdentificationNumber": "1Z12345E1512345676",
+    "TrackingNumber": "1Z12345E0390817264",
+    "LabelResults": {
+      "LabelImage": {
+        "LabelImageFormat": {
+          "Code": "GIF",
+          "Description": "GIF"
+        },
+        "GraphicImage": "base64-encoded-recovered-label-image",
+        "HTMLImage": "base64-encoded-recovered-label-html"
+      }
+    }
+  }
+}

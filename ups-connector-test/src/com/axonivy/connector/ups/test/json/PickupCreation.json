@@ -1,0 +1,54 @@
+{
+  "PickupCreationResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      },
+      "TransactionReference": {
+        "CustomerContext": "Pickup creation request"
+      }
+    },
+    "RatePickupIndicator": "Y",
+    "RateChartType": "1",
+    "TaxInformationIndicator": "N",
+    "UserLevelDiscountIndicator": "N",
+    "ConfirmationNumber": "PRN123456789",
+    "PickupDateInfo": {
+      "PickupDate": "20250717",
+      "ReadyTime": "1400",
+      "CloseTime": "1800"
+    },
+    "PickupAddress": {
+      "CompanyName": "ACME Corp",
+      "ContactName": "Jane Doe",
+      "AddressLine": ["123 Commerce Blvd"],
+      "City": "Atlanta",
+      "StateProvince": "GA",
+      "PostalCode": "30310",
+      "CountryCode": "US",
+      "ResidentialIndicator": "N",
+      "Phone": {
+        "Number": "4045556789",
+        "Extension": ""
+      },
+      "AlternateAddressIndicator": "N"
+    },
+    "PickupPiece": [
+      {
+        "ServiceCode": "03",
+        "Quantity": "2",
+        "DestinationCountryCode": "US",
+        "ContainerCode": "01",
+        "TotalWeight": {
+          "Weight": "15.5",
+          "UnitOfMeasurement": "LBS"
+        },
+        "OverweightIndicator": "N"
+      }
+    ],
+    "SpecialInstruction": "Leave at front desk",
+    "ConfirmationEmailAddress": "jane.doe@acme.com",
+    "UndeliverableEmailAddress": "returns@acme.com"
+  }
+}

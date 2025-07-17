@@ -18,5 +18,8 @@
   }, {
     "name" : "transactionSrc",
     "type" : "String"
+   }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

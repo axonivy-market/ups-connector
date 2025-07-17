@@ -1,0 +1,15 @@
+{
+  "Response": {
+    "ResponseStatus": {
+      "Code": "1",
+      "Description": "Success"
+    }
+  },
+  "UploadDetails": {
+    "DocumentId": "DOC1122334455",
+    "DocumentType": "PackingList",
+    "UploadStatus": "Uploaded",
+    "ShipperNumber": "1Z7777",
+    "FileName": "packing_list_20250717.pdf"
+  }
+}

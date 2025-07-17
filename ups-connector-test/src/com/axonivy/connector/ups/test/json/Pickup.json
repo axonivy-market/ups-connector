@@ -1,0 +1,23 @@
+{
+  "Response": {
+    "ResponseStatus": {
+      "Code": "1",
+      "Description": "Success"
+    }
+  },
+  "PickupConfirmation": {
+    "PickupRequestNumber": "PRN123456789",
+    "PickupDate": "2025-07-17",
+    "PickupTime": "15:30",
+    "PickupType": "Daily",
+    "Location": {
+      "AddressLine": ["789 Logistics Ave"],
+      "City": "Atlanta",
+      "StateProvinceCode": "GA",
+      "PostalCode": "30309",
+      "CountryCode": "US"
+    },
+    "ShipperNumber": "1Z6666",
+    "Status": "Scheduled"
+  }
+}
