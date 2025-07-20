@@ -4,17 +4,7 @@
       "ResponseStatus": {
         "Code": "1",
         "Description": "Success"
-      },
-      "TransactionReference": {
-        "CustomerContext": "Cancel pickup request"
       }
-    },
-    "PickupRequest": {
-      "PickupRequestNumber": "PRN123456789",
-      "Status": "Cancelled",
-      "CancelBy": "PickupRequestNumber",
-      "CancellationDate": "20250717",
-      "CancellationTime": "1030"
     }
   }
 }

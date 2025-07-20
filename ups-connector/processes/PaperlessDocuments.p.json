@@ -8,9 +8,17 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",
-      "name" : "deletePaperlessDocument()",
+      "name" : "deletePaperlessDocument(String)",
       "config" : {
         "signature" : "deletePaperlessDocument",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String", "desc" : "" }
+          ],
+          "map" : {
+            "out.version" : "param.version"
+          }
+        },
         "result" : {
           "params" : [
             { "name" : "deleteResponse", "type" : "com.ups.wwwcie.api.client.DeleteResponse", "desc" : "" },

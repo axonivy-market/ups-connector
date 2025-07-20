@@ -15,25 +15,17 @@ import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmElement;
 
 
-//@IvyProcessTest(enableWebServer = true)
-//@ExtendWith(MultiEnvironmentContextProvider.class)
 public class AddressValidationProcessTest extends BaseSetup {
-
-//	@BeforeEach
-//	void setup(ExtensionContext context, AppFixture fixture) {
-//		setupEnvironmentForTesting(context, fixture);
-//	}
+  
+  @Override
+  protected String getCurrentRestClientFeaturesConfig() {
+    return "ups (Address Validation - Street Level)";
+  }
 
 	@TestTemplate
 	void addressValidation(ExtensionContext context,BpmClient bpmClient) throws NoSuchFieldException {
 		BpmElement startable = ADDRESS_VALIDATION.elementName("addressValidation(Integer,String,String,Integer,XAVRequest)");
 		XAVRequest requestData = new XAVRequest();
-		requestData.setRequest(new XAVRequestRequest());
-		requestData.getRequest().setRequestOption("1");
-		XAVRequestAddressKeyFormat addressKeyFormat = new XAVRequestAddressKeyFormat();
-		addressKeyFormat.setConsigneeName("test");
-		addressKeyFormat.setRegion("ROSWELL,GA,30076-1521");
-		addressKeyFormat.countryCode("CountryCode");
 		ExecutionResult result = bpmClient.start().subProcess(startable).execute(1, "v1", "1", 1, requestData);
 		var response = (XAVResponseWrapper) result.data().last().get("xavResponseWrapper");
 		if (response != null) {

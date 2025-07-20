@@ -239,7 +239,7 @@
             { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.pickupCancelResponse" : "in.pickupCancelResponse",
+            "result.pickupCancelResponse" : "in.#pickupCancelResponse",
             "result.error" : "in.#error"
           }
         }

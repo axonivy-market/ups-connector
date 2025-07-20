@@ -4,19 +4,9 @@
       "ResponseStatus": {
         "Code": "200",
         "Description": "Success"
-      },
-      "Alert": [
-        {
-          "Code": "PP001",
-          "Description": "Pending pickup status retrieved successfully."
-        }
-      ],
-      "TransactionReference": {
-        "CustomerContext": "Pending pickup status check for account 1Z9999"
       }
     },
-    "PendingStatus": [
-      {
+    "PendingStatus": {
         "PickupType": "Daily",
         "ServiceDate": "2025-07-17",
         "PRN": "PRN123456789",
@@ -26,7 +16,6 @@
         "BillingCode": "02",
         "ContactName": "Jane Doe",
         "ReferenceNumber": "REF987654321"
-      }
-    ]
+    }
   }
 }

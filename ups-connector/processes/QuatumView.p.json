@@ -27,7 +27,7 @@
             { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.quantumViewResponse" : "in.quantumViewResponse",
+            "result.quantumViewResponse" : "in.#quantumViewResponse",
             "result.error" : "in.#error"
           }
         }
