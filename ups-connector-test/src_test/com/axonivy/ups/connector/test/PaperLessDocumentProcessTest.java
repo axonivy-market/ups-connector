@@ -50,7 +50,7 @@ public class PaperLessDocumentProcessTest extends BaseSetup {
       assertAcceptableHttpStatusResponse(context.getDisplayName(), result);
     }
   }
-  
+
   @TestTemplate
   void testUploadPaperlessDocument(ExtensionContext context, BpmClient bpmClient) throws NoSuchFieldException {
     BpmElement startable = PAPERLESS_DOCUMENTS

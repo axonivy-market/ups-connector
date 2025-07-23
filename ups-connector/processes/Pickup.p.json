@@ -340,7 +340,7 @@
           ],
           "map" : {
             "result.pickupCreationResponse" : "in.pickupCreationResponse",
-            "result.error" : "in.error"
+            "result.error" : "in.#error"
           }
         }
       },
@@ -512,7 +512,7 @@
             }
           },
           "visual" : {
-            "at" : { "x" : 672, "y" : 696 }
+            "at" : { "x" : 672, "y" : 698 }
           },
           "connect" : [
             { "id" : "f34", "to" : "f21" }

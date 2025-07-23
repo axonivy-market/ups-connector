@@ -32,7 +32,7 @@
           ],
           "map" : {
             "result.timeInTransitResponse" : "in.timeInTransitResponse",
-            "result.error" : "in.error"
+            "result.error" : "in.#error"
           }
         }
       },
@@ -81,7 +81,8 @@
             "type" : "com.ups.wwwcie.api.client.TimeInTransitResponse",
             "map" : {
               "out.timeInTransitResponse" : "result"
-            }
+            },
+            "code" : "System.out.print(result);"
           }
         }
       },
@@ -100,7 +101,7 @@
             }
           },
           "visual" : {
-            "at" : { "x" : 576, "y" : 104 }
+            "at" : { "x" : 576, "y" : 106 }
           },
           "connect" : [
             { "id" : "f6", "to" : "f1" }
