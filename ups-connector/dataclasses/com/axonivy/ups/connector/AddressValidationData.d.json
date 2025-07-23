@@ -21,5 +21,8 @@
   }, {
     "name" : "xavResponseWrapper",
     "type" : "com.ups.wwwcie.api.client.XAVResponseWrapper"
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

@@ -18,5 +18,8 @@
   }, {
     "name" : "timeInTransitResponse",
     "type" : "com.ups.wwwcie.api.client.TimeInTransitResponse"
+   }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

@@ -1,0 +1,16 @@
+{
+	"PushToImageRepositoryResponse": {
+		"Response": {
+			"ResponseStatus": {
+				"Code": "1",
+				"Description": "Success"
+			}
+		},
+		"UploadedDocument": {
+			"DocumentId": "DOC987654321",
+			"DocumentType": "CommercialInvoice",
+			"UploadStatus": "Uploaded",
+			"ShipperNumber": "1Z8888"
+		}
+	}
+}

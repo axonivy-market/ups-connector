@@ -18,5 +18,8 @@
   }, {
     "name" : "preNotificationResponse",
     "type" : "com.ups.wwwcie.api.client.PreNotificationResponse"
+   }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

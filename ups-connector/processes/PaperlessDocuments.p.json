@@ -8,15 +8,25 @@
   "elements" : [ {
       "id" : "f0",
       "type" : "CallSubStart",
-      "name" : "deletePaperlessDocument()",
+      "name" : "deletePaperlessDocument(String)",
       "config" : {
         "signature" : "deletePaperlessDocument",
-        "result" : {
+        "input" : {
           "params" : [
-            { "name" : "deleteResponse", "type" : "com.ups.wwwcie.api.client.DeleteResponse", "desc" : "" }
+            { "name" : "version", "type" : "String", "desc" : "" }
           ],
           "map" : {
-            "result.deleteResponse" : "in.deleteResponse"
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "deleteResponse", "type" : "com.ups.wwwcie.api.client.DeleteResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
+          ],
+          "map" : {
+            "result.deleteResponse" : "in.#deleteResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -66,6 +76,24 @@
       "visual" : {
         "at" : { "x" : 640, "y" : 64 }
       },
+      "boundaries" : [ {
+          "id" : "f15",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 672, "y" : 104 }
+          },
+          "connect" : [
+            { "id" : "f16", "to" : "f1" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f2", "to" : "f1" }
       ]
@@ -93,10 +121,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "pushToImageRepositoryResponse", "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryResponse", "desc" : "" }
+            { "name" : "pushToImageRepositoryResponse", "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.pushToImageRepositoryResponse" : "in.pushToImageRepositoryResponse"
+            "result.pushToImageRepositoryResponse" : "in.pushToImageRepositoryResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -145,7 +175,7 @@
           "entity" : {
             "type" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTResponseWrapper",
             "map" : {
-              "out.pushToImageRepositoryResponse" : "in.pushToImageRepositoryResponse"
+              "out.pushToImageRepositoryResponse" : "result.pushToImageRepositoryResponse"
             }
           }
         }
@@ -153,6 +183,24 @@
       "visual" : {
         "at" : { "x" : 640, "y" : 240 }
       },
+      "boundaries" : [ {
+          "id" : "f17",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 672, "y" : 280 }
+          },
+          "connect" : [
+            { "id" : "f18", "to" : "f6" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f8", "to" : "f6" }
       ]
@@ -180,10 +228,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "uploadResponse", "type" : "com.ups.wwwcie.api.client.UploadResponse", "desc" : "" }
+            { "name" : "uploadResponse", "type" : "com.ups.wwwcie.api.client.UploadResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.uploadResponse" : "in.uploadResponse"
+            "result.uploadResponse" : "in.uploadResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -230,13 +280,34 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTUploadResponseWrapper"
+            "type" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTUploadResponseWrapper",
+            "map" : {
+              "out.uploadResponse" : "result.uploadResponse"
+            }
           }
         }
       },
       "visual" : {
         "at" : { "x" : 640, "y" : 416 }
       },
+      "boundaries" : [ {
+          "id" : "f19",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 672, "y" : 458 }
+          },
+          "connect" : [
+            { "id" : "f20", "to" : "f11" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f13", "to" : "f11" }
       ]

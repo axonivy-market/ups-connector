@@ -36,5 +36,8 @@
   }, {
     "name" : "labelRecoveryResponse",
     "type" : "com.ups.wwwcie.api.client.LabelRecoveryResponse"
+   }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

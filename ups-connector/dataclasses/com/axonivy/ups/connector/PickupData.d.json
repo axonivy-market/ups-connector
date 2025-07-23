@@ -48,5 +48,8 @@
   }, {
     "name" : "pickupGetServiceCenterFacilitiesResponse",
     "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesResponse"
+   }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

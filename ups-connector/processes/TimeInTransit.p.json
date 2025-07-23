@@ -27,10 +27,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "timeInTransitResponse", "type" : "com.ups.wwwcie.api.client.TimeInTransitResponse", "desc" : "" }
+            { "name" : "timeInTransitResponse", "type" : "com.ups.wwwcie.api.client.TimeInTransitResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.timeInTransitResponse" : "in.timeInTransitResponse"
+            "result.timeInTransitResponse" : "in.timeInTransitResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -79,13 +81,32 @@
             "type" : "com.ups.wwwcie.api.client.TimeInTransitResponse",
             "map" : {
               "out.timeInTransitResponse" : "result"
-            }
+            },
+            "code" : "System.out.print(result);"
           }
         }
       },
       "visual" : {
         "at" : { "x" : 544, "y" : 64 }
       },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 576, "y" : 106 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f1" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f2", "to" : "f1" }
       ]
