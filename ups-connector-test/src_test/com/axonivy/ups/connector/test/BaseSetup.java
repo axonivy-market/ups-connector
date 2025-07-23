@@ -11,12 +11,15 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 
 import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
 import com.axonivy.ups.connector.test.context.MultiEnvironmentContextProvider;
+import com.axonivy.ups.connector.test.feature.MockCallHeaderFeature;
 
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmProcess;
 import ch.ivyteam.ivy.bpm.error.BpmError;
 import ch.ivyteam.ivy.bpm.exec.client.IvyProcessTest;
 import ch.ivyteam.ivy.environment.AppFixture;
+import ch.ivyteam.ivy.rest.client.mapper.JsonFeature;
+
 @IvyProcessTest(enableWebServer = true)
 @ExtendWith(MultiEnvironmentContextProvider.class)
 public class BaseSetup {
@@ -32,20 +35,19 @@ public class BaseSetup {
 
   @BeforeEach
   void setupEnvironmentForTesting(ExtensionContext context, AppFixture fixture) {
-    fixture.var("upsConnector.appId", "appId");
-    fixture.var("upsConnector.secretKey", "secretKey");;
 
     switch (context.getDisplayName()) {
     case UpsConnectorTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME:
+      fixture.var("upsConnector.appId", "appId");
+      fixture.var("upsConnector.secretKey", "secretKey");
       fixture.var("upsConnector.Url", "https://wwwcie.ups.com/api");
       fixture.var("upsConnector.authUri", "https://wwwcie.ups.com/security/v1/oauth");
       break;
     case UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME:
       fixture.config(String.format("RestClients.%s.Features", getCurrentRestClientFeaturesConfig()),
-          List.of("ch.ivyteam.ivy.rest.client.mapper.JsonFeature"));
+          List.of(MockCallHeaderFeature.class.getName(), JsonFeature.class.getName()));
       fixture.config(String.format("RestClients.%s.Url", getCurrentRestClientFeaturesConfig()),
           "{ivy.app.baseurl}/api/upsMock");
-      System.out.print(String.format("RestClients.%s.Url", getCurrentRestClientFeaturesConfig()));
       fixture.var("upsConnector.Url", "{ivy.app.baseurl}/api/upsMock");
       break;
     default:

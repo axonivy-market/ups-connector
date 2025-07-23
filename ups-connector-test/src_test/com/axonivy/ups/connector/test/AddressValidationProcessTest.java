@@ -6,8 +6,6 @@ import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
 import com.ups.wwwcie.api.client.XAVRequest;
-import com.ups.wwwcie.api.client.XAVRequestAddressKeyFormat;
-import com.ups.wwwcie.api.client.XAVRequestRequest;
 import com.ups.wwwcie.api.client.XAVResponseWrapper;
 
 import ch.ivyteam.ivy.bpm.engine.client.BpmClient;
@@ -34,6 +32,6 @@ public class AddressValidationProcessTest extends BaseSetup {
 					.isEqualTo("Success");
 		} else {
 			assertAcceptableHttpStatusResponse(context.getDisplayName(), result);
-		}
-	}
+    }
+  }
 }

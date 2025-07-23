@@ -1,17 +1,15 @@
 {
-  "VoidShipmentResponse": {
-    "Response": {
-      "ResponseStatus": {
-        "Code": "1",
-        "Description": "Success"
-      },
-      "TransactionReference": {
-        "CustomerContext": "Void shipment request"
-      }
-    },
-    "ShipmentIdentificationNumber": "1Z12345E1512345676",
-    "Status": "Voided",
-    "VoidDate": "20250717",
-    "VoidTime": "1105"
-  }
+	"Response": {
+		"ResponseStatus": {
+			"Code": "1",
+			"Description": "Success"
+		},
+		"TransactionReference": {
+			"CustomerContext": "Void shipment request"
+		}
+	},
+	"ShipmentIdentificationNumber": "1Z12345E1512345676",
+	"Status": "Voided",
+	"VoidDate": "20250717",
+	"VoidTime": "1105"
 }

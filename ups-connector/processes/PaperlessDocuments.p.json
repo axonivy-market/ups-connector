@@ -175,7 +175,7 @@
           "entity" : {
             "type" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTResponseWrapper",
             "map" : {
-              "out.pushToImageRepositoryResponse" : "in.pushToImageRepositoryResponse"
+              "out.pushToImageRepositoryResponse" : "result.pushToImageRepositoryResponse"
             }
           }
         }
@@ -280,7 +280,10 @@
         },
         "response" : {
           "entity" : {
-            "type" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTUploadResponseWrapper"
+            "type" : "com.ups.wwwcie.api.client.PAPERLESSDOCUMENTUploadResponseWrapper",
+            "map" : {
+              "out.uploadResponse" : "result.uploadResponse"
+            }
           }
         }
       },

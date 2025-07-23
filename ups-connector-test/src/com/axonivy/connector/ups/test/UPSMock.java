@@ -26,7 +26,6 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 @PermitAll
 @Hidden
 public class UPSMock {
-  //Done
   @POST
   @Produces(MediaType.APPLICATION_JSON)
   @Path("addressvalidation/{version}/{requestOption}")
@@ -34,69 +33,70 @@ public class UPSMock {
       @PathParam("requestOption") String requestOption) {
     return Response.status(200).entity(load("AddressValidation.json")).build();
   }
-  
+
   @POST
+  @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
   @Path("locations/{version}/search/availabilities/{reqOption}")
-  public Response locator(@PathParam("version") String version,
-      @PathParam("reqOption") String requestOption,@QueryParam("Locale") String localeId) {
-    return Response.status(200).entity(load("Locator.json")).build();
+  public Response locator(@PathParam("version") String version, @PathParam("reqOption") String requestOption) {
+    return Response.status(200).entity(load("GetLocator.json")).build();
   }
-  
+
   @DELETE
   @Path("paperlessdocuments/{version}/DocumentId/ShipperNumber")
   @Produces(MediaType.APPLICATION_JSON)
-  public Response deletePaperless(@PathParam("version") String version) {
-    System.out.print("--------------------------");
-    System.out.print(load("DeletePaperlessDocument.json"));
-
+  public Response deletePaperless(@PathParam(value = "version") String version) {
     return Response.status(200).entity(load("DeletePaperlessDocument.json")).build();
   }
-  
+
   @POST
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
   @Path("paperlessdocuments/{version}/image")
-  public Response postImage(@PathParam("version") String version,
-      @PathParam("reqOption") String requestOption,@QueryParam("Locale") String localeId) {
-    return Response.status(200).entity(load("Locator.json")).build();
+  public Response postImage(@PathParam("version") String version) {
+    return Response.status(201).entity(load("UploadPaperlesImage.json")).build();
   }
-  
-	@GET
-	@Path("track/v1/details/{inquiryNumber}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getTracking(@PathParam("inquiryNumber") String inquiryNumber, @PathParam("locale") String locale,
-			@PathParam("returnSignature") String returnSignature) {
-		return Response.status(200).entity(load("CreateTrackingResponse.json")).build();
-	}
-	
 
+  @POST
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("paperlessdocuments/{version}/upload")
+  public Response postDocument(@PathParam("version") String version) {
+    return Response.status(201).entity(load("UploadPaperlessDocument.json")).build();
+  }
 
-	//Done
-	@GET
-	@Path("shipments/{version}/pickup/{pickupType}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response pickupPendingStatus(@PathParam("pickupType") String pickupType,
-			@PathParam("version") String version) {
-		return Response.status(200).entity(load("PickupPending.json")).build();
-	}
+  @GET
+  @Path("track/v1/details/{inquiryNumber}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getTracking(@PathParam("inquiryNumber") String inquiryNumber, @PathParam("locale") String locale,
+      @PathParam("returnSignature") String returnSignature) {
+    return Response.status(200).entity(load("CreateTrackingResponse.json")).build();
+  }
 
-	//Done
-	@DELETE
-	@Path("shipments/{version}/pickup/{cancelBy}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response pickupCancel(@PathParam("cancelBy") String cancelBy, @PathParam("version") String version) {
-	  return Response.status(200).entity(load("PickupCancel.json")).build();
-	}
-	
+  @GET
+  @Path("shipments/{version}/pickup/{pickupType}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response pickupPendingStatus(@PathParam("pickupType") String pickupType,
+      @PathParam("version") String version) {
+    return Response.status(200).entity(load("PickupPending.json")).build();
+  }
+
+  @DELETE
+  @Path("shipments/{version}/pickup/{cancelBy}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response pickupCancel(@PathParam("cancelBy") String cancelBy, @PathParam("version") String version) {
+    return Response.status(200).entity(load("PickupCancel.json")).build();
+  }
+
   @POST
   @Produces(MediaType.APPLICATION_JSON)
   @Path("pickupcreation/{version}/pickup")
-  public Response pickupCreate(@PathParam(value  = "version") String version, @RequestBody PickupCreationRequest request ) {
+  public Response pickupCreate(@PathParam(value = "version") String version,
+      @RequestBody PickupCreationRequest request) {
 
     return Response.status(200).entity(load("PickupCreation.json")).build();
   }
-  
+
   @POST
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.APPLICATION_JSON)
@@ -106,8 +106,7 @@ public class UPSMock {
     System.out.print(load("PickupCreation.json"));
     return Response.status(200).entity(load("AddressValidation.json")).build();
   }
-  
-  
+
   @POST
   @Produces(MediaType.APPLICATION_JSON)
   @Path("dangerousgoods/{version}/prenotification")
@@ -116,7 +115,7 @@ public class UPSMock {
     System.out.print(load("PreNoti.json"));
     return Response.status(200).entity(load("AddressValidation.json")).build();
   }
-  
+
   @POST
   @Produces(MediaType.APPLICATION_JSON)
   @Path("quantumview/{version}/events")
@@ -126,14 +125,14 @@ public class UPSMock {
     return Response.status(200).entity(load("QuantumView.json")).build();
   }
 
-	private static String load(String json) {
-		try (var is = UPSMock.class.getResourceAsStream("json/" + json)) {
-			if (is == null) {
-				throw new RuntimeException("The json file '" + json + "' does not exist.");
-			}
-			return IOUtils.toString(is, StandardCharsets.UTF_8);
-		} catch (IOException ex) {
-			throw new RuntimeException("Failed to read json " + json, ex);
-		}
-	}
+  private static String load(String json) {
+    try (var is = UPSMock.class.getResourceAsStream("json/" + json)) {
+      if (is == null) {
+        throw new RuntimeException("The json file '" + json + "' does not exist.");
+      }
+      return IOUtils.toString(is, StandardCharsets.UTF_8);
+    } catch (IOException ex) {
+      throw new RuntimeException("Failed to read json " + json, ex);
+    }
+  }
 }

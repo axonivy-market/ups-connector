@@ -32,36 +32,6 @@
           "LandmarkName": "Near City Hall"
         }
       ],
-      "Disclaimer": "This is a test response for demonstration purposes.",
-      "DropLocation": [
-      ],
-      "AvailableLocationAttributes": [
-        {
-          "OptionType": {
-            "Code": "PUP",
-            "Description": "Pick Up Point"
-          },
-          "OptionCode": [
-            {
-              "Code": "01",
-              "Description": "Next Day Air",
-              "Name": "UPS Next Day Air",
-              "Category": "Service",
-              "TransportationPickUpSchedule": {
-                "PickUp": [
-                  {
-                    "DayOfWeek": "Mon",
-                    "PickUpDetails": {
-                      "PickUpTime": "17:00",
-                      "NoPickUpIndicator": "N"
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      ],
       "ActiveAvailableAccessPointIndicator": "Y"
     }
   }

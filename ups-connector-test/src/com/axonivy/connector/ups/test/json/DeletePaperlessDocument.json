@@ -1,13 +1,10 @@
 {
-  "Response": {
-    "ResponseStatus": {
-      "Code": "1",
-      "Description": "Success"
-    }
-  },
-  "DeletedDocument": {
-    "DocumentId": "DOC123456789",
-    "ShipperNumber": "1Z9999",
-    "Status": "Deleted"
-  }
+	"DeleteResponse": {
+		"Response": {
+			"ResponseStatus": {
+				"Code": "1",
+				"Description": "Success"
+			}
+		}
+	}
 }
