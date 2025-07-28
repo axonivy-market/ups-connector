@@ -22,12 +22,6 @@ import io.swagger.v3.oas.annotations.Hidden;
 @PermitAll
 @Hidden
 public class UPSMock {
-  @GET
-  @Path("test")
-  @Produces(MediaType.APPLICATION_JSON)
-  public Response testy() {
-    return Response.status(200).entity(load("AddressValidation.json")).build();
-  }
 
   @POST
   @Produces(MediaType.APPLICATION_JSON)
@@ -73,7 +67,6 @@ public class UPSMock {
   @Consumes(MediaType.APPLICATION_JSON)
   @Path("pickupcreation/{version}/pickup")
   public Response pickupCreate(@PathParam(value = "version") String version) {
-    System.out.print(load("PickupCreation.json"));
     return Response.status(200).entity(load("PickupCreation.json")).build();
   }
 
