@@ -123,11 +123,11 @@ public class UPSMock {
   }
 
   private static String load(String json) {
-    try (var is = UPSMock.class.getResourceAsStream("json/" + json)) {
-      if (is == null) {
+    try (var inputStream = UPSMock.class.getResourceAsStream("json/" + json)) {
+      if (inputStream == null) {
         throw new RuntimeException("The json file '" + json + "' does not exist.");
       }
-      return IOUtils.toString(is, StandardCharsets.UTF_8);
+      return IOUtils.toString(inputStream, StandardCharsets.UTF_8);
     } catch (IOException ex) {
       throw new RuntimeException("Failed to read json " + json, ex);
     }
