@@ -12,9 +12,13 @@ public class MultiEnvironmentContextProvider implements TestTemplateInvocationCo
 
 	@Override
 	public Stream<TestTemplateInvocationContext> provideTestTemplateInvocationContexts(ExtensionContext context) {
-		return Stream.of(
-				new TestEnironmentInvocationContext(UpsConnectorTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME),
-				new TestEnironmentInvocationContext(UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME));
+		String testEnv = System.getProperty(UpsConnectorTestConstants.END_TO_END_TESTING_ENVIRONMENT_KEY);
+		return switch (testEnv) {
+		case UpsConnectorTestConstants.END_TO_END_TESTING_ENVIRONMENT_VALUE ->
+			Stream.of(new TestEnironmentInvocationContext(UpsConnectorTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME));
+		default ->
+			Stream.of(new TestEnironmentInvocationContext(UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME));
+		};
 	}
 
 	@Override
