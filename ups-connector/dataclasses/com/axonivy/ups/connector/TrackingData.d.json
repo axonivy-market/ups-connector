@@ -9,5 +9,8 @@
   }, {
     "name" : "trackApiResponse",
     "type" : "com.ups.wwwcie.client.TrackApiResponse"
+   }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

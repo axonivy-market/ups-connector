@@ -31,10 +31,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "locatorResponseWrapper", "type" : "com.ups.wwwcie.api.client.LOCATORResponseWrapper", "desc" : "" }
+            { "name" : "locatorResponseWrapper", "type" : "com.ups.wwwcie.api.client.LOCATORResponseWrapper", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.locatorResponseWrapper" : "in.locatorResponseWrapper"
+            "result.locatorResponseWrapper" : "in.#locatorResponseWrapper",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -90,6 +92,24 @@
       "visual" : {
         "at" : { "x" : 528, "y" : 64 }
       },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 560, "y" : 104 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f1", "via" : [ { "x" : 800, "y" : 104 } ] }
+          ]
+        } ],
       "connect" : [
         { "id" : "f2", "to" : "f1" }
       ]

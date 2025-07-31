@@ -1,0 +1,46 @@
+{
+  "ServiceCenterLocationResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      },
+      "TransactionReference": {
+        "CustomerContext": "Request for nearby service center locations"
+      }
+    },
+    "ServiceCenterLocations": [
+      {
+        "CenterID": "ATL001",
+        "CenterName": "UPS Customer Center Atlanta",
+        "Address": {
+          "AddressLine": ["456 Logistics Park"],
+          "City": "Atlanta",
+          "StateProvince": "GA",
+          "PostalCode": "30312",
+          "CountryCode": "US"
+        },
+        "Phone": {
+          "Number": "4045551234"
+        },
+        "Distance": {
+          "Value": "2.5",
+          "UnitOfMeasurement": "MI"
+        },
+        "BusinessHours": [
+          {
+            "DayOfWeek": "Monday",
+            "OpenTime": "0800",
+            "CloseTime": "1900"
+          },
+          {
+            "DayOfWeek": "Tuesday",
+            "OpenTime": "0800",
+            "CloseTime": "1900"
+          }
+        ],
+        "SpecialInstructions": "Entrance at rear of building"
+      }
+    ]
+  }
+}

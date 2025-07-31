@@ -12,5 +12,8 @@
   }, {
     "name" : "quantumViewResponse",
     "type" : "com.ups.wwwcie.api.client.QuantumViewResponse"
+   }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

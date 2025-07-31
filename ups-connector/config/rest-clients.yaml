@@ -8,7 +8,7 @@ RestClients:
     - com.axonivy.ups.connector.oauth.OAuth2Feature
     Properties:
       AUTH.baseUri: ${ivy.var.upsConnector.authUri}
-      AUTH.appId: ${ivy.var.upConnector.appId}
+      AUTH.appId: ${ivy.var.upsConnector.appId}
       jersey.client.connectorProvider: org.glassfish.jersey.client.HttpUrlConnectorProvider
       JSON.Serialization.PROPERTY_INCLUSION: NON_NULL
       AUTH.secretKey: ${ivy.var.upsConnector.secretKey}
