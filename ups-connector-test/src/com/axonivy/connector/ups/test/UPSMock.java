@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import javax.annotation.security.PermitAll;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -21,95 +22,114 @@ import io.swagger.v3.oas.annotations.Hidden;
 @PermitAll
 @Hidden
 public class UPSMock {
-	@GET
-	@Path("track/v1/details/{inquiryNumber}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getTracking(@PathParam("inquiryNumber") String inquiryNumber, @PathParam("locale") String locale,
-			@PathParam("returnSignature") String returnSignature) {
-		return Response.status(200).entity(load("CreateTrackingResponse.json")).build();
-	}
 
-	@DELETE
-	@Path("shipments/{version}/pickup/{cancelBy}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response pickupCancel(@PathParam("cancelBy") String cancelBy, @PathParam("version") String version) {
-		return Response.status(200).entity("{\r\n"
-				+ "    \"PickupCancelResponse\": {\r\n"
-				+ "        \"Response\": {\r\n"
-				+ "            \"ResponseStatus\": {\r\n"
-				+ "                \"Code\": \"1\",\r\n"
-				+ "                \"Description\": \"Success\"\r\n"
-				+ "            },\r\n"
-				+ "            \"TransactionReference\": {\r\n"
-				+ "                \"CustomerContext\": \"testing\",\r\n"
-				+ "                \"TransactionIdentifier\": \"iewssoat2dtc6rrV5x2prt\"\r\n"
-				+ "            }\r\n"
-				+ "        },\r\n"
-				+ "        \"PickupType\": \"01\"\r\n"
-				+ "    }\r\n"
-				+ "}")
-				.build();
-	}
-	
-	@GET
-	@Path("shipments/{version}/pickup/{pickupType}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response pickupPendingStatus(@PathParam("pickupType") String pickupType,
-			@PathParam("version") String version) {
-		return Response.status(200).entity("{\r\n"
-				+ "    \"PickupPendingStatusResponse\": {\r\n"
-				+ "        \"Response\": {\r\n"
-				+ "            \"ResponseStatus\": {\r\n"
-				+ "                \"Code\": \"1\",\r\n"
-				+ "                \"Description\": \"Success\"\r\n"
-				+ "            },\r\n"
-				+ "            \"TransactionReference\": {\r\n"
-				+ "                \"CustomerContext\": \"testing\",\r\n"
-				+ "                \"TransactionIdentifier\": \"iewssoas21bcKvQwVSC7b5\"\r\n"
-				+ "            }\r\n"
-				+ "        },\r\n"
-				+ "        \"PendingStatus\": {\r\n"
-				+ "            \"PickupType\": \"01\",\r\n"
-				+ "            \"ServiceDate\": \"20240110\",\r\n"
-				+ "            \"PRN\": \"2929AONCALL\",\r\n"
-				+ "            \"OnCallStatusCode\": \"001\",\r\n"
-				+ "            \"PickupStatusMessage\": \"Received at dispatch\",\r\n"
-				+ "            \"BillingCode\": \"01\",\r\n"
-				+ "            \"ContactName\": \"Shipping Mgr.\",\r\n"
-				+ "            \"ReferenceNumber\": \"OnCallNextDayAir\"\r\n"
-				+ "        }\r\n"
-				+ "    }\r\n"
-				+ "}")
-				.build();
-	}
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("addressvalidation/{version}/{requestOption}")
+  public Response addressValidation(@PathParam("version") String version,
+      @PathParam("requestOption") String requestOption) {
+    return Response.status(200).entity(load("AddressValidation.json")).build();
+  }
 
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Path("addressvalidation/{version}/{requestOption}")
-	public Response addressValidation(@PathParam("version") String version,
-			@PathParam("requestOption") String requestOption) {
-		return Response.status(200).entity("{\r\n"
-				+ "    \"XAVResponse\": {\r\n"
-				+ "        \"Response\": {\r\n"
-				+ "            \"ResponseStatus\": {\r\n"
-				+ "                \"Code\": \"1\",\r\n"
-				+ "                \"Description\": \"Success\"\r\n"
-				+ "            }\r\n"
-				+ "        },\r\n"
-				+ "        \"NoCandidatesIndicator\": \"\"\r\n"
-				+ "    }\r\n"
-				+ "}")
-				.build();
-	}
-	
-	private static String load(String json) {
-		try (var is = UPSMock.class.getResourceAsStream("json/" + json)) {
-			if (is == null) {
-				throw new RuntimeException("The json file '" + json + "' does not exist.");
-			}
-			return IOUtils.toString(is, StandardCharsets.UTF_8);
-		} catch (IOException ex) {
-			throw new RuntimeException("Failed to read json " + json, ex);
-		}
-	}
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Path("locations/{version}/search/availabilities/{reqOption}")
+  public Response locator(@PathParam("version") String version, @PathParam("reqOption") String requestOption) {
+    return Response.status(200).entity(load("GetLocator.json")).build();
+  }
+
+  @DELETE
+  @Path("paperlessdocuments/{version}/DocumentId/ShipperNumber")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response deletePaperless(@PathParam(value = "version") String version) {
+    return Response.status(200).entity(load("DeletePaperlessDocument.json")).build();
+  }
+
+  @POST
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("paperlessdocuments/{version}/image")
+  public Response postImage(@PathParam("version") String version) {
+    return Response.status(201).entity(load("UploadPaperlesImage.json")).build();
+  }
+
+  @POST
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("paperlessdocuments/{version}/upload")
+  public Response postDocument(@PathParam("version") String version) {
+    return Response.status(201).entity(load("UploadPaperlessDocument.json")).build();
+  }
+
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Path("pickupcreation/{version}/pickup")
+  public Response pickupCreate(@PathParam(value = "version") String version) {
+    return Response.status(200).entity(load("PickupCreation.json")).build();
+  }
+
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Path("pickup/{version}/servicecenterlocations")
+  public Response addressValidation(@PathParam("version") String version) {
+    return Response.status(200).entity(load("AddressValidation.json")).build();
+  }
+
+  @GET
+  @Path("track/v1/details/{inquiryNumber}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getTracking(@PathParam("inquiryNumber") String inquiryNumber, @PathParam("locale") String locale,
+      @PathParam("returnSignature") String returnSignature) {
+    return Response.status(200).entity(load("CreateTrackingResponse.json")).build();
+  }
+
+  @GET
+  @Path("shipments/{version}/pickup/{pickupType}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response pickupPendingStatus(@PathParam("pickupType") String pickupType,
+      @PathParam("version") String version) {
+    return Response.status(200).entity(load("PickupPending.json")).build();
+  }
+
+  @DELETE
+  @Path("shipments/{version}/pickup/{cancelBy}")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response pickupCancel(@PathParam("cancelBy") String cancelBy, @PathParam("version") String version) {
+    return Response.status(200).entity(load("PickupCancel.json")).build();
+  }
+
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("dangerousgoods/{version}/prenotification")
+  public Response preNotification(@PathParam("version") String version) {
+    return Response.status(200).entity(load("PreNoti.json")).build();
+  }
+
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("quantumview/{version}/events")
+  public Response quantumView(@PathParam("version") String version) {
+    return Response.status(200).entity(load("QuantumView.json")).build();
+  }
+
+  @POST
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("shipments/{version}/transittimes")
+  public Response transitTime(@PathParam("version") String version) {
+    return Response.status(201).entity(load("TimeTransit.json")).build();
+  }
+
+  private static String load(String json) {
+    try (var inputStream = UPSMock.class.getResourceAsStream("json/" + json)) {
+      if (inputStream == null) {
+        throw new RuntimeException("The json file '" + json + "' does not exist.");
+      }
+      return IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+    } catch (IOException ex) {
+      throw new RuntimeException("Failed to read json " + json, ex);
+    }
+  }
 }

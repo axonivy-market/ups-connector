@@ -24,5 +24,8 @@
   }, {
     "name" : "locatorResponseWrapper",
     "type" : "com.ups.wwwcie.api.client.LOCATORResponseWrapper"
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
   } ]
 }

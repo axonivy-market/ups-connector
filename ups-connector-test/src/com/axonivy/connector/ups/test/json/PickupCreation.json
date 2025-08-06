@@ -1,0 +1,13 @@
+{
+  "PickupCreationResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      }
+    },
+    "RateResult": {
+      "CurrencyCode": "USD"
+    }
+  }
+}

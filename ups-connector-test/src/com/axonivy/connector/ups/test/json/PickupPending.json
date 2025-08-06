@@ -1,0 +1,21 @@
+{
+  "PickupPendingStatusResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "200",
+        "Description": "Success"
+      }
+    },
+    "PendingStatus": {
+        "PickupType": "Daily",
+        "ServiceDate": "2025-07-17",
+        "PRN": "PRN123456789",
+        "GWNStatusCode": "A",
+        "OnCallStatusCode": "B",
+        "PickupStatusMessage": "Pickup scheduled and pending driver assignment.",
+        "BillingCode": "02",
+        "ContactName": "Jane Doe",
+        "ReferenceNumber": "REF987654321"
+    }
+  }
+}

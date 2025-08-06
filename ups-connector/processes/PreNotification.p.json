@@ -27,10 +27,12 @@
         },
         "result" : {
           "params" : [
-            { "name" : "preNotificationResponse", "type" : "com.ups.wwwcie.api.client.PreNotificationResponse", "desc" : "" }
+            { "name" : "preNotificationResponse", "type" : "com.ups.wwwcie.api.client.PreNotificationResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
           ],
           "map" : {
-            "result.preNotificationResponse" : "in.preNotificationResponse"
+            "result.preNotificationResponse" : "in.preNotificationResponse",
+            "result.error" : "in.#error"
           }
         }
       },
@@ -86,6 +88,24 @@
       "visual" : {
         "at" : { "x" : 536, "y" : 64 }
       },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 568, "y" : 104 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f1" }
+          ]
+        } ],
       "connect" : [
         { "id" : "f2", "to" : "f1" }
       ]

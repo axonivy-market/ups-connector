@@ -1,0 +1,50 @@
+{
+  "ShipmentResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      },
+      "TransactionReference": {
+        "CustomerContext": "Shipment creation request"
+      }
+    },
+    "ShipmentResults": {
+      "ShipmentIdentificationNumber": "1Z12345E1512345676",
+      "PackageResults": [
+        {
+          "TrackingNumber": "1Z12345E0390817264",
+          "LabelImage": {
+            "LabelImageFormat": {
+              "Code": "GIF",
+              "Description": "GIF"
+            },
+            "GraphicImage": "base64-encoded-label-image",
+            "HTMLImage": "base64-encoded-label-html"
+          }
+        }
+      ],
+      "ShipmentCharges": {
+        "TransportationCharges": {
+          "CurrencyCode": "USD",
+          "MonetaryValue": "25.50"
+        },
+        "ServiceOptionsCharges": {
+          "CurrencyCode": "USD",
+          "MonetaryValue": "5.00"
+        },
+        "TotalCharges": {
+          "CurrencyCode": "USD",
+          "MonetaryValue": "30.50"
+        }
+      },
+      "BillingWeight": {
+        "UnitOfMeasurement": {
+          "Code": "LBS",
+          "Description": "Pounds"
+        },
+        "Weight": "5.0"
+      }
+    }
+  }
+}

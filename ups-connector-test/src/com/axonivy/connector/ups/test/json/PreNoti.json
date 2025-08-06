@@ -1,0 +1,35 @@
+{
+  "PreNotificationResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      },
+      "TransactionReference": {
+        "CustomerContext": "Dangerous Goods Pre-Notification"
+      }
+    },
+    "PreNotificationDetails": {
+      "PreNotificationNumber": "DGPN123456789",
+      "ShipperNumber": "1Z4444",
+      "ShipmentIdentificationNumber": "1Z4444DG123456789",
+      "Status": "Accepted",
+      "SubmissionDate": "20250717",
+      "SubmissionTime": "1045",
+      "DangerousGoodsDetails": [
+        {
+          "UNNumber": "3480",
+          "ProperShippingName": "Lithium Ion Batteries",
+          "HazardClass": "9",
+          "PackingGroup": "II",
+          "Quantity": "4",
+          "UnitOfMeasurement": "PKG",
+          "NetWeight": {
+            "Weight": "10",
+            "UnitOfMeasurement": "KG"
+          }
+        }
+      ]
+    }
+  }
+}
