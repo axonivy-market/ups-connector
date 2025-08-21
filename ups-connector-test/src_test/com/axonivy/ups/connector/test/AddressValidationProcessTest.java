@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
 import com.ups.wwwcie.api.client.XAVRequest;
 import com.ups.wwwcie.api.client.XAVResponseWrapper;
 
@@ -22,12 +21,12 @@ public class AddressValidationProcessTest extends BaseSetup {
 
   @TestTemplate
   void addressValidation(ExtensionContext context, BpmClient bpmClient) throws NoSuchFieldException {
-    BpmElement startable = ADDRESS_VALIDATION
-        .elementName("addressValidation(Integer,String,String,Integer,XAVRequest)");
+    BpmElement startable =
+        ADDRESS_VALIDATION.elementName("addressValidation(Integer,String,String,Integer,XAVRequest)");
     XAVRequest requestData = new XAVRequest();
     ExecutionResult result = bpmClient.start().subProcess(startable).execute(1, "v1", "1", 1, requestData);
     var response = (XAVResponseWrapper) result.data().last().get("xavResponseWrapper");
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       assertThat(response.getXaVResponse().getResponse().getResponseStatus().getCode()).isEqualTo("1");
       assertThat(response.getXaVResponse().getResponse().getResponseStatus().getDescription()).isEqualTo("Success");
     } else {

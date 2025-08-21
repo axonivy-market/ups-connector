@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
 import com.ups.wwwcie.api.client.TimeInTransitRequest;
 import com.ups.wwwcie.api.client.TimeInTransitResponse;
 
@@ -25,7 +24,7 @@ public class TimeTransitTest extends BaseSetup {
     BpmElement startable = TIME_IN_TRANSIT.elementName("call(String,String,String,TimeInTransitRequest)");
     ExecutionResult result = bpmClient.start().subProcess(startable).execute("test", "test", "test",
         new TimeInTransitRequest());
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       System.out.print(result.data().last());
       var response = (TimeInTransitResponse) result.data().last().get("timeInTransitResponse");
       assertThat(response.getValidationList().isDestinationAmbiguous()).isEqualTo(true);

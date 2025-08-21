@@ -1,7 +1,8 @@
 package com.axonivy.ups.connector.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
+import static com.axonivy.utils.e2etest.enums.E2EEnvironment.MOCK_SERVER;
+import static com.axonivy.utils.e2etest.enums.E2EEnvironment.REAL_SERVER;
 import java.util.List;
 
 import org.apache.http.HttpStatus;
@@ -9,9 +10,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
-import com.axonivy.ups.connector.test.context.MultiEnvironmentContextProvider;
 import com.axonivy.ups.connector.test.feature.MockCallHeaderFeature;
+import com.axonivy.utils.e2etest.context.MultiEnvironmentContextProvider;
+import com.axonivy.utils.e2etest.utils.E2ETestUtils;
 
 import ch.ivyteam.ivy.bpm.engine.client.ExecutionResult;
 import ch.ivyteam.ivy.bpm.engine.client.element.BpmProcess;
@@ -32,27 +33,31 @@ public class BaseSetup {
   protected static final BpmProcess SHIPPING = BpmProcess.path("Shipping");
   protected static final BpmProcess TIME_IN_TRANSIT = BpmProcess.path("TimeInTransit");
   protected static final BpmProcess TRACKING = BpmProcess.path("Tracking");
+  protected boolean isMockTest;
 
   @BeforeEach
   void setupEnvironmentForTesting(ExtensionContext context, AppFixture fixture) {
+    isMockTest = context.getDisplayName().equals(MOCK_SERVER.getDisplayName());
+    E2ETestUtils.determineConfigForContext(context.getDisplayName(), runRealEnv(fixture), runMockEnv(fixture));
+  }
 
-    switch (context.getDisplayName()) {
-    case UpsConnectorTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME:
+  private Runnable runRealEnv(AppFixture fixture) {
+    return () -> {
       fixture.var("upsConnector.appId", "appId");
       fixture.var("upsConnector.secretKey", "secretKey");
       fixture.var("upsConnector.Url", "https://wwwcie.ups.com/api");
       fixture.var("upsConnector.authUri", "https://wwwcie.ups.com/security/v1/oauth");
-      break;
-    case UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME:
+    };
+  }
+
+  private Runnable runMockEnv(AppFixture fixture) {
+    return () -> {
       fixture.config(String.format("RestClients.%s.Features", getCurrentRestClientFeaturesConfig()),
           List.of(MockCallHeaderFeature.class.getName(), JsonFeature.class.getName()));
       fixture.config(String.format("RestClients.%s.Url", getCurrentRestClientFeaturesConfig()),
           "{ivy.app.baseurl}/api/upsMock");
       fixture.var("upsConnector.Url", "{ivy.app.baseurl}/api/upsMock");
-      break;
-    default:
-      break;
-    }
+    };
   }
 
   protected String getCurrentRestClientFeaturesConfig() {
@@ -64,7 +69,7 @@ public class BaseSetup {
     BpmError error = (BpmError) result.data().last().get("error");
     int actualStatus = error.getHttpStatusCode();
     assertThat(actualStatus).isNotNull();
-    assertThat(contextName).isEqualToIgnoringCase(UpsConnectorTestConstants.REAL_CALL_CONTEXT_DISPLAY_NAME);
+    assertThat(contextName).isEqualToIgnoringCase(REAL_SERVER.getDisplayName());
     assertThat(isAcceptableStatus(actualStatus)).withFailMessage("Unexpected HTTP status: %s", actualStatus).isTrue();
   }
 
