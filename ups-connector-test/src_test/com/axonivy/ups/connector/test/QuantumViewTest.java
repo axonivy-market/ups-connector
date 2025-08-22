@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
 import com.ups.wwwcie.api.client.QuantumViewRequest;
 import com.ups.wwwcie.api.client.QuantumViewResponse;
 
@@ -24,7 +23,7 @@ public class QuantumViewTest extends BaseSetup {
   void quantumViewTest(ExtensionContext context, BpmClient bpmClient) throws NoSuchFieldException {
     BpmElement startable = QUATUM_VIEW.elementName("quatumView(String,QuantumViewRequest)");
     ExecutionResult result = bpmClient.start().subProcess(startable).execute("1", new QuantumViewRequest());
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       var response = (QuantumViewResponse) result.data().last().get("quantumViewResponse");
       assertThat(response.getBookmark()).isEqualTo("Disqualified");
     } else {

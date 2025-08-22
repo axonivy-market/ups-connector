@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
 import com.ups.wwwcie.api.client.LOCATORResponseWrapper;
 import com.ups.wwwcie.api.client.LocatorRequest;
 
@@ -26,7 +25,7 @@ public class LocatorProcessTest extends BaseSetup {
     LocatorRequest request = new LocatorRequest();
     ExecutionResult result = bpmClient.start().subProcess(startable).execute("VN", "v1", "VN", "v1", "v1", request);
     var response = (LOCATORResponseWrapper) result.data().last().get("locatorResponseWrapper");
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       assertThat(response.getLocatorResponse().getResponse().getResponseStatusCode()).isEqualTo("1");
       assertThat(response.getLocatorResponse().getResponse().getResponseStatusDescription()).isEqualTo("Success");
     } else {

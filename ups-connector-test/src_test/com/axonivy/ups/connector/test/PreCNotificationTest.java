@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
 import com.ups.wwwcie.api.client.PreNotificationRequest;
 import com.ups.wwwcie.api.client.PreNotificationResponse;
 
@@ -25,7 +24,7 @@ public class PreCNotificationTest extends BaseSetup {
     BpmElement startable = PRE_NOTIFICATION.elementName("preNotification(String,String,String,PreNotificationRequest)");
     ExecutionResult result = bpmClient.start().subProcess(startable).execute("1", "v1", "1",
         new PreNotificationRequest());
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       var response = (PreNotificationResponse) result.data().last().get("preNotificationResponse");
       assertThat(response.getResponse().getResponseStatus().getCode()).isEqualTo("1");
       assertThat(response.getResponse().getResponseStatus().getDescription()).isEqualTo("Success");

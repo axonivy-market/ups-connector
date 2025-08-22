@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
 import com.ups.wwwcie.api.client.PickupCancelResponse;
 import com.ups.wwwcie.api.client.PickupCreationRequest;
 import com.ups.wwwcie.api.client.PickupCreationRequestRequest;
@@ -35,7 +34,7 @@ public class PickupProcessTest extends BaseSetup {
     BpmElement startable = PICKUP.elementName("pickupPendingStatus(String,String,String,String,String)");
     ExecutionResult result = bpmClient.start().subProcess(startable).execute("1", "ciewssoatcnc0lRzHj9P2z", "testing",
         "2929602E9CP", "02");
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       var response = (PickupPendingStatusResponse) result.data().last().get("pickupPendingStatusResponse");
       assertThat(response.getResponse().getResponseStatus().getCode()).isEqualTo("200");
       assertThat(response.getResponse().getResponseStatus().getDescription()).isEqualTo("Success");
@@ -49,7 +48,7 @@ public class PickupProcessTest extends BaseSetup {
     BpmElement startable = PICKUP.elementName("pickupCancel(String,String,String,String,String)");
     ExecutionResult result = bpmClient.start().subProcess(startable).execute("1", "ciewssoatcnc0lRzHj9P2z", "testing",
         "2929602E9CP", "02");
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       var response = (PickupCancelResponse) result.data().last().get("pickupCancelResponse");
       assertThat(response.getResponse().getResponseStatus().getCode()).isEqualTo("1");
       assertThat(response.getResponse().getResponseStatus().getDescription()).isEqualTo("Success");
@@ -65,7 +64,7 @@ public class PickupProcessTest extends BaseSetup {
     request.setRequest(new PickupCreationRequestRequest());
     ExecutionResult result = bpmClient.start().subProcess(startable).execute("1", "ciewssoatcnc0lRzHj9P2z", "testing",
         request);
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       var response = (PickupCreationResponse) result.data().last().get("pickupCreationResponse");
       assertThat(response.getRateResult().getCurrencyCode()).isEqualTo("USD");
       assertThat(response.getResponse().getResponseStatus().getDescription()).isEqualTo("Success");

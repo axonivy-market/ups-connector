@@ -5,7 +5,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtensionContext;
 
-import com.axonivy.connector.ups.test.constant.UpsConnectorTestConstants;
 import com.axonivy.ups.connector.TrackingRequestData;
 import com.ups.wwwcie.client.TrackApiResponse;
 
@@ -30,7 +29,7 @@ public class TrackingProcessTest extends BaseSetup {
     requestData.setTransactionSrc("testing");
     requestData.setTransId("ciewssoatcnc0lRzHj9P2z");
     ExecutionResult result = bpmClient.start().subProcess(startable).execute(requestData);
-    if (UpsConnectorTestConstants.MOCK_SERVER_CONTEXT_DISPLAY_NAME.equals(context.getDisplayName())) {
+    if (isMockTest) {
       var response = (TrackApiResponse) result.data().last().get("trackApiResponse");
       assertThat(response.getTrackResponse().getShipment().get(0).getInquiryNumber()).isEqualTo("1Z615V90DK63764633");
     } else {
