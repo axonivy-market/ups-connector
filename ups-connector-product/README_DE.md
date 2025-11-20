@@ -1,87 +1,91 @@
-# UPS Modul
+# UPS-Modul
 
-Der #Axon Efeu [UPS Anschluss](https://developer.ups.com/catalog) aktiviert
-Nutzer zu integrieren UPS Bedienungen #bruchlos hinein irgendwelchen
-dienstlichen Arbeitsgang.
+Der Axon Ivy [UPS-Anschluss](https://developer.ups.com/catalog) ermöglicht es
+Benutzern, USV-Dienste nahtlos in jeden Geschäftsprozess zu integrieren.
 
-Dieser Anschluss:
+Dieser Konnektor:
 
-- Ermächtigt du mit voll Zugang zu den OpenAPI UPS API Katalog
-- Bietet tagtägliche Nutzung Fälle wie #rückverfolgen Päckchen, #bekommen
-  verschicken Raten, und validierend Adressen
+- Ergänzt Sie mit vollem Zugriff auf den OpenAPI UPS API-Katalog.
+- Bietet Funktionen für den täglichen Gebrauch, wie z. B. Sendungsverfolgung,
+  Ermittlung von Versandkosten und Adressvalidierung.
 
-Erkunde das [API katalogisieren](https://developer.ups.com/catalog) zu
-identifizieren #welche APIs stimmen ab best mit euren dienstlichen
-Notwendigkeiten.
+Sehen Sie sich den [API-Katalog](https://developer.ups.com/catalog) an, um
+herauszufinden, welche APIs am besten zu Ihren geschäftlichen Anforderungen
+passen.
 
 ## Demo
-### #Bekommen #rückverfolgen Auskunft
-Diese Bedienung ist benutzt zu #wiedergewinnen Päckchen Auskunft.
-1. Anmeldung zu den #Axon Efeu Portal
-2. Auf die Arbeitsgang Liste Seite, Klick weiter **Bekommt #Rückverfolgen**
+### Tracking-Informationen abrufen
+Dieser Dienst wird zum Abrufen von Paketinformationen verwendet.
+1. Melden Sie sich beim Axon Ivy Portal an.
+2. Klicken Sie auf der Seite „Prozessliste“ auf „ **“ und dann auf „Tracking
+   abrufen“.**
 
-![Alt Text](images/image-1.png)
+![Alt-Text](images/image-1.png)
 
-3. Setz ein eure #rückverfolgen Nummer
+3. Geben Sie Ihre Sendungsverfolgungsnummer ein.
 
-![Alt Text](images/image-2.png)
+![Alt-Text](images/image-2.png)
 
-4. Klick **Suche** #zuknöpfen zu bekommen alle Auskunft von dem Päckchen
+4. Klicken Sie auf „ **“ Klicken Sie auf die Schaltfläche „** “, um alle
+   Informationen zum Paket anzuzeigen.
 
-![Alt Text](images/image-3.png)
+![Alt-Text](images/image-3.png)
 
-### Schalldose Kreation
-Diese Bedienung ist benutzt zu einplanen Schalldosen.
-1. Anmeldung zu den #Axon Efeu Portal
-2. Auf die Arbeitsgang Liste Seite, Klick weiter **Schalldose Kreation**
+### Erstellung der Abholung
+Dieser Service wird zur Planung von Abholungen genutzt.
+1. Melden Sie sich beim Axon Ivy Portal an.
+2. Klicken Sie auf der Seite „Prozessliste“ auf „ **-Erstellung abholen“.**
 
-![Alt Text](images/image-5.png)
+![Alt-Text](images/image-5.png)
 
-3. Einsetzen bedürft #auffangen
+3. Füllen Sie die erforderlichen Felder aus.
 
-![Alt Text](images/image-4.png)
+![Alt-Text](images/image-4.png)
 
-4. Klick **Arbeitsgang** #zuknöpfen zu einplanen Schalldosen
+4. Klicken Sie auf „ **“ Klicken Sie auf die Schaltfläche „** “, um Abholungen
+   zu planen
 
-![Alt Text](images/image-12.png)
+![Alt-Text](images/image-12.png)
 
-### Schalldose streicht
-Diese Bedienung ist benutzt zu streichen vorher fahrplanmäßige Schalldosen.
-1. Anmeldung zu den #Axon Efeu Portal
-2. Auf die Arbeitsgang Liste Seite, Klick weiter **Schalldose Kreation**
+### Abholung stornieren
+Dieser Service wird verwendet, um zuvor geplante Abholungen zu stornieren.
+1. Melden Sie sich beim Axon Ivy Portal an.
+2. Klicken Sie auf der Seite „Prozessliste“ auf „ **-Erstellung abholen“.**
 
-![Alt Text](images/image-8.png)
+![Alt-Text](images/image-8.png)
 
-3. Einsetzen bedürft #auffangen
+3. Füllen Sie die erforderlichen Felder aus.
 
-![Alt Text](images/image-7.png)
+![Alt-Text](images/image-7.png)
 
-4. Klick **Streicht** #zuknöpfen zu beenden
+4. Klicken Sie auf „ **“ (Abbrechen) und dann auf „** “ (Abbrechen), um den
+   Vorgang abzuschließen.
 
-### Adresse Bestätigung
-Diese Bedienung ist genutzt zu überprüfen Adressen gegen #die Vereinigten
-Staaten Postalische Bedienung Datenbank von gültig Adressen herein die #U.S.
-1. Anmeldung zu den #Axon Efeu Portal
-2. Auf die Arbeitsgang Liste Seite, Klick weiter **Validiert Adresse**
+### Adressvalidierung
+Dieser Dienst wird verwendet, um Adressen anhand der Datenbank des United States
+Postal Service mit gültigen Adressen in den USA zu überprüfen.
+1. Melden Sie sich beim Axon Ivy Portal an.
+2. Klicken Sie auf der Seite „Prozessliste“ auf „ **-Adresse validieren“.**
 
-![Alt Text](images/image-9.png)
+![Alt-Text](images/image-9.png)
 
-3. #Einsetzen #adressieren info
+3. Geben Sie die Adressdaten ein.
 
-![Alt Text](images/image-10.png)
+![Alt-Text](images/image-10.png)
 
-4. Klick **Validiert** Knopf
+4. Klicken Sie auf „ **“ (Validieren) und dann auf die Schaltfläche „** “
+   (Validieren).
 
 ## Einrichtung
-1. Geh zu https://Entwickler.ups.com, Anmeldung mit eurem Nutzer oder schaffen
-   ein neues UPS Konto.
-2. Schaff weiter einen Antrag UPS
-3. Einmal ist geschafft eure Antrag, der **Kunde ID** und **Kunde Geheimnis**
-   ist generiert und kann sein benutzt zu bekommen eine Zugang Automatenmünze
-   für autorisieren eure API Bitten
-4. Konfigurier die folgenden Variablen in eurem Projekt:
+1. Gehen Sie zu https://developer.ups.com, melden Sie sich mit Ihrem
+   Benutzerkonto an oder erstellen Sie ein neues UPS-Konto.
+2. Erstellen Sie eine Anwendung auf UPS.
+3. **Sobald Ihre Anwendung erstellt ist, werden die Client-ID** und der
+   Client-Secret** von **generiert und können verwendet werden, um einen
+   Zugriffstoken für die Autorisierung Ihrer API-Anfragen zu erhalten.
+4. Konfigurieren Sie die folgenden Variablen in Ihrem Projekt:
 ```
 @variables.yaml@
 ```
-> [!BEACHTE] Den variablen Pfad `ups-Anschluss` ist #umbenennen zu
-> `upsConnector` von 13.1.
+> [!HINWEIS] Der variable Pfad `ups-connector` wird ab Version 13.1 in
+> `upsConnector` umbenannt.
