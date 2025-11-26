@@ -76,7 +76,7 @@ Postal Service mit gültigen Adressen in den USA zu überprüfen.
 4. Klicken Sie auf „ **“ (Validieren) und dann auf die Schaltfläche „** “
    (Validieren).
 
-## Einrichtung
+## Setup
 1. Gehen Sie zu https://developer.ups.com, melden Sie sich mit Ihrem
    Benutzerkonto an oder erstellen Sie ein neues UPS-Konto.
 2. Erstellen Sie eine Anwendung auf UPS.
