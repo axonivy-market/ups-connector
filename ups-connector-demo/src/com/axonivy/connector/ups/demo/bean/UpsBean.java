@@ -20,11 +20,11 @@ public class UpsBean {
 	private XAVRequestAddressKeyFormat addressKeyFormat = new XAVRequestAddressKeyFormat();
 	private PickupCreationRequestPickupPiece pickupPiece = new PickupCreationRequestPickupPiece();
 
-	public String getFormatedDate(String date) throws ParseException {
+	public String getFormattedDate(String date) throws ParseException {
 		return dateFormatter.format(inputDateFormatter.parse(date));
 	}
 
-	public String getFormatedTime(String time) throws ParseException {
+	public String getFormattedTime(String time) throws ParseException {
 		return timeFormatter.format(inputTimeFormatter.parse(time));
 	}
 
