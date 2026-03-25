@@ -59,13 +59,13 @@
 
 						<p:outputLabel for="deliveryDate" value="Delivery Date" />
 						<p:calendar id="deliveryDate"
-							value="#{upsBean.getFormatedDate(data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryDate[0].date)}"
+							value="#{upsBean.getFormattedDate(data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryDate[0].date)}"
 							pattern="yyyyMMdd">
 						</p:calendar>
 
 						<p:outputLabel for="deliveryTime" value="Delivery Time" />
 						<p:inputText id="deliveryTime"
-							value="#{upsBean.getFormatedTime(data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryTime.endTime)}" />
+							value="#{upsBean.getFormattedTime(data.trackApiResponse.trackResponse.shipment[0].package[0].deliveryTime.endTime)}" />
 					</p:panelGrid>
 					<h4>Package Activity</h4>
 					<p:dataTable id="activity" var="activity"
@@ -79,10 +79,10 @@
 							<h:outputText value="#{activity.status.description}" />
 						</p:column>
 						<p:column headerText="Date">
-							<h:outputText value="#{upsBean.getFormatedDate(activity.date)}" />
+							<h:outputText value="#{upsBean.getFormattedDate(activity.date)}" />
 						</p:column>
 						<p:column headerText="Time">
-							<h:outputText value="#{upsBean.getFormatedTime(activity.time)}" />
+							<h:outputText value="#{upsBean.getFormattedTime(activity.time)}" />
 						</p:column>
 					</p:dataTable>
 				</c:if>
