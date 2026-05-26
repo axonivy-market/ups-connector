@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "18BA7FF3B06A0E62",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -52,7 +52,7 @@
       "config" : {
         "method" : "DELETE",
         "target" : {
-          "clientId" : "9fe556c4-9078-4bb9-8d0d-ec1fd217a822",
+          "clientId" : "ups-Paperless-Document",
           "path" : "/paperlessdocuments/{version}/DocumentId/ShipperNumber",
           "templateParams" : {
             "version" : "in.version"
@@ -152,7 +152,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "9fe556c4-9078-4bb9-8d0d-ec1fd217a822",
+          "clientId" : "ups-Paperless-Document",
           "path" : "/paperlessdocuments/{version}/image",
           "templateParams" : {
             "version" : "in.version"
@@ -259,7 +259,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "9fe556c4-9078-4bb9-8d0d-ec1fd217a822",
+          "clientId" : "ups-Paperless-Document",
           "path" : "/paperlessdocuments/{version}/upload",
           "templateParams" : {
             "version" : "in.version"

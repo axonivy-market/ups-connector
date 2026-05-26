@@ -1,6 +1,7 @@
+# yaml-language-server: $schema=https://json-schema.axonivy.com/14.0-dev/config/variables.json
 Variables:
-  ups-connector:  
-      # Your UPS Application Client ID
-      appId: ""
-      # Your UPS Application Client Secret
-      secretKey: ""
+  ups-connector:
+    # Your UPS Application Client ID
+    appId: ""
+    # Your UPS Application Client Secret
+    secretKey: ""

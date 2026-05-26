@@ -1,31 +1,19 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "PickupCancelData",
   "namespace" : "com.axonivy.ups.connector.demo.PickupCancel",
-  "isBusinessCaseData" : false,
   "fields" : [ {
-    "name" : "transId",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "transId"
   }, {
-    "name" : "transactionSrc",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "transactionSrc"
   }, {
-    "name" : "prn",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "prn"
   }, {
-    "name" : "cancelBy",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "cancelBy"
   }, {
     "name" : "pickupResponse",
-    "type" : "com.ups.wwwcie.api.client.PickupCancelResponse",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.ups.wwwcie.api.client.PickupCancelResponse"
   }, {
-    "name" : "accountNumber",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "accountNumber"
   } ]
 }

@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.axonivy.ivy.api</groupId>
     <artifactId>ivy-project-parent</artifactId>
-    <version>13.2.0</version>
+    <version>14.0.0-SNAPSHOT</version>
     <relativePath></relativePath>
   </parent>
   <groupId>com.axonivy.connector.ups</groupId>
   <artifactId>ups-connector</artifactId>
-  <version>13.2.0-SNAPSHOT</version>
+  <version>14.0.0-SNAPSHOT</version>
   <packaging>iar</packaging>
   <dependencies>
     <dependency>
@@ -55,6 +55,32 @@
         <groupId>com.axonivy.ivy.ci</groupId>
         <artifactId>project-build-plugin</artifactId>
         <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-generated-source</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.basedir}/src_generated/rest/ups-PreNotification</source>
+                <source>${project.basedir}/src_generated/rest/ups-Locator</source>
+                <source>${project.basedir}/src_generated/rest/ups-TrackService-API</source>
+                <source>${project.basedir}/src_generated/rest/ups-Ship</source>
+                <source>${project.basedir}/src_generated/rest/ups-Address-Validation---Street-Level</source>
+                <source>${project.basedir}/src_generated/rest/ups-Paperless-Document</source>
+                <source>${project.basedir}/src_generated/rest/ups-Pickup</source>
+                <source>${project.basedir}/src_generated/rest/ups-Time-In-Transit</source>
+                <source>${project.basedir}/src_generated/rest/ups-Quantum-View</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

@@ -1,35 +1,24 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/12.0.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "AddressData",
   "namespace" : "com.axonivy.ups.connector.demo.Address",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "requestOption",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
-    "name" : "version",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "version"
   }, {
-    "name" : "regionalRequestIndicator",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "regionalRequestIndicator"
   }, {
     "name" : "maximumCandidateListSize",
-    "type" : "Integer",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "Integer"
   }, {
     "name" : "xavRequest",
-    "type" : "com.ups.wwwcie.api.client.XAVRequest",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.ups.wwwcie.api.client.XAVRequest"
   }, {
     "name" : "xavResponseWrapper",
-    "type" : "com.ups.wwwcie.api.client.XAVResponseWrapper",
-    "modifiers" : [ "PERSISTENT" ]
+    "type" : "com.ups.wwwcie.api.client.XAVResponseWrapper"
   }, {
-    "name" : "errorMessage",
-    "type" : "String",
-    "modifiers" : [ "PERSISTENT" ]
+    "name" : "errorMessage"
   } ]
 }
