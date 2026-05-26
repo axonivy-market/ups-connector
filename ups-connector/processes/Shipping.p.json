@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "18BA8C00018E3138",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -61,7 +61,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "674eeece-45b5-403b-83a4-5d04d5132034",
+          "clientId" : "ups-Ship",
           "path" : "/shipments/{version}/ship",
           "templateParams" : {
             "version" : "in.version"
@@ -162,7 +162,7 @@
       "config" : {
         "method" : "DELETE",
         "target" : {
-          "clientId" : "674eeece-45b5-403b-83a4-5d04d5132034",
+          "clientId" : "ups-Ship",
           "path" : "/shipments/{version}/void/cancel/{shipmentidentificationnumber}",
           "templateParams" : {
             "shipmentidentificationnumber" : "in.shipmentIdentificationNumber",
@@ -260,7 +260,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "674eeece-45b5-403b-83a4-5d04d5132034",
+          "clientId" : "ups-Ship",
           "path" : "/labels/{version}/recovery",
           "templateParams" : {
             "version" : "in.version"

@@ -1,40 +1,45 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "PaperlessDocumentsData",
   "namespace" : "com.axonivy.ups.connector",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "version",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "transId",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "transactionSrc",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "shipperNumber",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "documentId",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "deleteResponse",
-    "type" : "com.ups.wwwcie.api.client.DeleteResponse"
+    "type" : "com.ups.wwwcie.api.client.DeleteResponse",
+    "modifiers" : [ ]
   }, {
     "name" : "pushToImageRepositoryRequest",
-    "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryRequest"
+    "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryRequest",
+    "modifiers" : [ ]
   }, {
     "name" : "pushToImageRepositoryResponse",
-    "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryResponse"
+    "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryResponse",
+    "modifiers" : [ ]
   }, {
     "name" : "uploadRequest",
-    "type" : "com.ups.wwwcie.api.client.UploadRequest"
+    "type" : "com.ups.wwwcie.api.client.UploadRequest",
+    "modifiers" : [ ]
   }, {
     "name" : "uploadResponse",
-    "type" : "com.ups.wwwcie.api.client.UploadResponse"
-   }, {
+    "type" : "com.ups.wwwcie.api.client.UploadResponse",
+    "modifiers" : [ ]
+  }, {
     "name" : "error",
-    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
   } ]
 }

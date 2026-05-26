@@ -1,25 +1,25 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/data-class/13.1.0/data-class.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
   "simpleName" : "TrackingRequestData",
   "namespace" : "com.axonivy.ups.connector",
-  "isBusinessCaseData" : false,
   "fields" : [ {
     "name" : "inquiryNumber",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "locale",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "returnSignature",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "transId",
-    "type" : "String"
+    "modifiers" : [ ]
   }, {
     "name" : "transactionSrc",
-    "type" : "String"
-   }, {
+    "modifiers" : [ ]
+  }, {
     "name" : "error",
-    "type" : "ch.ivyteam.ivy.bpm.error.BpmError"
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
   } ]
 }

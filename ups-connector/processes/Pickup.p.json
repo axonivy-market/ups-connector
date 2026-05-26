@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "18BA81B8D6761598",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -60,7 +60,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "clientId" : "ups-Pickup",
           "path" : "/shipments/{version}/pickup/{pickuptype}",
           "templateParams" : {
             "version" : "in.version",
@@ -166,7 +166,7 @@
       "name" : "Pickup Pending Status",
       "config" : {
         "target" : {
-          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "clientId" : "ups-Pickup",
           "path" : "/shipments/{version}/pickup/{pickuptype}",
           "templateParams" : {
             "version" : "in.version",
@@ -266,7 +266,7 @@
       "config" : {
         "method" : "DELETE",
         "target" : {
-          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "clientId" : "ups-Pickup",
           "path" : "/shipments/{version}/pickup/{CancelBy}",
           "templateParams" : {
             "version" : "in.version",
@@ -366,7 +366,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "clientId" : "ups-Pickup",
           "path" : "/pickupcreation/{version}/pickup",
           "templateParams" : {
             "version" : "in.version"
@@ -470,7 +470,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "3c375417-832b-43bf-83b8-3a522adc3f15",
+          "clientId" : "ups-Pickup",
           "path" : "/pickup/{version}/servicecenterlocations",
           "templateParams" : {
             "version" : "in.version"

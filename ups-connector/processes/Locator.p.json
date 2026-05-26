@@ -1,5 +1,5 @@
 {
-  "$schema" : "https://json-schema.axonivy.com/process/13.2.0/process.json",
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process.json",
   "id" : "18B9434D3583828B",
   "kind" : "CALLABLE_SUB",
   "config" : {
@@ -62,7 +62,7 @@
       "config" : {
         "method" : "POST",
         "target" : {
-          "clientId" : "392a25b1-ff85-48ae-95cb-44dddd4a876b",
+          "clientId" : "ups-Locator",
           "path" : "/locations/{version}/search/availabilities/{reqOption}",
           "templateParams" : {
             "reqOption" : "in.reqOption",
