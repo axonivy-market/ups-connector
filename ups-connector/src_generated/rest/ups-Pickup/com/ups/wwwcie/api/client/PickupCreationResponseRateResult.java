@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.RateResultDisclaimer;
 /**
  * The result of rating on-callpickup. It correlates to rate status code 01
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupCreationResponseRateResult {
   @JsonProperty("Disclaimer")
   private RateResultDisclaimer disclaimer = null;

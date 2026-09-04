@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.CN22ContentCN22ContentWeight;
 /**
  * Container for CN22 content.  Required if the CN22 form container is present.  Note: The maximum number of goods printed on the CN22 form when a combined MI package and CN22 form label is requested is 30.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class CN22FormCN22Content {
   @JsonProperty("CN22ContentQuantity")
   private String cn22ContentQuantity = null;

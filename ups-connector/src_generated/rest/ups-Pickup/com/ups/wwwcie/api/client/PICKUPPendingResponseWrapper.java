@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.PickupPendingStatusResponse;
 /**
  * N/A  
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PICKUPPendingResponseWrapper {
   @JsonProperty("PickupPendingStatusResponse")
   private PickupPendingStatusResponse pickupPendingStatusResponse = null;

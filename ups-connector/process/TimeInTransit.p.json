@@ -1,0 +1,114 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "id" : "18BA7F3EF0ADEECC",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.TimeInTransitData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "call(String,String,String,TimeInTransitRequest)",
+      "config" : {
+        "signature" : "call",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "transId", "type" : "String", "desc" : "" },
+            { "name" : "transactionSrc", "type" : "String", "desc" : "" },
+            { "name" : "timeInTransitRequest", "type" : "com.ups.wwwcie.api.client.TimeInTransitRequest", "desc" : "" }
+          ],
+          "map" : {
+            "out.timeInTransitRequest" : "param.timeInTransitRequest",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.transactionSrc",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "timeInTransitResponse", "type" : "com.ups.wwwcie.api.client.TimeInTransitResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
+          ],
+          "map" : {
+            "result.timeInTransitResponse" : "in.timeInTransitResponse",
+            "result.error" : "in.#error"
+          }
+        }
+      },
+      "tags" : [
+        "connector"
+      ],
+      "visual" : {
+        "at" : { "x" : 208, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 848, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Get Time and Transit",
+      "config" : {
+        "method" : "POST",
+        "target" : {
+          "clientId" : "ups-Time-In-Transit",
+          "path" : "/shipments/{version}/transittimes",
+          "templateParams" : {
+            "version" : "in.version"
+          },
+          "headers" : {
+            "transId" : "in.transId",
+            "transactionSrc" : "in.transactionSrc"
+          }
+        },
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.TimeInTransitRequest",
+            "map" : {
+              "param" : "in.timeInTransitRequest"
+            }
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.TimeInTransitResponse",
+            "map" : {
+              "out.timeInTransitResponse" : "result"
+            },
+            "code" : "System.out.print(result);"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 544, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 576, "y" : 106 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f1" }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}

@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Ship To address container.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:38.808862600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:38.808862600+07:00[Asia/Bangkok]")
 public class ShipmentShipToAddress {
   @JsonProperty("AddressLine")
   private List<String> addressLine = new ArrayList<>();

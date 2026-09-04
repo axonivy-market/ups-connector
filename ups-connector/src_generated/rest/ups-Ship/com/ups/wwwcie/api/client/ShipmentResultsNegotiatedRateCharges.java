@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * Negotiated Rates Charge Container.  For tiered rates and promotional discounts, if a particular shipment based on zone, origin, destination or even shipment size doesn&#x27;t qualify for the existing discount then no negotiated rates container will be returned. Published rates will be the applicable rate.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ShipmentResultsNegotiatedRateCharges {
   @JsonProperty("ItemizedCharges")
   private List<NegotiatedRateChargesItemizedCharges> itemizedCharges = null;

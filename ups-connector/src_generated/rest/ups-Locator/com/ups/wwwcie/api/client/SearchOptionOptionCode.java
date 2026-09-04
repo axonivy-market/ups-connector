@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Option code contains the information of a particular Location, Retail Location, Additional Service, Program Type or End Point Service Offering depending on the option type.  The SearchOptions can contain one or more OptionCodes which forms the criteria for the location search.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class SearchOptionOptionCode {
   @JsonProperty("Code")
   private String code = null;

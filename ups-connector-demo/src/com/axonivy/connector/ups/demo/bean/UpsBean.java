@@ -1,18 +1,19 @@
 package com.axonivy.connector.ups.demo.bean;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import jakarta.inject.Named;
+import jakarta.faces.view.ViewScoped;
 
 import com.ups.wwwcie.api.client.PickupCreationRequestPickupPiece;
 import com.ups.wwwcie.api.client.XAVRequestAddressKeyFormat;
 
 @ViewScoped
-@ManagedBean
-public class UpsBean {
+@Named
+public class UpsBean implements Serializable {
 	private final DateFormat timeFormatter = new SimpleDateFormat("HH:mm");
 	private final DateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
 	private final DateFormat inputDateFormatter = new SimpleDateFormat("yyyyMMdd");

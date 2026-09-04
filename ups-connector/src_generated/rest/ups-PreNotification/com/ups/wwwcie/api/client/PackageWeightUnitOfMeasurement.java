@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Container to hold UnitOfMeasurement information for package weight.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:38.808862600+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:38.808862600+07:00[Asia/Bangkok]")
 public class PackageWeightUnitOfMeasurement {
   @JsonProperty("Code")
   private String code = null;

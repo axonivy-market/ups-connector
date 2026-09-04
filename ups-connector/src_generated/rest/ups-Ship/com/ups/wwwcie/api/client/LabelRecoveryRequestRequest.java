@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.LRRequestTransactionReference;
 /**
  * Request Container.  N/A
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class LabelRecoveryRequestRequest {
   @JsonProperty("SubVersion")
   private String subVersion = null;

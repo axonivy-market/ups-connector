@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Container for Return Service and Forward Tracking Numbers.  Accept no more than 30 TrackingData.  TrackingDataWithReferenceNumber and TrackingData container cannot be present at the same time.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupCreationRequestTrackingData {
   @JsonProperty("TrackingNumber")
   private String trackingNumber = null;

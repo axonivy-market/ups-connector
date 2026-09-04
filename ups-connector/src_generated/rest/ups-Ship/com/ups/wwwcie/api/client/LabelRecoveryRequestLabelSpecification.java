@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.LabelSpecificationLabelStockSize;
 /**
  * Container that is used to define the properties required by the user to print and/ or display the UPS shipping label.  Required for the shipment without return service, or shipment with PRL return service.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class LabelRecoveryRequestLabelSpecification {
   @JsonProperty("HTTPUserAgent")
   private String htTPUserAgent = null;

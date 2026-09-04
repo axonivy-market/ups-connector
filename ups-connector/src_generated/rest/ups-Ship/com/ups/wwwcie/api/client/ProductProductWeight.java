@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.ProductWeightUnitOfMeasurement;
 /**
  * The shipping weight, including containers, for each commodity with a separate Harmonized Tariff Code / Schedule B Number. This weight does not include carrier equipment.  Applies to CO and EEI forms only. Required for CO and EEI forms.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ProductProductWeight {
   @JsonProperty("UnitOfMeasurement")
   private ProductWeightUnitOfMeasurement unitOfMeasurement = null;
