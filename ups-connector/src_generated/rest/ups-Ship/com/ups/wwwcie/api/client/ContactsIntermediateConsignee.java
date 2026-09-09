@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.IntermediateConsigneeAddress;
 /**
  * The intermediate consignee is the person or company in the importing country or territory that makes final delivery to the ultimate consignee.  Applicable for EEI form only.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ContactsIntermediateConsignee {
   @JsonProperty("CompanyName")
   private String companyName = null;

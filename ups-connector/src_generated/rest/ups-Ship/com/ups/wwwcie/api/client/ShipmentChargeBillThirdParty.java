@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.BillThirdPartyAddress;
 /**
  * Container for the third party billing option.  This element or its sibling element, BillShipper, BillReceiver or Consignee Billed, must be present but no more than one can be present.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ShipmentChargeBillThirdParty {
   @JsonProperty("AccountNumber")
   private String accountNumber = null;

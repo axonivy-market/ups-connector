@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Container to hold the list of service offerings at the end point.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class DropLocationServiceOfferingList {
   @JsonProperty("ServiceOffering")
   private List<ServiceOfferingListServiceOffering> serviceOffering = new ArrayList<>();

@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * The event that a user receives a subset of Tracking information specific to either packages coming or packages going, after subscription request is made.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
 public class QuantumViewEventsSubscriptionEvents {
   @JsonProperty("Name")
   private String name = null;

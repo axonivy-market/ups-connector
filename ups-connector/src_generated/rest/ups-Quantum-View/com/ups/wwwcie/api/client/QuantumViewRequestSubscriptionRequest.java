@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Subscription requested by user to retrieve Inbound or/and Outbound XML formed subscription information.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
 public class QuantumViewRequestSubscriptionRequest {
   @JsonProperty("Name")
   private String name = null;

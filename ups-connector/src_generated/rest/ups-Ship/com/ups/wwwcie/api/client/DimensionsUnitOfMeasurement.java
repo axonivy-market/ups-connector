@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Dimensions information container. Note: Currently dimensions are not applicable to Ground Freight Pricing. Length + 2*(Width + Height) must be less than or equal to 165 IN or 330 CM.Required for Heavy Goods service. Package Dimension will be ignored for Simple Rate 
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class DimensionsUnitOfMeasurement {
   @JsonProperty("Code")
   private String code = null;

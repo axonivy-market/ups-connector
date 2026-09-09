@@ -24,7 +24,7 @@ import com.ups.wwwcie.api.client.FreightOptionsShipmentServiceOptions;
 /**
  * Container will be used to indicate Service options, add optional Original service center, destination address and shipment details related to the UPS Worldwide Express Freight and UPS Worldwide Express Freight Midday.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupCreationRequestFreightOptions {
   @JsonProperty("ShipmentServiceOptions")
   private FreightOptionsShipmentServiceOptions shipmentServiceOptions = null;

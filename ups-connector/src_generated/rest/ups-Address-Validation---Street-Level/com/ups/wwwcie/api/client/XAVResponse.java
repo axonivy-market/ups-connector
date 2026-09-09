@@ -24,7 +24,7 @@ import com.ups.wwwcie.api.client.XAVResponseResponse;
 /**
  * XAV Response Container.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:02:35.133666300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:02:35.133666300+07:00[Asia/Bangkok]")
 public class XAVResponse {
   @JsonProperty("Response")
   private XAVResponseResponse response = null;

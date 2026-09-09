@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * LocationAttribute is a container that contains the information about the location&#x27;s Location Type, Retail Location Type, Additional Services, or Program Type.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class DropLocationLocationAttribute {
   @JsonProperty("OptionType")
   private LocationAttributeOptionType optionType = null;

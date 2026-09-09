@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * Information about shipment&#x27;s origin.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
 public class SubscriptionFileOrigin {
   @JsonProperty("PackageReferenceNumber")
   private List<OriginPackageReferenceNumber> packageReferenceNumber = null;

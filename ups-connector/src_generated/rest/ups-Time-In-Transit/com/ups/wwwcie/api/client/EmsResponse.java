@@ -25,7 +25,7 @@ import java.util.List;
  * EmsResponse
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:05:10.812142200+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:05:10.812142200+07:00[Asia/Bangkok]")
 public class EmsResponse {
   @JsonProperty("shipDate")
   private String shipDate = null;

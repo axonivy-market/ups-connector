@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Ground Freight Pricing Shipment data container. Ground Freight Pricing shipment data is only guaranteed to be returned for Ground Freight Pricing shipments only.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ShipmentResultsFRSShipmentData {
   @JsonProperty("TransportationCharges")
   private FRSShipmentDataTransportationCharges transportationCharges = null;

@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * AddressKeyFormat container. The Key format is based on addressing standards jointly developed by the Postal Service and mailing industry.  The information provided in the Address Key container will be returned in the same format.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:02:35.133666300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:02:35.133666300+07:00[Asia/Bangkok]")
 public class XAVRequestAddressKeyFormat {
   @JsonProperty("ConsigneeName")
   private String consigneeName = null;
