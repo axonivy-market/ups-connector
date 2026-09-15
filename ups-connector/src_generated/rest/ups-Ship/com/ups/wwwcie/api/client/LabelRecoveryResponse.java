@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Response for the Label recovery request  Validates the date range and label being present. Also if the shipment is return or not
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class LabelRecoveryResponse {
   @JsonProperty("Response")
   private LabelRecoveryResponseResponse response = null;

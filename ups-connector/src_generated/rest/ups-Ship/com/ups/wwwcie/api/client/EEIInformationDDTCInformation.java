@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.DDTCInformationUnitOfMeasurement;
 /**
  * Department of State/ Directorate of Defense Trade Control Information. This element is a container for additional information that is applicable to SDL products. It will only be evaluated if the provided license code is an SDL code.  Applies to EEI Form only.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class EEIInformationDDTCInformation {
   @JsonProperty("ITARExemptionNumber")
   private String itARExemptionNumber = null;

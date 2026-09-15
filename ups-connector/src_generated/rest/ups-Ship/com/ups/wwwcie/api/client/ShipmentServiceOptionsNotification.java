@@ -25,7 +25,7 @@ import com.ups.wwwcie.api.client.NotificationVoiceMessage;
 /**
  * Container for the Quantum View Notification (QVN) is valid for all shipments including Return service, Import Control and Returns Flexible Access.  Valid return service types are: ERL, PRL, PNM, RS1, or RS3.   The shipment level notification is valid for forward and return international shipments as well as for domestic shipments (for US and PR).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ShipmentServiceOptionsNotification {
   @JsonProperty("NotificationCode")
   private String notificationCode = null;

@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Container to hold end point service offering List for UPS Access point. Applicable only when a UPS Access Point candidate list is obtained in search by address or geocode search.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class IncludeCriteriaServiceOfferingList {
   @JsonProperty("ServiceOffering")
   private List<ServiceOfferingListServiceOffering> serviceOffering = new ArrayList<>();

@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.TrackingCandidatePickupDateRange;
 /**
  * Information containing the results of the users Label Recovery Request. Returned in the event the Shipper Number and Reference Number are supplied in the request.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class LabelRecoveryResponseTrackingCandidate {
   @JsonProperty("TrackingNumber")
   private String trackingNumber = null;

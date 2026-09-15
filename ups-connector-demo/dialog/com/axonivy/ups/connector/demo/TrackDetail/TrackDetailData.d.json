@@ -1,0 +1,14 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
+  "simpleName" : "TrackDetailData",
+  "namespace" : "com.axonivy.ups.connector.demo.TrackDetail",
+  "fields" : [ {
+    "name" : "trackingRequest",
+    "type" : "com.axonivy.ups.connector.TrackingRequestData",
+    "modifiers" : [ ]
+  }, {
+    "name" : "trackApiResponse",
+    "type" : "com.ups.wwwcie.client.TrackApiResponse",
+    "modifiers" : [ ]
+  } ]
+}

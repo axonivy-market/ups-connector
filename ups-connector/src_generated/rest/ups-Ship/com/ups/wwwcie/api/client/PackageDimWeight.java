@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.DimWeightUnitOfMeasurement;
 /**
  * Dimensional weight of shipment. Please visit ups.com for rules on calculating. There is one implied decimal place (e.g. 115 &#x3D; 11.5).  If dimensions are provided, dimensional weight is ignored. For US/PR/CA shipments, dimensional weight is ignored
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class PackageDimWeight {
   @JsonProperty("UnitOfMeasurement")
   private DimWeightUnitOfMeasurement unitOfMeasurement = null;

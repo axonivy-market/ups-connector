@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Information that specifies a physical location where package is delivered.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
 public class DeliveryLocationAddressArtifactFormat {
   @JsonProperty("ConsigneeName")
   private String consigneeName = null;

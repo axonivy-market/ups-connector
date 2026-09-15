@@ -1,0 +1,105 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "id" : "18BA92FE8801A9AF",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.QuatumViewData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "quatumView(String,QuantumViewRequest)",
+      "config" : {
+        "signature" : "quatumView",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "quantumViewRequest", "type" : "com.ups.wwwcie.api.client.QuantumViewRequest", "desc" : "" }
+          ],
+          "map" : {
+            "out.quantumViewRequest" : "param.quantumViewRequest",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "quantumViewResponse", "type" : "com.ups.wwwcie.api.client.QuantumViewResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
+          ],
+          "map" : {
+            "result.quantumViewResponse" : "in.#quantumViewResponse",
+            "result.error" : "in.#error"
+          }
+        }
+      },
+      "tags" : [
+        "connector"
+      ],
+      "visual" : {
+        "at" : { "x" : 256, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 888, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Get Quantum View",
+      "config" : {
+        "method" : "POST",
+        "target" : {
+          "clientId" : "ups-Quantum-View",
+          "path" : "/quantumview/{version}/events",
+          "templateParams" : {
+            "version" : "in.version"
+          }
+        },
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.QUANTUMVIEWRequestWrapper",
+            "map" : {
+              "param.quantumViewRequest" : "in.quantumViewRequest"
+            }
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.QUANTUMVIEWResponseWrapper",
+            "map" : {
+              "out.quantumViewResponse" : "result.quantumViewResponse"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 568, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 600, "y" : 104 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f1" }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}

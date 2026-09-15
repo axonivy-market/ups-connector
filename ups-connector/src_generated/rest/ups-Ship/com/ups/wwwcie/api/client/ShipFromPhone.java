@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Container for Phone Number.  If ShipFrom country or territory is US, PR, CA, and VI, the layout is: area code, 7 digit phone number or  area code, 7 digit phone number, 4 digit extension number.  For other countries or territories, the layout is: country or territory code, area code, 7 digit number.    If ShipFrom tag is in the XML and International forms is requested.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ShipFromPhone {
   @JsonProperty("Number")
   private String number = null;

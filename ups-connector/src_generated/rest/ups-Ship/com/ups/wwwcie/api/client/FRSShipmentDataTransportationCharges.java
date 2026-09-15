@@ -24,7 +24,7 @@ import com.ups.wwwcie.api.client.TransportationChargesNetCharge;
 /**
  * Transportation charges container. Ground Freight Pricing transportation charges. These are only returned for Ground Freight Pricing enabled shipper account number when the user includes the FRSShipmentIndicator in the request.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class FRSShipmentDataTransportationCharges {
   @JsonProperty("GrossCharge")
   private TransportationChargesGrossCharge grossCharge = null;

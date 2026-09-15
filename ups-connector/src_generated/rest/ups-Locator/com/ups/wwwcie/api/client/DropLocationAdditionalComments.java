@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Container for Additional Comments about Location.Text will be displayed in the Locale requested.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class DropLocationAdditionalComments {
   @JsonProperty("CommentType")
   private List<AdditionalCommentsCommentType> commentType = new ArrayList<>();

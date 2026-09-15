@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.CODTurnInPageImage;
 /**
  * The container of the COD Turn In Page.    Applicable only for ShipmentResponse and ShipAcceptResponse.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ShipmentResultsCODTurnInPage {
   @JsonProperty("Image")
   private CODTurnInPageImage image = null;

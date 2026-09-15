@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Allows for users to further define the search criteria. Refer to the rules specified in Service Search section.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class LocationSearchCriteriaServiceSearch {
   @JsonProperty("Time")
   private String time = null;

@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Container for Tracking Number with its associated reference numbers.  This container should be populated to provide visibility into shipment tied to pickup being scheduled.  TrackingDataWithReferenceNumber and TrackingData container cannot be present at the same time.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupCreationRequestTrackingDataWithReferenceNumber {
   @JsonProperty("TrackingNumber")
   private String trackingNumber = null;

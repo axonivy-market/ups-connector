@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Container to hold a list of postal codes to exclude from the access point address or geocode search.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class ExcludeFromResultPostalCodeList {
   @JsonProperty("PostalCode")
   private List<PostalCodeListPostalCode> postalCode = new ArrayList<>();

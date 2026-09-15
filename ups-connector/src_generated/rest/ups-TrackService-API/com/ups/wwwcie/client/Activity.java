@@ -24,7 +24,7 @@ import com.ups.wwwcie.client.Status;
  * Activity
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-26T15:11:14.832076200+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-10-26T15:11:14.832076200+07:00[Asia/Bangkok]")
 public class Activity {
   @JsonProperty("date")
   private String date = null;

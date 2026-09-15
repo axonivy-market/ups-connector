@@ -25,7 +25,7 @@ import com.ups.wwwcie.api.client.PickupCreationResponseWeekendServiceTerritory;
 /**
  * The response for scheduling an on-callpickup.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupCreationResponse {
   @JsonProperty("Response")
   private PickupCreationResponseResponse response = null;

@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * Paperless Document API Request container for uploading User Created Forms.  N/A
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:17:47.935512400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:17:47.935512400+07:00[Asia/Bangkok]")
 public class UploadRequest {
   @JsonProperty("Request")
   private UploadRequestRequest request = null;

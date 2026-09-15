@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesResponseService
 /**
  * Returns service center location information for Origin UPS Facilities and Destination Facilities
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupGetServiceCenterFacilitiesResponse {
   @JsonProperty("Response")
   private PickupGetServiceCenterFacilitiesResponseResponse response = null;

@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Container to hold information regarding pickup details for each day of the week.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class OptionCodeTransportationPickUpSchedule {
   @JsonProperty("PickUp")
   private List<TransportationPickUpSchedulePickUp> pickUp = new ArrayList<>();

@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.PickupPendingStatusResponseResponse;
 /**
  * The response of the pending status for on-callpickup.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupPendingStatusResponse {
   @JsonProperty("Response")
   private PickupPendingStatusResponseResponse response = null;

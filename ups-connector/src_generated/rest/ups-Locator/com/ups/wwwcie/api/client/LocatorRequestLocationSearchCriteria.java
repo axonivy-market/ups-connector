@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * The Location search criteria container allows the user to further define the basis to which they wish to receive the UPS locations.  Only relevant when the user requests a Location search (request option 1).
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class LocatorRequestLocationSearchCriteria {
   @JsonProperty("SearchOption")
   private List<LocationSearchCriteriaSearchOption> searchOption = null;

@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Container to hold languages in which UPS Premium Care Form is required.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class UPSPremiumCareFormLanguageForUPSPremiumCare {
   @JsonProperty("Language")
   private List<String> language = new ArrayList<>();

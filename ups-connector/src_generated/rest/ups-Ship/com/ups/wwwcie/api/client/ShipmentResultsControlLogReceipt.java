@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.ControlLogReceiptImageFormat;
 /**
  * Container for the High Value reports when forward shipments have declared value between $999 and $50,000 USD.  Two copies of high value report needs to be pointed out.    Applicable only for ShipmentResponse and ShipAcceptResponse.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ShipmentResultsControlLogReceipt {
   @JsonProperty("ImageFormat")
   private ControlLogReceiptImageFormat imageFormat = null;
