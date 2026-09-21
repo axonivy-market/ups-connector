@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Container tag for determining whether or not to exclude product information from a particular form.  If this container is not present we assume that the DEFAULT is selected which is \&quot;none\&quot; and all products will appear on all forms.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ProductExcludeFromForm {
   @JsonProperty("FormType")
   private List<String> formType = new ArrayList<>();

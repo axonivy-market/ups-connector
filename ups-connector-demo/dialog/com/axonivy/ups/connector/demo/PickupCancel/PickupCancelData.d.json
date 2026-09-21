@@ -1,0 +1,25 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
+  "simpleName" : "PickupCancelData",
+  "namespace" : "com.axonivy.ups.connector.demo.PickupCancel",
+  "fields" : [ {
+    "name" : "transId",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transactionSrc",
+    "modifiers" : [ ]
+  }, {
+    "name" : "prn",
+    "modifiers" : [ ]
+  }, {
+    "name" : "cancelBy",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupCancelResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "accountNumber",
+    "modifiers" : [ ]
+  } ]
+}

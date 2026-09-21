@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.UltimateConsigneeUltimateConsigneeType;
 /**
  * The ultimate consignee is the person or company who receives the goods for end-use or the person or company listed on the export license. This is the end-user of the goods.  Applicable for EEI form only.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ContactsUltimateConsignee {
   @JsonProperty("CompanyName")
   private String companyName = null;

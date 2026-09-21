@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * The container for UPS shipping label. Returned for following shipments - Forward shipments, Shipments with PRL returns service,  Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707. Shipping label wont be returned if BarCodeImageIndicator is present. Applicable only for ShipmentResponse and ShipAcceptResponse.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class PackageResultsShippingLabel {
   @JsonProperty("ImageFormat")
   private ShippingLabelImageFormat imageFormat = null;

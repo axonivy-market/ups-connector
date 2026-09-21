@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Contains the commodity/product information.  Applies to EEI, Invoice, Partial Invoice, CO and NAFTA CO. When any International form is requested, at least one Product must be present.   Maximum number of products allowed for different forms are:  50: Package Packing List  100: Commercial Invoice, NAFTA, CO, EEI  1000: Air Freight packing list  Note: For Partial Invoice this container is optional.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class InternationalFormsProduct {
   @JsonProperty("Description")
   private List<String> description = new ArrayList<>();

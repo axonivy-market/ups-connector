@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Translate container allows the user to specify the language he/she would like a specific portion of response to return.  The language is specified by the combination of language code and dialect code.  Valid combinations are: LanguageCode + DialectCode.  Either Translate container or Locale element can be present in a given request. Both can&#x27;t be requested together in same request. Combinations:  eng GB &#x3D; Queen&#x27;s English  Spa 97 &#x3D; Castilian Spanish  ita 97 &#x3D; Italian  fra 97 &#x3D; France French  fra CA &#x3D; Canadian French  deu 97 &#x3D; German  por 97 &#x3D; Portugal Portuguese  nld 97 &#x3D; Dutch  dan 97 &#x3D; Danish  fin 97 &#x3D; Finnish  swe 97 &#x3D; Swedish  eng CA &#x3D; Canadian English  Eng US &#x3D; US English  Default language is Queen&#x27;s English   If the Ship from country or territory is Canada, the Language defaults to Canadian English.   If the ship from country or territory is US, the language defaults to US English.  If shipping from some other country or territory, the language defaults to Queens English.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class LabelRecoveryRequestTranslate {
   @JsonProperty("LanguageCode")
   private String languageCode = null;

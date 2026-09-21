@@ -1,0 +1,32 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
+  "simpleName" : "PickupCreationData",
+  "namespace" : "com.axonivy.ups.connector.demo.PickupCreation",
+  "fields" : [ {
+    "name" : "version",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickuptype",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transId",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transactionSrc",
+    "modifiers" : [ ]
+  }, {
+    "name" : "accountNumber",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupCreationRequest",
+    "type" : "com.ups.wwwcie.api.client.PickupCreationRequest",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupCreationResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupCreationResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "address",
+    "modifiers" : [ ]
+  } ]
+}

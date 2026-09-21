@@ -1,0 +1,113 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "id" : "18BA8EFA66A3E32A",
+  "kind" : "CALLABLE_SUB",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.PreNotificationData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "CallSubStart",
+      "name" : "preNotification(String,String,String,PreNotificationRequest)",
+      "config" : {
+        "signature" : "preNotification",
+        "input" : {
+          "params" : [
+            { "name" : "version", "type" : "String", "desc" : "" },
+            { "name" : "transId", "type" : "String", "desc" : "" },
+            { "name" : "tramsactionSrc", "type" : "String", "desc" : "" },
+            { "name" : "preNotificationRequest", "type" : "com.ups.wwwcie.api.client.PreNotificationRequest", "desc" : "" }
+          ],
+          "map" : {
+            "out.preNotificationRequest" : "param.preNotificationRequest",
+            "out.transId" : "param.transId",
+            "out.transactionSrc" : "param.tramsactionSrc",
+            "out.version" : "param.version"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "preNotificationResponse", "type" : "com.ups.wwwcie.api.client.PreNotificationResponse", "desc" : "" },
+            { "name" : "error", "type" : "ch.ivyteam.ivy.bpm.error.BpmError", "desc" : "" }
+          ],
+          "map" : {
+            "result.preNotificationResponse" : "in.preNotificationResponse",
+            "result.error" : "in.#error"
+          }
+        }
+      },
+      "tags" : [
+        "connector"
+      ],
+      "visual" : {
+        "at" : { "x" : 232, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "CallSubEnd",
+      "visual" : {
+        "at" : { "x" : 776, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "RestClientCall",
+      "name" : "Pre-Notification",
+      "config" : {
+        "method" : "POST",
+        "target" : {
+          "clientId" : "ups-PreNotification",
+          "path" : "/dangerousgoods/{version}/prenotification",
+          "templateParams" : {
+            "version" : "in.version"
+          },
+          "headers" : {
+            "transId" : "in.transId",
+            "transactionSrc" : "in.transactionSrc"
+          }
+        },
+        "body" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PRENOTIFICATIONRequestWrapper",
+            "map" : {
+              "param.preNotificationRequest" : "in.preNotificationRequest"
+            }
+          }
+        },
+        "response" : {
+          "entity" : {
+            "type" : "com.ups.wwwcie.api.client.PRENOTIFICATIONResponseWrapper",
+            "map" : {
+              "out.preNotificationResponse" : "result.preNotificationResponse"
+            }
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 536, "y" : 64 }
+      },
+      "boundaries" : [ {
+          "id" : "f5",
+          "type" : "ErrorBoundaryEvent",
+          "config" : {
+            "output" : {
+              "map" : {
+                "out" : "in",
+                "out.error" : "error"
+              }
+            }
+          },
+          "visual" : {
+            "at" : { "x" : 568, "y" : 104 }
+          },
+          "connect" : [
+            { "id" : "f6", "to" : "f1" }
+          ]
+        } ],
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    } ]
+}

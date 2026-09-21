@@ -1,0 +1,160 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/process-2.json",
+  "id" : "18D0B1942A6D959F",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "com.axonivy.ups.connector.demo.TrackDetail.TrackDetailData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start()",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "trackApiResponse", "type" : "com.ups.wwwcie.client.TrackApiResponse", "desc" : "" }
+          ],
+          "map" : {
+            "out.trackApiResponse" : "param.trackApiResponse"
+          }
+        },
+        "guid" : "18BD64A9EB95A6D9"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f9" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "18BD64A9EBC4458A"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "getTracking(TrackingRequestData)",
+      "config" : {
+        "signature" : "getTracking",
+        "input" : {
+          "params" : [
+            { "name" : "trackingRequest", "type" : "com.axonivy.ups.connector.TrackingRequestData", "desc" : "" }
+          ],
+          "map" : {
+            "out.trackingRequest" : "param.trackingRequest",
+            "out.trackingRequest.returnSignature" : "\"false\""
+          }
+        },
+        "guid" : "18BEAE53145EE6DF"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 304 },
+        "labelOffset" : { "x" : 67, "y" : 35 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f8" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "SubProcessCall",
+      "name" : "Tracking",
+      "config" : {
+        "processCall" : "Tracking:tracking(com.axonivy.ups.connector.TrackingRequestData)",
+        "call" : {
+          "map" : {
+            "param.trackingRequest" : "in.trackingRequest"
+          }
+        },
+        "output" : {
+          "map" : {
+            "out" : "in",
+            "out.trackApiResponse" : "result.trackApiResponse"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 392, "y" : 304 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f11",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 712, "y" : 304 }
+      }
+    }, {
+      "id" : "f9",
+      "type" : "Script",
+      "name" : "init",
+      "config" : {
+        "output" : {
+          "code" : [
+            "in.trackingRequest.transId = \"iewssoas2cq10QnkCX2r1P\";",
+            "in.trackingRequest.transactionSrc = \"Testing\";",
+            "in.trackingRequest.locale = \"de_DE\";"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f14",
+      "type" : "Script",
+      "name" : "show error message",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import javax.faces.application.FacesMessage;",
+            "import org.primefaces.component.inputtext.InputText;",
+            "import javax.faces.context.FacesContext;",
+            "",
+            "FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, \"Get single tracking failed\", null));"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 584, "y" : 440 }
+      },
+      "connect" : [
+        { "id" : "f16", "to" : "f11" }
+      ]
+    }, {
+      "id" : "f13",
+      "type" : "ErrorStartEvent",
+      "visual" : {
+        "at" : { "x" : 432, "y" : 336 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      },
+      "connect" : [
+        { "id" : "f15", "to" : "f14" }
+      ]
+    } ]
+}

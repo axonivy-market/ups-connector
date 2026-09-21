@@ -26,7 +26,7 @@ import com.ups.wwwcie.api.client.ContactsUltimateConsignee;
 /**
  * Holds the contact information of various parties.  Applicable for EEI and NAFTA CO only. Required for NAFTA CO and EEI. Ultimate consignee contact information is required for EEI.  Producer contact information is required for NAFTA CO
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class InternationalFormsContacts {
   @JsonProperty("ForwardAgent")
   private ContactsForwardAgent forwardAgent = null;

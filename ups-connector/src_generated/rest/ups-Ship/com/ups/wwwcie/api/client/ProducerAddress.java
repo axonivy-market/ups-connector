@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Address information of the Producer.  Applies to NAFTA CO. Only applicable if producer option is empty or not present. Conditionally required for: NAFTA CO, when Producer option is not specified.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ProducerAddress {
   @JsonProperty("AddressLine")
   private List<String> addressLine = new ArrayList<>();

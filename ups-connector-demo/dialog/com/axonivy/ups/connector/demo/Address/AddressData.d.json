@@ -1,0 +1,31 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0-dev/project/data-class.json",
+  "simpleName" : "AddressData",
+  "namespace" : "com.axonivy.ups.connector.demo.Address",
+  "fields" : [ {
+    "name" : "requestOption",
+    "type" : "Integer",
+    "modifiers" : [ ]
+  }, {
+    "name" : "version",
+    "modifiers" : [ ]
+  }, {
+    "name" : "regionalRequestIndicator",
+    "modifiers" : [ ]
+  }, {
+    "name" : "maximumCandidateListSize",
+    "type" : "Integer",
+    "modifiers" : [ ]
+  }, {
+    "name" : "xavRequest",
+    "type" : "com.ups.wwwcie.api.client.XAVRequest",
+    "modifiers" : [ ]
+  }, {
+    "name" : "xavResponseWrapper",
+    "type" : "com.ups.wwwcie.api.client.XAVResponseWrapper",
+    "modifiers" : [ ]
+  }, {
+    "name" : "errorMessage",
+    "modifiers" : [ ]
+  } ]
+}

@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * This field should be entered if the  NAFTA Certificate covers multiple shipments of identical goods as described in the Description of Goods field that are imported into a NAFTA country or territory for a specified period of up to one year (the blanket period). The importation of a good for which preferential treatment is claimed based on this certificate must occur between these dates.  Applies to NAFTA CO form only. Required for NAFTA CO.  This is not valid for a paperless shipment.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class InternationalFormsBlanketPeriod {
   @JsonProperty("BeginDate")
   private String beginDate = null;

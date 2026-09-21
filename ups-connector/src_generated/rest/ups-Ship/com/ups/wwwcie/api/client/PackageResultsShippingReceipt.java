@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.ShippingReceiptImageFormat;
 /**
  * Supported for following shipments - PRL shipments, Electronic Return Label or Electronic Import Control Label shipments with SubVersion greater than or equal to 1707.  Applicable only for ShipmentResponse and ShipAcceptResponse.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class PackageResultsShippingReceipt {
   @JsonProperty("ImageFormat")
   private ShippingReceiptImageFormat imageFormat = null;
