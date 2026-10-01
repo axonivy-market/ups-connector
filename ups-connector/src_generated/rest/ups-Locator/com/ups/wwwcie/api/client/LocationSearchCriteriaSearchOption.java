@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * SearchOption contains the information that forms the basis of the location search, It contains the criteria for search by Locations, Retail Locations, Additional Services, or Program Types.  There should be one container for each type of search the user may wish to do. The user can specify either search by Locations or Retail Locations, but not both.  If this container is missing, the default search would be for The UPS Store, UPS Center,� UPS Drop Box, and Authorized Shipping Outlet location types.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class LocationSearchCriteriaSearchOption {
   @JsonProperty("OptionType")
   private SearchOptionOptionType optionType = null;

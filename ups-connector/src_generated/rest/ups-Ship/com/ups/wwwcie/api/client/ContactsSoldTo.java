@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.SoldToPhone;
 /**
  * SoldTo Container. The Sold To party&#x27;s country code must be the same as the Ship To party&#x27;s country code with the exception of Canada and satellite countries.  Applies to Invoice and NAFTA CO Forms. Required if Invoice or NAFTA CO (International Form) is requested.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ContactsSoldTo {
   @JsonProperty("Name")
   private String name = null;

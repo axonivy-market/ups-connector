@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.ShipmentServiceOptionsCallTagARS;
 /**
  * Container tag for optional UPS services related to a shipment.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
 public class ManifestShipmentServiceOptions {
   @JsonProperty("SaturdayPickup")
   private String saturdayPickup = null;

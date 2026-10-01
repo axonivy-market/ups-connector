@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.DeleteRequestRequest;
 /**
  * Paperless Document API Request container for deleting user created forms.  N/A
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:17:47.935512400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:17:47.935512400+07:00[Asia/Bangkok]")
 public class DeleteRequest {
   @JsonProperty("Request")
   private DeleteRequestRequest request = null;

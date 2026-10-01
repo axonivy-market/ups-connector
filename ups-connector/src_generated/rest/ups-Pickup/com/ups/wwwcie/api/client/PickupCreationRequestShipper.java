@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.ShipperChargeCard;
 /**
  * On-call pickup shipper or requestor information.   Must provide when choose to pay the pickup by shipper account number, BillThirdParty account number, or BillReceiver account number.  It is optional if the shipper chooses any other payment method. However, it is highly recommended to provide if available.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupCreationRequestShipper {
   @JsonProperty("Account")
   private ShipperAccount account = null;

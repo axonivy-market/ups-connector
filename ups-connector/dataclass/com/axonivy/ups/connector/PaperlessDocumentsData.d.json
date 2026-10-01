@@ -1,0 +1,45 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "PaperlessDocumentsData",
+  "namespace" : "com.axonivy.ups.connector",
+  "fields" : [ {
+    "name" : "version",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transId",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transactionSrc",
+    "modifiers" : [ ]
+  }, {
+    "name" : "shipperNumber",
+    "modifiers" : [ ]
+  }, {
+    "name" : "documentId",
+    "modifiers" : [ ]
+  }, {
+    "name" : "deleteResponse",
+    "type" : "com.ups.wwwcie.api.client.DeleteResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pushToImageRepositoryRequest",
+    "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryRequest",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pushToImageRepositoryResponse",
+    "type" : "com.ups.wwwcie.api.client.PushToImageRepositoryResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "uploadRequest",
+    "type" : "com.ups.wwwcie.api.client.UploadRequest",
+    "modifiers" : [ ]
+  }, {
+    "name" : "uploadResponse",
+    "type" : "com.ups.wwwcie.api.client.UploadResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
+  } ]
+}

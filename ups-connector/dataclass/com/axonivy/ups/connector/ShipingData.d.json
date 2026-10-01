@@ -1,0 +1,48 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "ShipingData",
+  "namespace" : "com.axonivy.ups.connector",
+  "fields" : [ {
+    "name" : "version",
+    "modifiers" : [ ]
+  }, {
+    "name" : "additionalAddressValidation",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transId",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transactionSrc",
+    "modifiers" : [ ]
+  }, {
+    "name" : "shipmentRequest",
+    "type" : "com.ups.wwwcie.api.client.ShipmentRequest",
+    "modifiers" : [ ]
+  }, {
+    "name" : "shipmentResponse",
+    "type" : "com.ups.wwwcie.api.client.ShipmentResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "shipmentIdentificationNumber",
+    "modifiers" : [ ]
+  }, {
+    "name" : "trackingNumber",
+    "modifiers" : [ ]
+  }, {
+    "name" : "voidShipmentResponse",
+    "type" : "com.ups.wwwcie.api.client.VoidShipmentResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "labelRecoveryRequest",
+    "type" : "com.ups.wwwcie.api.client.LabelRecoveryRequest",
+    "modifiers" : [ ]
+  }, {
+    "name" : "labelRecoveryResponse",
+    "type" : "com.ups.wwwcie.api.client.LabelRecoveryResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
+  } ]
+}

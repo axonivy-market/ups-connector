@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Contains all of the basic information about the origin such as: Address Lines, City, State/Province, Postal Code and Country or Territory Code.  The element CountryCode is required.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class OriginAddressAddressKeyFormat {
   @JsonProperty("ConsigneeName")
   private String consigneeName = null;

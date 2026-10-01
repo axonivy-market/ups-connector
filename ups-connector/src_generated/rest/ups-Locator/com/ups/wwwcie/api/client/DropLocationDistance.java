@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.DistanceUnitOfMeasurement;
 /**
  * Container for the straight line distance from the origin to the UPS location.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class DropLocationDistance {
   @JsonProperty("Value")
   private String value = null;

@@ -1,0 +1,18 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "TrackingData",
+  "namespace" : "com.axonivy.ups.connector",
+  "fields" : [ {
+    "name" : "trackingRequest",
+    "type" : "com.axonivy.ups.connector.TrackingRequestData",
+    "modifiers" : [ ]
+  }, {
+    "name" : "trackApiResponse",
+    "type" : "com.ups.wwwcie.client.TrackApiResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
+  } ]
+}

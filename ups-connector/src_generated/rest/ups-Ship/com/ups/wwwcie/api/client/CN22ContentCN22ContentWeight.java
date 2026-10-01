@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.CN22ContentWeightUnitOfMeasurement;
 /**
  * Container for CN22 content weight.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class CN22ContentCN22ContentWeight {
   @JsonProperty("UnitOfMeasurement")
   private CN22ContentWeightUnitOfMeasurement unitOfMeasurement = null;

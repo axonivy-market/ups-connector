@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.PickupGetPoliticalDivision1ListResponseResponse
 /**
  * The response for getting a list of valid Political Division 1 or State field in the specified country or territory.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class PickupGetPoliticalDivision1ListResponse {
   @JsonProperty("Response")
   private PickupGetPoliticalDivision1ListResponseResponse response = null;

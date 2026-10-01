@@ -25,7 +25,7 @@ import com.ups.wwwcie.api.client.LabelResultsReceipt;
 /**
  * Container that stores the label results. Information containing the results of the user&#x27;s Label Recovery Request.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class LabelRecoveryResponseLabelResults {
   @JsonProperty("TrackingNumber")
   private String trackingNumber = null;

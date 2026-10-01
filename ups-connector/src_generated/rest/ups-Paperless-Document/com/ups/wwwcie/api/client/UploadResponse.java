@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.UploadResponseResponse;
 /**
  * Paperless Document API Response Container for upload request.  N/A
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:17:47.935512400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:17:47.935512400+07:00[Asia/Bangkok]")
 public class UploadResponse {
   @JsonProperty("Response")
   private UploadResponseResponse response = null;
