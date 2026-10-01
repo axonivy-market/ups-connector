@@ -24,7 +24,7 @@ import com.ups.wwwcie.api.client.ShipmentChargeBillThirdParty;
 /**
  * Shipment charge container.  If Duty and Tax charges are applicable to a shipment and a payer is not specified, the default payer of Duty and Tax charges is Bill to Receiver.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class PaymentInformationShipmentCharge {
   @JsonProperty("Type")
   private String type = null;

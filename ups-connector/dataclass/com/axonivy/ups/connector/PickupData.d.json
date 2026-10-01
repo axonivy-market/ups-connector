@@ -1,0 +1,63 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/14.0/project/data-class.json",
+  "simpleName" : "PickupData",
+  "namespace" : "com.axonivy.ups.connector",
+  "fields" : [ {
+    "name" : "version",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickuptype",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupRequestWrapper",
+    "type" : "com.ups.wwwcie.api.client.PICKUPRequestWrapper",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupRateResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupRateResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transId",
+    "modifiers" : [ ]
+  }, {
+    "name" : "transactionSrc",
+    "modifiers" : [ ]
+  }, {
+    "name" : "accountNumber",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupPendingStatusResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupPendingStatusResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "cancelBy",
+    "modifiers" : [ ]
+  }, {
+    "name" : "prn",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupCancelResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupCancelResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupCreationResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupCreationResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupCreationRequest",
+    "type" : "com.ups.wwwcie.api.client.PickupCreationRequest",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupGetServiceCenterFacilitiesRequest",
+    "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesRequest",
+    "modifiers" : [ ]
+  }, {
+    "name" : "pickupGetServiceCenterFacilitiesResponse",
+    "type" : "com.ups.wwwcie.api.client.PickupGetServiceCenterFacilitiesResponse",
+    "modifiers" : [ ]
+  }, {
+    "name" : "error",
+    "type" : "ch.ivyteam.ivy.bpm.error.BpmError",
+    "modifiers" : [ ]
+  } ]
+}

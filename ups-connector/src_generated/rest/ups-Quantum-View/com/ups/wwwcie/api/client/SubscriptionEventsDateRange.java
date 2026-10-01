@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * The range of date time of subscription requested by user, as one type of request criteria, valid up to but not exceeding 7 days into the past, starting from current day.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
 public class SubscriptionEventsDateRange {
   @JsonProperty("BeginDate")
   private String beginDate = null;

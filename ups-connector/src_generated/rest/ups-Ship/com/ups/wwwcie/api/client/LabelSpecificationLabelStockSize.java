@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Container for the EPL2, ZPL or SPL label size.  Valid for EPL2, ZPL and SPL Labels.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class LabelSpecificationLabelStockSize {
   @JsonProperty("Height")
   private String height = null;

@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.ProducerPhone;
 /**
  * Information of the producer. The NAFTA Certificate of Origin must be completed, signed, and dated by the exporter.  When the Certificate is completed by the producer for use by the exporter, it must be completed, signed, and dated by the producer. The date must be the date the Certificate was completed and signed.  Applies to NAFTA CO.  Required for NAFTA CO forms.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ContactsProducer {
   @JsonProperty("Option")
   private String option = null;

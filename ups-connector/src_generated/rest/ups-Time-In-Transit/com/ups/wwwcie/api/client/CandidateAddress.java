@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * CandidateAddress
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:05:10.812142200+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T11:05:10.812142200+07:00[Asia/Bangkok]")
 public class CandidateAddress {
   @JsonProperty("countryName")
   private String countryName = null;

@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.OptionCodeTransportationPickUpSchedule;
 /**
  * Option code is a container that contains the information of a particular retail location type or additional service or program type that is available currently. One or more of this container will be returned to give all the available codes for Retail Type or Additional Services or Program Type.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-03T14:58:26.891244800+07:00[Asia/Bangkok]")
 public class AvailableLocationAttributesOptionCode {
   @JsonProperty("Code")
   private String code = null;

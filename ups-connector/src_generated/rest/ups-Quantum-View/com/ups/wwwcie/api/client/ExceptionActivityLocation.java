@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.ActivityLocationAddressArtifactFormat;
 /**
  * Geographic location where an activity occurred during a movement of a package or shipment.(ActivityLocation in Exception is identical to the one in Manifest. But three of all elements in Exception/ActivityLocation/AddressArtifactFormat are populated in this release. Refer to Manifest for remaining unpopulated elements.)
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
 public class ExceptionActivityLocation {
   @JsonProperty("AddressArtifactFormat")
   private ActivityLocationAddressArtifactFormat addressArtifactFormat = null;

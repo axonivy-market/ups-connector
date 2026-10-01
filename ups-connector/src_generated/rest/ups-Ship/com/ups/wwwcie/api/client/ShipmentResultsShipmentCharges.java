@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Shipment charges Container. Shipment charges info.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class ShipmentResultsShipmentCharges {
   @JsonProperty("RateChart")
   private String rateChart = null;

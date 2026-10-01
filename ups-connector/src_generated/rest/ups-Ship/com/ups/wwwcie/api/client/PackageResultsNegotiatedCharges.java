@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Negotiated Rates Charge Container.  These charges are returned when: 1) Subversion is greater than or equal to 1607 2) If negotiated rates were requested for GFP shipments and account number is eligible to receive negotiated rates.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class PackageResultsNegotiatedCharges {
   @JsonProperty("ItemizedCharges")
   private List<NegotiatedChargesItemizedCharges> itemizedCharges = null;

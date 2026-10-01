@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /**
  * Localized Instruction Container.  Localized Instructions will be returned for drop off location search by proximity order.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2024-01-12T10:01:45.611049100+07:00[Asia/Bangkok]")
 public class DropOffFacilitiesLocalizedInstruction implements OneOfServiceCenterLocationDropOffFacilitiesLocalizedInstruction {
   @JsonProperty("Locale")
   private String locale = null;

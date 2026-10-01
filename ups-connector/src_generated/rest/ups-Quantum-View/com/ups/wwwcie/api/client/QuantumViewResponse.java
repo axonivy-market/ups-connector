@@ -23,7 +23,7 @@ import com.ups.wwwcie.api.client.QuantumViewResponseResponse;
 /**
  * Container for QuantumView response information.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:44:48.184199400+07:00[Asia/Bangkok]")
 public class QuantumViewResponse {
   @JsonProperty("Response")
   private QuantumViewResponseResponse response = null;

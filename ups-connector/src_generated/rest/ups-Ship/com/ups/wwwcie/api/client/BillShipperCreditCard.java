@@ -22,7 +22,7 @@ import com.ups.wwwcie.api.client.CreditCardAddress;
 /**
  * Credit card information container.  Required if neither of the following is present:   /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AccountNumber  or  /ShipmentRequest/Shipment/PaymentInformation/ShipmentCharge/BillShipper/AlternatePaymentMethod.   Credit card payment is valid for shipments without return service only.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
+@jakarta.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2023-11-07T15:43:52.173749300+07:00[Asia/Bangkok]")
 public class BillShipperCreditCard {
   @JsonProperty("Type")
   private String type = null;
